@@ -40,6 +40,28 @@ OpenStudioLandscapes-Template
 A longer description of your project goes here...
 
 
+Installation
+============
+
+
+Add `OpenStudioLandscapes.Template.definitions` to
+`OpenStudioLandscapes.engine.constants.THIRD_PARRTY`:
+
+.. code-block:: python
+
+   THIRD_PARTY = [
+       "OpenStudioLandscapes.Template.definitions",
+   ]
+
+
+Install module into `venv`
+
+.. code-block:: bash
+
+   cd OpenStudioLandscapes-Template
+   pip install -e .[dev]
+
+
 .. _pyscaffold-notes:
 
 Note
