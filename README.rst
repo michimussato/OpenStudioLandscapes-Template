@@ -34,10 +34,14 @@ OpenStudioLandscapes-Template
 =============================
 
 
-    Add a short description here!
+    OpenStudioLandscapes module template
 
 
 A longer description of your project goes here...
+This is a template module that can serve as a starting
+point to implement new functionality in `OpenStudioLandscapes`_.
+
+.. _OpenStudioLandscapes: https://github.com/michimussato/OpenStudioLandscapes
 
 
 Installation
@@ -45,7 +49,7 @@ Installation
 
 
 Add `OpenStudioLandscapes.Template.definitions` to
-`OpenStudioLandscapes.engine.constants.THIRD_PARRTY`:
+`OpenStudioLandscapes.engine.constants.THIRD_PARTY`:
 
 .. code-block:: python
 
