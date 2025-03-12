@@ -54,7 +54,11 @@ Add `OpenStudioLandscapes.Template.definitions` to
 .. code-block:: python
 
    THIRD_PARTY = [
-       "OpenStudioLandscapes.Template.definitions",
+       {
+           "enabled": True,
+           "module": "OpenStudioLandscapes.Template.definitions",,
+           "compose_scope": ComposeScope.DEFAULT,
+       },
    ]
 
 
