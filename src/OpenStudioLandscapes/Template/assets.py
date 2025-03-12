@@ -1,5 +1,8 @@
 import copy
-from typing import Generator
+import json
+from collections import ChainMap
+from functools import reduce
+from typing import Generator, MutableMapping
 
 import yaml
 
@@ -17,6 +20,8 @@ from dagster import (
 from OpenStudioLandscapes.engine.base.assets import KEY_BASE
 from OpenStudioLandscapes.engine.base.ops import op_docker_compose_graph
 from OpenStudioLandscapes.engine.base.ops import op_group_out
+
+from OpenStudioLandscapes.engine.enums import *
 
 from OpenStudioLandscapes.Template.constants import *
 
@@ -60,17 +65,82 @@ def env(
 
 @asset(
     **ASSET_HEADER,
+)
+def compose_networks(
+    context: AssetExecutionContext,
+) -> Generator[
+    Output[dict[str, dict[str, dict[str, str]]]] | AssetMaterialization, None, None]:
+
+    compose_network_mode = ComposeNetworkMode.DEFAULT
+
+    if compose_network_mode == ComposeNetworkMode.DEFAULT:
+        docker_dict = {
+            "networks": {
+                "template": {
+                    "name": "network_template",
+                },
+            },
+        }
+
+    else:
+        docker_dict = {
+            "network_mode": compose_network_mode.value,
+        }
+
+    docker_yaml = yaml.dump(docker_dict)
+
+    yield Output(docker_dict)
+
+    yield AssetMaterialization(
+        asset_key=context.asset_key,
+        metadata={
+            "__".join(context.asset_key.path): MetadataValue.json(docker_dict),
+            "compose_network_mode": MetadataValue.text(compose_network_mode.value),
+            "docker_dict": MetadataValue.md(
+                f"```json\n{json.dumps(docker_dict, indent=2)}\n```"
+            ),
+            "docker_yaml": MetadataValue.md(f"```shell\n{docker_yaml}\n```"),
+        },
+    )
+
+
+@asset(
+    **ASSET_HEADER,
     ins={
         "env": AssetIn(
             AssetKey([*KEY, "env"]),
         ),
+        "compose_networks": AssetIn(
+            AssetKey([*KEY, "compose_networks"]),
+        ),
     },
 )
-def compose(
+def compose_template(
     context: AssetExecutionContext,
     env: dict,  # pylint: disable=redefined-outer-name
+    compose_networks: dict,  # pylint: disable=redefined-outer-name
 ) -> Generator[Output[dict] | AssetMaterialization, None, None]:
     """ """
+
+    if "networks" in compose_networks:
+        network_dict = {
+            "networks": list(compose_networks.get("networks", {}).keys())
+        }
+        ports_dict = {
+            "ports": [
+                f"{env.get('DAGSTER_DEV_PORT_HOST')}:{env.get('DAGSTER_DEV_PORT_CONTAINER')}",
+            ]
+        }
+    elif "network_mode" in compose_networks:
+        network_dict = {
+            "network_mode": compose_networks.get("network_mode")
+        }
+        ports_dict = {}
+    else:
+        network_dict = {}
+        ports_dict = {}
+
+    volumes = []
 
     docker_dict = {
         "services": {
@@ -80,10 +150,8 @@ def compose(
                 "domainname": env.get("ROOT_DOMAIN"),
                 "restart": "always",
                 "image": "template/template",
-                "networks": [
-                    # "repository",
-                    # "mongodb",
-                ],
+                **copy.deepcopy(network_dict),
+                **copy.deepcopy(ports_dict),
                 # "environment": {
                 # },
                 # "healthcheck": {
@@ -98,6 +166,50 @@ def compose(
             },
         },
     }
+
+    docker_yaml = yaml.dump(docker_dict)
+
+    yield Output(docker_dict)
+
+    yield AssetMaterialization(
+        asset_key=context.asset_key,
+        metadata={
+            "__".join(context.asset_key.path): MetadataValue.json(docker_dict),
+            "docker_yaml": MetadataValue.md(f"```yaml\n{docker_yaml}\n```"),
+            # Todo: "cmd_docker_run": MetadataValue.path(cmd_list_to_str(cmd_docker_run)),
+        },
+    )
+
+
+@asset(
+    **ASSET_HEADER,
+    ins={
+        "compose_networks": AssetIn(
+            AssetKey([*KEY, "compose_networks"]),
+        ),
+        "compose_template": AssetIn(
+            AssetKey([*KEY, "compose_template"]),
+        ),
+    },
+)
+def compose(
+    context: AssetExecutionContext,
+    compose_networks: dict,  # pylint: disable=redefined-outer-name
+    compose_template: dict,  # pylint: disable=redefined-outer-name
+) -> Generator[Output[MutableMapping] | AssetMaterialization, None, None]:
+    """ """
+
+    if "networks" in compose_networks:
+        network_dict = copy.deepcopy(compose_networks)
+    else:
+        network_dict = {}
+
+    docker_chainmap = ChainMap(
+        network_dict,
+        compose_template,
+    )
+
+    docker_dict = reduce(deep_merge, docker_chainmap.maps)
 
     docker_yaml = yaml.dump(docker_dict)
 
