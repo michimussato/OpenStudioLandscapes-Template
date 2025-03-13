@@ -1,6 +1,3 @@
-
-
-
 import copy
 import json
 from typing import Generator
@@ -234,6 +231,7 @@ compose = AssetsDefinition.from_op(
 
 group_out = AssetsDefinition.from_op(
     op_group_out,
+    can_subset=True,
     group_name=GROUP,
     tags_by_output_name={
         "group_out": {
@@ -259,6 +257,9 @@ docker_compose_graph = AssetsDefinition.from_op(
     keys_by_input_name={
         "group_out": AssetKey(
             [*KEY, "group_out"]
+        ),
+        "compose_project_name": AssetKey(
+            [*KEY, "compose_project_name"]
         ),
     },
 )
