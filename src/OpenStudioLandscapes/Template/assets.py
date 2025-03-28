@@ -448,25 +448,26 @@ def compose_template(
 ) -> Generator[Output[dict] | AssetMaterialization, None, None]:
     """ """
 
+    network_dict = {}
+    ports_dict = {}
+
     if "networks" in compose_networks:
         network_dict = {
             "networks": list(compose_networks.get("networks", {}).keys())
         }
         ports_dict = {
             "ports": [
-                f"{env.get('DAGSTER_DEV_PORT_HOST')}:{env.get('DAGSTER_DEV_PORT_CONTAINER')}",
+                f"{env.get('PORT_HOST')}:{env.get('PORT_CONTAINER')}",
             ]
         }
     elif "network_mode" in compose_networks:
         network_dict = {
             "network_mode": compose_networks.get("network_mode")
         }
-        ports_dict = {}
-    else:
-        network_dict = {}
-        ports_dict = {}
 
-    volumes = []
+    volumes_dict = {
+        "volumes": [],
+    }
 
     docker_dict = {
         "services": {
@@ -476,9 +477,14 @@ def compose_template(
                 "domainname": env.get("ROOT_DOMAIN"),
                 "restart": "always",
                 **[
-                    {"image": "docker.io/template/template"},
-                    {"image": f"{build['image_path']}:{build['image_tags'][-1]}"},
+                    {
+                        "image": "docker.io/template/template",
+                    },
+                    {
+                        "image": f"{build['image_prefix_full']}{build['image_name']}:{build['image_tags'][0]}",
+                    },
                 ][1],
+                **copy.deepcopy(volumes_dict),
                 **copy.deepcopy(network_dict),
                 **copy.deepcopy(ports_dict),
                 # "environment": {
@@ -486,11 +492,6 @@ def compose_template(
                 # "healthcheck": {
                 # },
                 # "command": [
-                # ],
-                # "volumes": [
-                # ],
-                # "ports": [
-                #     f"{env.get('<TEMPLATE>_PORT_HOST')}:{env.get('<TEMPLATE>_PORT_CONTAINER')}",
                 # ],
             },
         },
