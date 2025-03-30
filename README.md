@@ -39,7 +39,7 @@ Source template version: [`1.1.0`](https://github.com/michimussato/OpenStudioLan
    2. All occurrences of `<Your-New-Module>` -> `Your-Module`
    3. All occurrences of `<Your_New_Module>` -> `Your_Module`
    4. All occurrences of `John Doe` -> `Your Name`
-   5. All occurrences of `john.doe@adme.com` -> `your@email.com`
+   5. All occurrences of `john.doe@acme.com` -> `your@email.com`
 
 # Install
 
