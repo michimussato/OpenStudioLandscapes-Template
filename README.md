@@ -47,3 +47,8 @@ Source template version: [`1.1.0`](https://github.com/michimussato/OpenStudioLan
 cd OpenStudioLandscapes-Your-New-Module
 pip install -e .[dev]
 ```
+
+```shell
+cd OpenStudioLandscapes
+pip install -e ../OpenStudioLandscapes-Your-New-Module[dev]
+```

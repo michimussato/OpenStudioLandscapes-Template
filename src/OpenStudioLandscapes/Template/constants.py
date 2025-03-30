@@ -7,6 +7,7 @@ __all__ = [
     "COMPOSE_SCOPE",
 ]
 
+import pathlib
 from typing import Generator, MutableMapping
 
 from dagster import (
@@ -42,12 +43,12 @@ ENVIRONMENT = {
     # .expanduser()
     # .as_posix(),
     # "DATA_ROOT": pathlib.Path(
-    #     get_configs_root(pathlib.Path(__file__)),
+    #     get_data_root(pathlib.Path(__file__)),
     # )
     # .expanduser()
     # .as_posix(),
     # "BIN_ROOT": pathlib.Path(
-    #     get_configs_root(pathlib.Path(__file__)),
+    #     get_bin_root(pathlib.Path(__file__)),
     # )
     # .expanduser()
     # .as_posix(),
