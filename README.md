@@ -8,21 +8,21 @@ Source template version: [`1.1.0`](https://github.com/michimussato/OpenStudioLan
    i.e. OpenStudioLandscapes-YourModule
 2. Clone OpenStudioLandscapes-Template
    ```shell
-   git clone https://github.com/michimussato/OpenStudioLandscapes-Template.git OpenStudioLandscapes-YourModule
+   git clone https://github.com/michimussato/OpenStudioLandscapes-Template.git OpenStudioLandscapes-Your-New-Module
    ```
 3. Rename Git remote
    1. ```shell
-      cd OpenStudioLandscapes-YourModule
+      cd OpenStudioLandscapes-Your-New-Module
       rm -rf .venv
       rm -rf .idea
       rm -rf .git && git init --initial-branch=main
       ```
    3. Rename src directory
       ```shell
-      mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/Your_Module
+      mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/Your_New_Module
       ```
    2. ```shell
-      git remote add origin https://github.com/yourlogin/OpenStudioLandscapes-YourModule.git
+      git remote add origin https://github.com/yourlogin/OpenStudioLandscapes-Your-New-Module.git
       git branch -M main
       ```
    3. Create initial commit
@@ -35,15 +35,15 @@ Source template version: [`1.1.0`](https://github.com/michimussato/OpenStudioLan
       git push -u origin main
       ```
 4. Rename Template
-   1. OpenStudioLandscapes-Template -> OpenStudioLandscapes-YourModule
-   2. All occurrences of <OSLs-Template> -> Your-Module
-   3. All occurrences of <OSLs_Template> -> Your_Module
-   4. All occurrences of John Doe -> Your Name
-   5. All occurrences of john.doe@adme.com -> your@email.com
+   1. OpenStudioLandscapes-Template -> OpenStudioLandscapes-Your-New-Module
+   2. All occurrences of `<Your-New-Module>` -> `Your-Module`
+   3. All occurrences of `<Your_New_Module>` -> `Your_Module`
+   4. All occurrences of `John Doe` -> `Your Name`
+   5. All occurrences of `john.doe@adme.com` -> `your@email.com`
 
 # Install
 
 ```shell
-cd OpenStudioLandscapes-YourModule
+cd OpenStudioLandscapes-Your-New-Module
 pip install -e .[dev]
 ```
