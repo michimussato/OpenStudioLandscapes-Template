@@ -4,9 +4,12 @@
 
 1. Create your new Git repo on Github, i.e. OpenStudioLandscapes-YourModule
 2. Clone OpenStudioLandscapes-Template
+   ```shell
+   git clone https://github.com/michimussato/OpenStudioLandscapes-Template.git OpenStudioLandscapes-YourModule
+   ```
 3. Rename Git remote
    1. ```shell
-      cd OpenStudioLandscapes-Template
+      cd OpenStudioLandscapes-YourModule
       ```
    2. ```shell
       git remote set-url origin https://github.com/yourlogin/OpenStudioLandscapes-YourModule.git
