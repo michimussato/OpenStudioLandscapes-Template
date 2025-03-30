@@ -1,8 +1,11 @@
 # OpenStudioLandscapes Template Module
 
+Template version: `1.0.0`
+
 ## Guide: How to use the template
 
-1. Create your new Git repo on Github, i.e. OpenStudioLandscapes-YourModule
+1. Create your new Git repo on Github, 
+   i.e. OpenStudioLandscapes-YourModule
 2. Clone OpenStudioLandscapes-Template
    ```shell
    git clone https://github.com/michimussato/OpenStudioLandscapes-Template.git OpenStudioLandscapes-YourModule
@@ -10,9 +13,10 @@
 3. Rename Git remote
    1. ```shell
       cd OpenStudioLandscapes-YourModule
+      rm -rf .git && git init --initial-branch=main
       ```
    2. ```shell
-      git remote set-url origin https://github.com/yourlogin/OpenStudioLandscapes-YourModule.git
+      git remote add origin https://github.com/yourlogin/OpenStudioLandscapes-YourModule.git
       git branch -M main
       git push -u origin main
       ```
