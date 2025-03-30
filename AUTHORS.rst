@@ -2,4 +2,4 @@
 Contributors
 ============
 
-* Michael Mussato <michimussato@gmail.com>
+* John Doe <john.doe@acme.com>

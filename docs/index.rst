@@ -1,8 +1,8 @@
-=============================
-OpenStudioLandscapes-Template
-=============================
+===============================
+OpenStudioLandscapes-<Template>
+===============================
 
-This is the documentation of **OpenStudioLandscapes-Template**.
+This is the documentation of **OpenStudioLandscapes-<Template>**.
 
 .. note::
 

@@ -36,7 +36,7 @@ from OpenStudioLandscapes.engine.base.ops import (
     op_group_out,
 )
 
-from OpenStudioLandscapes.Template.constants import *
+from OpenStudioLandscapes.<Template>.constants import *
 
 
 @asset(

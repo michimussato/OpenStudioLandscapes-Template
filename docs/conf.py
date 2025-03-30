@@ -87,8 +87,8 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "OpenStudioLandscapes-Template"
-copyright = "2025, Michael Mussato"
+project = "OpenStudioLandscapes-<Template>"
+copyright = "20XX, John Doe"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -99,7 +99,7 @@ copyright = "2025, Michael Mussato"
 # If you don’t need the separation provided between version and release,
 # just set them both to the same value.
 try:
-    from OpenStudioLandscapes.Template import __version__ as version
+    from OpenStudioLandscapes.<Template> import __version__ as version
 except ImportError:
     version = ""
 
@@ -229,7 +229,7 @@ html_static_path = ["_static"]
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "OpenStudioLandscapes-Template-doc"
+htmlhelp_basename = "OpenStudioLandscapes-<Template>-doc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -246,7 +246,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ("index", "user_guide.tex", "OpenStudioLandscapes-Template Documentation", "Michael Mussato", "manual")
+    ("index", "user_guide.tex", "OpenStudioLandscapes-<Template> Documentation", "Michael Mussato", "manual")
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
