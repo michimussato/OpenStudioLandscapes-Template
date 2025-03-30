@@ -1,6 +1,6 @@
 # OpenStudioLandscapes Template Module
 
-Source template version: [`1.1.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.0.0)
+Source template version: [`1.2.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.2.0)
 
 ## Guide: How to use the template
 
