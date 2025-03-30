@@ -1,5 +1,5 @@
 """
-    Dummy conftest.py for <Template>.
+    Dummy conftest.py for <Your-New-Module>.
 
     If you don't know what this is for, just leave it empty.
     Read more about conftest.py under:
