@@ -479,11 +479,13 @@ def compose_template(
         "volumes": [],
     }
 
+    container_name = "template"
+
     docker_dict = {
         "services": {
-            "template": {
-                "container_name": "template",
-                "hostname": "template",
+            container_name: {
+                "container_name": container_name,
+                "hostname":  ".".join([container_name, env["ROOT_DOMAIN"]]),
                 "domainname": env.get("ROOT_DOMAIN"),
                 "restart": "always",
                 **[
