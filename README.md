@@ -1,6 +1,6 @@
 # OpenStudioLandscapes Template Module
 
-Source template version: [`1.5.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.5.0)
+Source template version: [`1.6.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.6.0)
 
 ## Guide: How to use the template
 
@@ -72,10 +72,22 @@ Source template version: [`1.5.0`](https://github.com/michimussato/OpenStudioLan
 
 # Install
 
+## Create venv
+
+```shell
+cd OpenStudioLandscapes-Your-New-Module
+python3.11 -m venv .venv
+pip install -U setuptools
+```
+
+## Install OpenStudioLandscapes-Your-New-Module into venv
+
 ```shell
 cd OpenStudioLandscapes-Your-New-Module
 pip install -e .[dev]
 ```
+
+## Install OpenStudioLandscapes-Your-New-Module into OpenStudioLandscapes venv
 
 ```shell
 cd OpenStudioLandscapes
