@@ -1,6 +1,6 @@
 # OpenStudioLandscapes Template Module
 
-Source template version: [`1.6.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.6.0)
+Source template version: [`1.7.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.7.0)
 
 ## Guide: How to use the template
 
@@ -55,17 +55,20 @@ Source template version: [`1.6.0`](https://github.com/michimussato/OpenStudioLan
    7. All occurrences of `YourLogin` -> `your_github_login`
       - `Ctrl+Shift+R` in PyCharm
       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/YourLogin/your_github_login/g'`
-   8. All occurrences of `<USERNAME>` -> `your_github_login`
+   8. All occurrences of `GROUP = "Template"` -> `GROUP = "Your_New_Module"`
+      - `Ctrl+Shift+R` in PyCharm
+      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/GROUP = "Template"/GROUP = "Your_New_Module"/g'`
+   9. All occurrences of `<USERNAME>` -> `your_github_login`
       - `Ctrl+Shift+R` in PyCharm
       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
-   9. Revert `README.md`
+   10. Revert `README.md`
       - `git checkout -f README.md`
-   10. Commit changes
+   11. Commit changes
       ```shell
       git add --all
       git commit -m "Initial Changes"
       ```
-   11. Initial Push
+   12. Initial Push
       ```shell
       git push -u origin main
       ```
@@ -92,4 +95,25 @@ pip install -e .[dev]
 ```shell
 cd OpenStudioLandscapes
 pip install -e ../OpenStudioLandscapes-Your-New-Module[dev]
+```
+
+
+## OpenStudioLandscapes/src/OpenStudioLandscapes/engine
+
+### constants.py
+
+```python
+THIRD_PARTY.append(
+   {
+      "enabled": True,
+      "module": "OpenStudioLandscapes.Your_New_Module.definitions",
+      "compose_scope": ComposeScope.DEFAULT,
+   }
+)
+```
+
+### definitions.py
+
+```
+
 ```
