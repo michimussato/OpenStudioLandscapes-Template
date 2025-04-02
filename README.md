@@ -1,6 +1,6 @@
 # OpenStudioLandscapes Template Module
 
-Source template version: [`1.7.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.7.0)
+Source template version: [`1.7.1`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.7.1)
 
 ## Guide: How to use the template
 
@@ -97,7 +97,6 @@ cd OpenStudioLandscapes
 pip install -e ../OpenStudioLandscapes-Your-New-Module[dev]
 ```
 
-
 ## OpenStudioLandscapes/src/OpenStudioLandscapes/engine
 
 ### constants.py
@@ -110,10 +109,4 @@ THIRD_PARTY.append(
       "compose_scope": ComposeScope.DEFAULT,
    }
 )
-```
-
-### definitions.py
-
-```
-
 ```
