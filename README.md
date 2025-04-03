@@ -1,6 +1,6 @@
 # OpenStudioLandscapes Template Module
 
-Source template version: [`1.7.1`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.7.1)
+Source template version: [`1.8.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.8.0)
 
 ## Guide: How to use the template
 
@@ -61,14 +61,20 @@ Source template version: [`1.7.1`](https://github.com/michimussato/OpenStudioLan
    9. All occurrences of `<USERNAME>` -> `your_github_login`
       - `Ctrl+Shift+R` in PyCharm
       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
-   10. Revert `README.md`
+   10. All occurrences of `"compose_template"` -> `"compose_your_new_module"`
+      - `Ctrl+Shift+R` in PyCharm
+      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/"compose_template"/"compose_your_new_module"/g'`
+   11. All occurrences of `service_name = "template"` -> `service_name = "your_new_module"`
+      - `Ctrl+Shift+R` in PyCharm
+      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
+   12. Revert `README.md`
       - `git checkout -f README.md`
-   11. Commit changes
+   13. Commit changes
       ```shell
       git add --all
       git commit -m "Initial Changes"
       ```
-   12. Initial Push
+   14. Initial Push
       ```shell
       git push -u origin main
       ```
