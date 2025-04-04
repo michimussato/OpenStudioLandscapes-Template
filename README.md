@@ -2,11 +2,6 @@
 * [OpenStudioLandscapes Template Module](#openstudiolandscapes-template-module)
   * [Guide: How to use the template](#guide-how-to-use-the-template)
 * [Install](#install)
-  * [Create venv](#create-venv)
-  * [Install OpenStudioLandscapes-Your-New-Module into venv](#install-openstudiolandscapes-your-new-module-into-venv)
-  * [Install OpenStudioLandscapes-Your-New-Module into OpenStudioLandscapes venv](#install-openstudiolandscapes-your-new-module-into-openstudiolandscapes-venv)
-  * [OpenStudioLandscapes/src/OpenStudioLandscapes/engine](#openstudiolandscapessrcopenstudiolandscapesengine)
-    * [constants.py](#constantspy)
 * [PyScaffold](#pyscaffold)
   * [Create Module](#create-module)
     * [PyScaffold Command](#pyscaffold-command)
@@ -18,7 +13,7 @@
 
 # OpenStudioLandscapes Template Module
 
-Source template version: [`2.0.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/2.0.0)
+Source template version: [`2.0.1`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/2.0.1)
 
 ## Guide: How to use the template
 
