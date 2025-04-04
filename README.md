@@ -135,6 +135,14 @@ THIRD_PARTY.append(
 )
 ```
 
+## Generate README.md
+
+Todo: Create CLI package
+
+```
+python3.11 src/OpenStudioLandscapes/Your_New_Module/utils/generate_readme.py
+```
+
 # PyScaffold
 
 If you want to start from scratch, a good starting point would be to create
