@@ -51,7 +51,7 @@ Source template version: [`1.8.0`](https://github.com/michimussato/OpenStudioLan
       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/john.doe@acme.com/your.name@email.com/g'`
    6. All occurrences of `20XX` -> `2025`
       - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/20XX/2025/g'`
+      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/20XX/$(date +%Y)/g'`
    7. All occurrences of `YourLogin` -> `your_github_login`
       - `Ctrl+Shift+R` in PyCharm
       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/YourLogin/your_github_login/g'`
