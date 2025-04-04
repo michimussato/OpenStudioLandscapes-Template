@@ -23,6 +23,10 @@ Source template version: [`2.0.1`](https://github.com/michimussato/OpenStudioLan
 
 1. Create your new Git repo on Github, 
    i.e. yourlogin/OpenStudioLandscapes-YourModule
+   We could do that programmatically with `gh`:
+   ```shell
+   gh repo create yourlogin/OpenStudioLandscapes-YourModule --push --disable-issues --disable-wiki --internal --source ./OpenStudioLandscapes-YourModule --remote=upstream
+   ```
 2. Clone OpenStudioLandscapes-Template
    ```shell
    git clone https://github.com/michimussato/OpenStudioLandscapes-Template.git OpenStudioLandscapes-Your-New-Module
