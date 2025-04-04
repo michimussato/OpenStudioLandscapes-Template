@@ -75,26 +75,26 @@ Source template version: [`2.0.1`](https://github.com/michimussato/OpenStudioLan
       - `Ctrl+Shift+R` in PyCharm
       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
    10. All occurrences of `"compose_template"` -> `"compose_your_new_module"`
-      - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/"compose_template"/"compose_your_new_module"/g'`
+       - `Ctrl+Shift+R` in PyCharm
+       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/"compose_template"/"compose_your_new_module"/g'`
    11. All occurrences of `service_name = "template"` -> `service_name = "your_new_module"`
-      - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
+       - `Ctrl+Shift+R` in PyCharm
+       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
    12. Revert `README.md`
-      - `git checkout -f README.md`
+       - `git checkout -f README.md`
    13. Commit changes
-      ```shell
-      git add --all
-      git commit -m "Initial Changes"
-      ```
+       ```shell
+       git add --all
+       git commit -m "Initial Changes"
+       ```
    14. Initial Push
-      ```shell
-      git push -u origin main
-      ```
+       ```shell
+       git push -u origin main
+       ```
 
 # Install
 
-Installation instructions being generated dynamically. Once all
+Installation instructions will be generated automatically. Once all
 preliminary steps were executed, the following command will generate
 the new `READMD.md` for `Your-New-Module`:
 
