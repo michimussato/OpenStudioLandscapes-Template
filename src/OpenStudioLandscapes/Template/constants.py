@@ -57,6 +57,7 @@ ENVIRONMENT = {
 
 # Todo
 #  - [ ] This is a bit hacky
+#  - [ ] Externalize
 _module = __name__
 _parent = '.'.join(_module.split('.')[:-1])
 _definitions = '.'.join([_parent, "definitions"])
@@ -68,7 +69,8 @@ for i in THIRD_PARTY:
         break
 
 if COMPOSE_SCOPE is None:
-    raise Exception("No compose_scope found for module '%s'" % _module)
+    raise Exception("No compose_scope found for module '%s'."
+                    "Is the module enabled?" % _module)
 
 
 @asset(
