@@ -1,3 +1,7 @@
+[![ Logo OpenStudioLandscapes ](https://github.com/michimussato/OpenStudioLandscapes/raw/main/_images/logo128.png)](https://github.com/michimussato/OpenStudioLandscapes)
+
+---
+
 <!-- TOC -->
 * [OpenStudioLandscapes Template Module](#openstudiolandscapes-template-module)
   * [Guide: How to use the template](#guide-how-to-use-the-template)
