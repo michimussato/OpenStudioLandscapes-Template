@@ -99,43 +99,9 @@ Source template version: [`2.0.0`](https://github.com/michimussato/OpenStudioLan
 
 # Install
 
-## Create venv
-
-```shell
-cd OpenStudioLandscapes-Your-New-Module
-python3.11 -m venv .venv
-pip install -U setuptools
-```
-
-## Install OpenStudioLandscapes-Your-New-Module into venv
-
-```shell
-cd OpenStudioLandscapes-Your-New-Module
-pip install -e .[dev]
-```
-
-## Install OpenStudioLandscapes-Your-New-Module into OpenStudioLandscapes venv
-
-```shell
-cd OpenStudioLandscapes
-pip install -e ../OpenStudioLandscapes-Your-New-Module[dev]
-```
-
-## OpenStudioLandscapes/src/OpenStudioLandscapes/engine
-
-### constants.py
-
-```python
-THIRD_PARTY.append(
-   {
-      "enabled": True,
-      "module": "OpenStudioLandscapes.Your_New_Module.definitions",
-      "compose_scope": ComposeScope.DEFAULT,
-   }
-)
-```
-
-## Generate README.md
+Installation instructions being generated dynamically. Once all
+preliminary steps were executed, the following command will generate
+the new `READMD.md` for `Your-New-Module`:
 
 Todo: Create CLI package
 
