@@ -1,3 +1,21 @@
+<!-- TOC -->
+* [OpenStudioLandscapes Template Module](#openstudiolandscapes-template-module)
+  * [Guide: How to use the template](#guide-how-to-use-the-template)
+* [Install](#install)
+  * [Create venv](#create-venv)
+  * [Install OpenStudioLandscapes-Your-New-Module into venv](#install-openstudiolandscapes-your-new-module-into-venv)
+  * [Install OpenStudioLandscapes-Your-New-Module into OpenStudioLandscapes venv](#install-openstudiolandscapes-your-new-module-into-openstudiolandscapes-venv)
+  * [OpenStudioLandscapes/src/OpenStudioLandscapes/engine](#openstudiolandscapessrcopenstudiolandscapesengine)
+    * [constants.py](#constantspy)
+* [PyScaffold](#pyscaffold)
+  * [Create Module](#create-module)
+    * [PyScaffold](#pyscaffold-1)
+    * [`pyproject.toml`](#pyprojecttoml)
+    * [`setup.cfg`](#setupcfg)
+<!-- TOC -->
+
+---
+
 # OpenStudioLandscapes Template Module
 
 Source template version: [`1.8.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.8.0)
@@ -115,4 +133,116 @@ THIRD_PARTY.append(
       "compose_scope": ComposeScope.DEFAULT,
    }
 )
+```
+
+# PyScaffold
+
+If you want to start from scratch, a good starting point would be to create
+a new package using `PyScaffold`
+
+## Create Module
+
+### PyScaffold Command
+
+```
+pip install PyScaffold
+putup --package Your_New_Module --force --namespace OpenStudioLandscapes --no-skeleton OpenStudioLandscapes-Your-New-Module
+```
+
+### `pyproject.toml`
+
+```
+[tool.dagster]
+module_name = "OpenStudioLandscapes.Your_New_Module.definitions"
+code_location_name = "OpenStudioLandscapes-Your-New-Module"
+```
+
+### `setup.cfg`
+
+```
+[metadata]
+platforms = Linux
+
+[options]
+python_requires = >=3.11
+
+install_requires =
+    [...]
+    dagster==1.9.11
+    gitpython
+    PyYAML
+    python-on-whales
+    # yaml_tags.overrides:
+    docker-compose-graph @ git+https://github.com/michimussato/docker-compose-graph.git
+    # Todo: Will work when released:
+    # OpenStudioLandscapes @ git+https://github.com/michimussato/OpenStudioLandscapes
+    [...]
+
+[options.extras_require]
+
+graphviz =
+    graphviz
+    pipdeptree
+
+docs =
+    sphinx
+    myst_parser
+    OpenStudioLandscapes-Your-New-Module[graphviz]
+    # https://github.com/omnilib/sphinx-mdinclude
+    # sphinx-mdinclude @ git+https://github.com/michimussato/sphinx-mdinclude.git
+    sphinx-mdinclude @ git+https://github.com/omnilib/sphinx-mdinclude.git
+
+sbom =
+    OpenStudioLandscapes-Your-New-Module[graphviz]
+    cyclonedx-bom
+
+lint =
+    black
+    isort
+    pre-commit
+    pylint
+
+coverage =
+    coverage
+    pytest
+
+nox =
+    OpenStudioLandscapes-Your-New-Module[testing]
+    nox
+
+dev =
+    OpenStudioLandscapes-Your-New-Module[testing]
+    OpenStudioLandscapes-Your-New-Module[docs]
+    OpenStudioLandscapes-Your-New-Module[lint]
+    OpenStudioLandscapes-Your-New-Module[nox]
+    OpenStudioLandscapes-Your-New-Module[sbom]
+    OpenStudioLandscapes-Your-New-Module[coverage]
+    dagster-webserver==1.9.11
+    snakemd
+    
+    
+dev =
+    dagster-webserver==1.9.11
+    OpenStudioLandscapes-Your-New-Module[testing]
+
+[tool:pytest]
+norecursedirs =
+    dist
+    build
+    .nox
+
+[flake8]
+exclude =
+    .nox
+    .svg
+    build
+    dist
+    .eggs
+    docs/conf.py
+
+[pyscaffold]
+package = Your-New-Module
+extensions =
+    namespace
+namespace = OpenStudioLandscapes
 ```
