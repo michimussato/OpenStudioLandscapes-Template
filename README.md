@@ -9,7 +9,7 @@
     * [constants.py](#constantspy)
 * [PyScaffold](#pyscaffold)
   * [Create Module](#create-module)
-    * [PyScaffold](#pyscaffold-1)
+    * [PyScaffold Command](#pyscaffold-command)
     * [`pyproject.toml`](#pyprojecttoml)
     * [`setup.cfg`](#setupcfg)
 <!-- TOC -->
@@ -18,7 +18,7 @@
 
 # OpenStudioLandscapes Template Module
 
-Source template version: [`1.8.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/1.8.0)
+Source template version: [`2.0.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/2.0.0)
 
 ## Guide: How to use the template
 
@@ -152,6 +152,16 @@ putup --package Your_New_Module --force --namespace OpenStudioLandscapes --no-sk
 ### `pyproject.toml`
 
 ```
+[build-system]
+# AVOID CHANGING REQUIRES: IT WILL BE UPDATED BY PYSCAFFOLD!
+requires = ["setuptools>=46.1.0", "setuptools_scm[toml]>=5"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+# For smarter version schemes and other configuration options,
+# check out https://github.com/pypa/setuptools_scm
+version_scheme = "no-guess-dev"
+
 [tool.dagster]
 module_name = "OpenStudioLandscapes.Your_New_Module.definitions"
 code_location_name = "OpenStudioLandscapes-Your-New-Module"
@@ -160,14 +170,57 @@ code_location_name = "OpenStudioLandscapes-Your-New-Module"
 ### `setup.cfg`
 
 ```
+# This file is used to configure your project.
+# Read more about the various options under:
+# https://setuptools.pypa.io/en/latest/userguide/declarative_config.html
+# https://setuptools.pypa.io/en/latest/references/keywords.html
+
 [metadata]
+name = OpenStudioLandscapes-Your-New-Module
+description = Add a short description here!
+author = John Doe
+author_email = john.doe@acme.com
+license = MIT
+license_files = LICENSE.txt
+long_description = file: README.rst
+long_description_content_type = text/x-rst; charset=UTF-8
+url = https://github.com/pyscaffold/pyscaffold/
+# Add here related links, for example:
+project_urls =
+    Documentation = https://pyscaffold.org/
+#    Source = https://github.com/pyscaffold/pyscaffold/
+#    Changelog = https://pyscaffold.org/en/latest/changelog.html
+#    Tracker = https://github.com/pyscaffold/pyscaffold/issues
+#    Conda-Forge = https://anaconda.org/conda-forge/pyscaffold
+#    Download = https://pypi.org/project/PyScaffold/#files
+#    Twitter = https://twitter.com/PyScaffold
+
+# Change if running only on Windows, Mac or Linux (comma-separated)
 platforms = Linux
 
+# Add here all kinds of additional classifiers as defined under
+# https://pypi.org/classifiers/
+classifiers =
+    Development Status :: 4 - Beta
+    Programming Language :: Python
+
+
 [options]
+zip_safe = False
+packages = find_namespace:
+include_package_data = True
+package_dir =
+    =src
+
+# Require a min/specific Python version (comma-separated conditions)
 python_requires = >=3.11
 
+# Add here dependencies of your project (line-separated), e.g. requests>=2.2,<3.0.
+# Version specifiers like >=2.2,<3.0 avoid problems due to API changes in
+# new major versions. This works if the required packages follow Semantic Versioning.
+# For more information, check out https://semver.org/.
 install_requires =
-    [...]
+    importlib-metadata; python_version<"3.8"
     dagster==1.9.11
     gitpython
     PyYAML
@@ -176,9 +229,23 @@ install_requires =
     docker-compose-graph @ git+https://github.com/michimussato/docker-compose-graph.git
     # Todo: Will work when released:
     # OpenStudioLandscapes @ git+https://github.com/michimussato/OpenStudioLandscapes
-    [...]
+
+
+[options.packages.find]
+where = src
+exclude =
+    tests
 
 [options.extras_require]
+# Add here additional requirements for extra features, to install with:
+# `pip install OpenStudioLandscapes-Your-New-Module[PDF]` like:
+# PDF = ReportLab; RXP
+
+# Add here test requirements (semicolon/line-separated)
+testing =
+    setuptools
+    pytest
+    pytest-cov
 
 graphviz =
     graphviz
@@ -219,19 +286,49 @@ dev =
     OpenStudioLandscapes-Your-New-Module[coverage]
     dagster-webserver==1.9.11
     snakemd
-    
-    
-dev =
-    dagster-webserver==1.9.11
-    OpenStudioLandscapes-Your-New-Module[testing]
+
+[options.entry_points]
+# Add here console scripts like:
+# console_scripts =
+#     script_name = OpenStudioLandscapes.Your_New_Module.module:function
+# For example:
+# console_scripts =
+#     fibonacci = OpenStudioLandscapes.Your_New_Module.skeleton:run
+# And any other entry points, for example:
+# pyscaffold.cli =
+#     awesome = pyscaffoldext.awesome.extension:AwesomeExtension
 
 [tool:pytest]
+# Specify command line options as you would do when invoking pytest directly.
+# e.g. --cov-report html (or xml) for html/xml output or --junitxml junit.xml
+# in order to write a coverage file that can be read by Jenkins.
+# CAUTION: --cov flags may prohibit setting breakpoints while debugging.
+#          Comment those flags to avoid this pytest issue.
+addopts =
+    --cov OpenStudioLandscapes.Your_New_Module --cov-report term-missing
+    --verbose
 norecursedirs =
     dist
     build
     .nox
+testpaths = tests
+# Use pytest markers to select/deselect specific tests
+# markers =
+#     slow: mark tests as slow (deselect with '-m "not slow"')
+#     system: mark end-to-end system tests
+
+[devpi:upload]
+# Options for the devpi: PyPI server and packaging tool
+# VCS export must be deactivated since we are using setuptools-scm
+no_vcs = 1
+formats = bdist_wheel
 
 [flake8]
+# Some sane defaults for the code style checker flake8
+max_line_length = 88
+extend_ignore = E203, W503
+# ^  Black-compatible
+#    E203 and W503 have edge cases handled by black
 exclude =
     .nox
     .svg
@@ -241,6 +338,9 @@ exclude =
     docs/conf.py
 
 [pyscaffold]
+# PyScaffold's parameters when the project was created.
+# This will be used when updating. Do not change!
+version = 4.6
 package = Your-New-Module
 extensions =
     namespace
