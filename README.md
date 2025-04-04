@@ -109,6 +109,8 @@ the new `READMD.md` for `Your-New-Module`:
 Todo: Create CLI package
 
 ```
+# ? pip install -e .[dev]
+# ? pip install -e ../OpenStudioLandscapes[dev]
 python3.11 src/OpenStudioLandscapes/Your_New_Module/utils/generate_readme.py
 ```
 
