@@ -4,6 +4,12 @@ import nox
 import pathlib
 
 
+# nox Configuration & API
+# https://nox.thea.codes/en/stable/config.html
+# # nox.sessions.Session.run
+# https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.run
+
+
 # https://www.youtube.com/watch?v=ImBvrDvK-1U&ab_channel=HynekSchlawack
 # https://codewitholi.com/_posts/python-nox-automation/
 
@@ -18,6 +24,7 @@ nox.options.reuse_existing_virtualenvs = True
 # or
 # nox --tag [TAG] [TAG] [...]
 nox.options.sessions = [
+    "readme",
     "sbom",
     "coverage",
     "lint",
@@ -35,12 +42,211 @@ VERSIONS = [
     # "3.13",
 ]
 
+VERSIONS_README = VERSIONS[0]
+
 ENV = {}
 
 
+#######################################################################################################################
+# Harbor
+# # Harbor up
+@nox.session(python=None, tags=["harbor_up"])
+def harbor_up(session):
+    """
+    Start Harbor with `sudo`.
+
+    Scope:
+    - [x] Engine
+    - [ ] Modules
+    """
+    # Ex:
+    # nox --session harbor_up
+    # nox --tags harbor_up
+
+    # /usr/bin/sudo \
+    #     /usr/bin/docker \
+    #     compose \
+    #     --file /home/michael/git/repos/OpenStudioLandscapes/.landscapes/.harbor/bin/docker-compose.yml \
+    #     --project-name openstudiolandscapes-harbor up --remove-orphans
+
+    compose = (
+        pathlib.Path.cwd() / ".landscapes" / ".harbor" / "bin" / "docker-compose.yml"
+    )
+
+    session.run(
+        shutil.which("sudo"),
+        shutil.which("docker"),
+        "compose",
+        "--file",
+        compose.as_posix(),
+        "--project-name",
+        "openstudiolandscapes-harbor",
+        "up",
+        "--remove-orphans",
+        env=ENV,
+        external=True,
+    )
+
+
+# # Harbor Down
+@nox.session(python=None, tags=["harbor_down"])
+def harbor_down(session):
+    """
+    Stop Harbor with `sudo`.
+
+    Scope:
+    - [x] Engine
+    - [ ] Modules
+    """
+    # Ex:
+    # nox --session harbor_down
+    # nox --tags harbor_down
+
+    # /usr/bin/sudo \
+    #     /usr/bin/docker \
+    #     compose \
+    #     --file /home/michael/git/repos/OpenStudioLandscapes/.landscapes/.harbor/bin/docker-compose.yml \
+    #     --project-name openstudiolandscapes-harbor down
+
+    compose = (
+        pathlib.Path.cwd() / ".landscapes" / ".harbor" / "bin" / "docker-compose.yml"
+    )
+
+    session.run(
+        shutil.which("sudo"),
+        shutil.which("docker"),
+        "compose",
+        "--file",
+        compose.as_posix(),
+        "--project-name",
+        "openstudiolandscapes-harbor",
+        "down",
+        env=ENV,
+        external=True,
+    )
+
+
+#######################################################################################################################
+
+
+#######################################################################################################################
+# Dagster
+# # Dagster MySQL
+@nox.session(python=None, tags=["dagster_mysql"])
+def dagster_mysql(session):
+    """
+    Start Dagster with MySQL (default) as backend.
+
+    Scope:
+    - [x] Engine
+    - [ ] Modules
+    """
+    # Ex:
+    # nox --session dagster_mysql
+    # nox --tags dagster_mysql
+
+    # cd ~/git/repos/OpenStudioLandscapes
+    # source .venv/bin/activate
+    # export DAGSTER_HOME="$(pwd)/.dagster"
+    # dagster dev
+    session.run(
+        shutil.which("dagster"),
+        "dev",
+        env={"DAGSTER_HOME": f"{pathlib.Path.cwd()}/.dagster"},
+        external=True,
+    )
+
+
+# # Dagster Postgres
+@nox.session(python=None, tags=["dagster_postgres"])
+def dagster_postgres(session):
+    """
+    Start Dagster with Postgres as backend.
+
+    Scope:
+    - [x] Engine
+    - [ ] Modules
+    """
+    # Ex:
+    # nox --session dagster_postgres
+    # nox --tags dagster_postgres
+
+    # docker run \
+    #     --name postgres-dagster \
+    #     --domainname farm.evil \
+    #     --hostname postgres-dagster.farm.evil \
+    #     --env POSTGRES_USER=postgres \
+    #     --env POSTGRES_PASSWORD=mysecretpassword \
+    #     --env POSTGRES_DB=postgres \
+    # 	--env PGDATA=/var/lib/postgresql/data/pgdata \
+    # 	--volume ./.postgres:/var/lib/postgresql/data \
+    # 	--publish 5432:5432 \
+    # 	--rm \
+    #     docker.io/postgres
+    try:
+        with session.chdir(".dagster-postgres"):
+            session.run(
+                shutil.which("docker"),
+                "run",
+                "--detach",
+                "--name",
+                "postgres-dagster",
+                "--domainname",
+                "farm.evil",
+                "--hostname",
+                "postgres-dagster.farm.evil",
+                "--env",
+                "POSTGRES_USER=postgres",
+                "--env",
+                "POSTGRES_PASSWORD=mysecretpassword",
+                "--env",
+                "POSTGRES_DB=postgres",
+                "--env",
+                "PGDATA=/var/lib/postgresql/data/pgdata",
+                "--volume",
+                "./.postgres:/var/lib/postgresql/data",
+                "--publish",
+                "5432:5432",
+                "--rm",
+                "docker.io/postgres",
+                # env={
+                #
+                # },
+                external=True,
+            )
+    except Exception as e:
+        print(f"PostgreSQL is already running, skipping ({e})")
+
+    # cd ~/git/repos/OpenStudioLandscapes
+    # source .venv/bin/activate
+    # export DAGSTER_HOME="$(pwd)/.dagster-postgres"
+    # dagster dev
+    # with session.chdir(".dagster-postgres"):
+    session.run(
+        shutil.which("dagster"),
+        "dev",
+        env={"DAGSTER_HOME": f"{pathlib.Path.cwd()}/.dagster-postgres"},
+        external=True,
+    )
+
+
+#######################################################################################################################
+
+
+#######################################################################################################################
+# SBOM
 @nox.session(python=VERSIONS, tags=["sbom"])
 def sbom(session):
-    """Runs Software Bill of Materials (SBOM)."""
+    """
+    Runs Software Bill of Materials (SBOM).
+
+    Scope:
+    - [x] Engine
+    - [x] Modules
+    """
+    # Ex:
+    # nox --session sbom
+    # nox --tags sbom
 
     # https://pypi.org/project/pipdeptree/
 
@@ -76,9 +282,23 @@ def sbom(session):
     )
 
 
+#######################################################################################################################
+
+
+#######################################################################################################################
+# Coverage
 @nox.session(python=VERSIONS, tags=["coverage"])
 def coverage(session):
-    """Runs coverage"""
+    """
+    Runs coverage
+
+    Scope:
+    - [x] Engine
+    - [x] Modules
+    """
+    # Ex:
+    # nox --session coverage
+    # nox --tags coverage
 
     session.install("-e", ".[coverage]")
 
@@ -92,9 +312,23 @@ def coverage(session):
     # session.run("coverage", "html")  # ./htmlcov/
 
 
+#######################################################################################################################
+
+
+#######################################################################################################################
+# Lint
 @nox.session(python=VERSIONS, tags=["lint"])
 def lint(session):
-    """Runs linters and fixers"""
+    """
+    Runs linters and fixers
+
+    Scope:
+    - [x] Engine
+    - [x] Modules
+    """
+    # Ex:
+    # nox --session lint
+    # nox --tags lint
 
     session.install("-e", ".[lint]")
 
@@ -123,11 +357,24 @@ def lint(session):
     # C0116 (missing-function-docstring)
 
 
+#######################################################################################################################
+
+
+#######################################################################################################################
+# Testing
 @nox.session(python=VERSIONS, tags=["testing"])
 def testing(session):
+    """
+    Runs pytests.
+
+    Scope:
+    - [x] Engine
+    - [x] Modules
+    """
     # Ex:
-    # nox --session testing,docs
-    # nox --tags docs-live
+    # nox --session testing
+    # nox --tags testing
+
     session.install("-e", ".[testing]", silent=True)
 
     session.run(
@@ -137,9 +384,49 @@ def testing(session):
     )
 
 
+#######################################################################################################################
+
+
+#######################################################################################################################
+# Readme
+@nox.session(python=VERSIONS_README, tags=["readme"])
+def readme(session):
+    """
+    Generate dynamically created README file for
+    OpenStudioLandscapes modules.
+
+    Scope:
+    - [ ] Engine
+    - [x] Modules
+    """
+    # Ex:
+    # nox --session readme
+    # nox --tags readme
+
+    session.install("-e", ".[readme]", silent=True)
+
+    session.run("generate-readme", "--versions", *VERSIONS)
+
+
+#######################################################################################################################
+
+
+#######################################################################################################################
+# Release
+# Todo
 @nox.session(python=VERSIONS, tags=["release"])
 def release(session):
-    """Build and release to a repository"""
+    """
+    Build and release to a repository
+
+    Scope:
+    - [x] Engine
+    - [x] Modules
+    """
+    # Ex:
+    # nox --session release
+    # nox --tags release
+
     session.install("-e", ".[release]")
 
     session.skip("Not implemented")
@@ -167,10 +454,24 @@ def release(session):
     # )
 
 
+#######################################################################################################################
+
+
+#######################################################################################################################
+# Docs
 @nox.session(reuse_venv=True, tags=["docs"])
 def docs(session):
+    """
+    Creates Sphinx documentation.
+
+    Scope:
+    - [x] Engine
+    - [x] Modules
+    """
+    # Ex:
     # nox --session docs
     # nox --tags docs
+
     session.install("-e", ".[docs]", silent=True)
 
     deptree_out = (
@@ -215,6 +516,9 @@ def docs(session):
         # copying the files to the
         # destination directory
         shutil.copy2(src / fname, trg)
+
+
+#######################################################################################################################
 
 
 # @nox.session(name="docs-live", tags=["docs-live"])
