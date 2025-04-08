@@ -3,6 +3,16 @@
   "sessions": [
     {
       "args": {},
+      "name": "readme",
+      "result": "failed",
+      "result_code": 0,
+      "signatures": [
+        "readme",
+        "readme-3.11"
+      ]
+    },
+    {
+      "args": {},
       "name": "sbom",
       "result": "failed",
       "result_code": 0,
