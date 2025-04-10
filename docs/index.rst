@@ -1,8 +1,8 @@
 ======================================
-OpenStudioLandscapes-<Your-New-Module>
+OpenStudioLandscapes-<Your-New-Feature>
 ======================================
 
-This is the documentation of **OpenStudioLandscapes-<Your-New-Module>**.
+This is the documentation of **OpenStudioLandscapes-<Your-New-Feature>**.
 
 .. note::
 

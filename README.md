@@ -3,11 +3,11 @@
 ---
 
 <!-- TOC -->
-* [OpenStudioLandscapes Template Module](#openstudiolandscapes-template-module)
+* [OpenStudioLandscapes Feature Template](#openstudiolandscapes-feature-template)
   * [Guide: How to use the template](#guide-how-to-use-the-template)
 * [Install](#install)
 * [PyScaffold](#pyscaffold)
-  * [Create Module](#create-module)
+  * [Create Feature](#create-feature)
     * [PyScaffold Command](#pyscaffold-command)
     * [`pyproject.toml`](#pyprojecttoml)
     * [`setup.cfg`](#setupcfg)
@@ -16,35 +16,35 @@
 
 ---
 
-# OpenStudioLandscapes Template Module
+# OpenStudioLandscapes Feature Template
 
 Source template version: [`2.0.2`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/2.0.2)
 
 ## Guide: How to use the template
 
 1. Create your new Git repo on Github, 
-   i.e. yourlogin/OpenStudioLandscapes-YourModule
+   i.e. yourlogin/OpenStudioLandscapes-YourFeature
    We could do that programmatically with `gh`:
    ```shell
-   gh repo create yourlogin/OpenStudioLandscapes-YourModule --push --disable-issues --disable-wiki --internal --source ./OpenStudioLandscapes-YourModule --remote=upstream
+   gh repo create yourlogin/OpenStudioLandscapes-YourFeature --push --disable-issues --disable-wiki --internal --source ./OpenStudioLandscapes-YourFeature --remote=upstream
    ```
 2. Clone OpenStudioLandscapes-Template
    ```shell
-   git clone https://github.com/michimussato/OpenStudioLandscapes-Template.git OpenStudioLandscapes-Your-New-Module
+   git clone https://github.com/michimussato/OpenStudioLandscapes-Template.git OpenStudioLandscapes-Your-New-Feature
    ```
 3. Rename Git remote
    1. ```shell
-      cd OpenStudioLandscapes-Your-New-Module
+      cd OpenStudioLandscapes-Your-New-Feature
       rm -rf .venv
       rm -rf .idea
       rm -rf .git && git init --initial-branch=main
       ```
    2. Rename src directory
       ```shell
-      mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/Your_New_Module
+      mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/Your_New_Feature
       ```
    3. ```shell
-      git remote add origin https://github.com/yourlogin/OpenStudioLandscapes-Your-New-Module.git
+      git remote add origin https://github.com/yourlogin/OpenStudioLandscapes-Your-New-Feature.git
       git branch -M main
       ```
    4. Create initial commit
@@ -57,38 +57,38 @@ Source template version: [`2.0.2`](https://github.com/michimussato/OpenStudioLan
       git push -u origin main
       ```
 4. Rename Template
-   1. OpenStudioLandscapes-Template -> OpenStudioLandscapes-Your-New-Module
-      - `mv OpenStudioTemplates-Temkplate OpenStudioLandscapes-Your-New-Module`
-   2. All occurrences of `<Your-New-Module>` -> `Your-Module`
+   1. OpenStudioLandscapes-Template -> OpenStudioLandscapes-Your-New-Feature
+      - `mv OpenStudioTemplates-Temkplate OpenStudioLandscapes-Your-New-Feature`
+   2. All occurrences of `<Your-New-Feature>` -> `Your-Feature`
       - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<Your-New-Module>/Your-Module/g'`
-   3. All occurrences of `<Your_New_Module>` -> `Your_Module`
+      - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/<Your-New-Feature>/Your-Feature/g'`
+   3. All occurrences of `<Your_New_Feature>` -> `Your_Feature`
       - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<Your_New_Module>/Your_Module/g'`
+      - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/<Your_New_Feature>/Your_Feature/g'`
    4. All occurrences of `John Doe` -> `Your Name`
       - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/John Doe/Your Name/g'`
+      - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/John Doe/Your Name/g'`
    5. All occurrences of `john.doe@acme.com` -> `your.name@email.com`
       - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/john.doe@acme.com/your.name@email.com/g'`
+      - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/john.doe@acme.com/your.name@email.com/g'`
    6. All occurrences of `20XX` -> `2025`
       - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/20XX/$(date +%Y)/g'`
+      - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/20XX/$(date +%Y)/g'`
    7. All occurrences of `YourLogin` -> `your_github_login`
       - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/YourLogin/your_github_login/g'`
-   8. All occurrences of `GROUP = "Template"` -> `GROUP = "Your_New_Module"`
+      - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/YourLogin/your_github_login/g'`
+   8. All occurrences of `GROUP = "Template"` -> `GROUP = "Your_New_Feature"`
       - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/GROUP = "Template"/GROUP = "Your_New_Module"/g'`
+      - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/GROUP = "Your_New_Feature"/GROUP = "Your_New_Feature"/g'`
    9. All occurrences of `<USERNAME>` -> `your_github_login`
       - `Ctrl+Shift+R` in PyCharm
-      - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
-   10. All occurrences of `"compose_template"` -> `"compose_your_new_module"`
+      - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
+   10. All occurrences of `"compose_Your_New_Feature"` -> `"compose_Your_New_Feature"`
        - `Ctrl+Shift+R` in PyCharm
-       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/"compose_template"/"compose_your_new_module"/g'`
-   11. All occurrences of `service_name = "template"` -> `service_name = "your_new_module"`
+       - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/"compose_Your_New_Feature"/"compose_Your_New_Feature"/g'`
+   11. All occurrences of `service_name = "Your_New_Feature"` -> `service_name = "Your_New_Feature"`
        - `Ctrl+Shift+R` in PyCharm
-       - `find OpenStudioLandscapes-Your-New-Module/ -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
+       - `find OpenStudioLandscapes-Your-New-Feature/ -type f | xargs sed -i 's/service_name = "Your_New_Feature"/service_name = "Your_New_Feature"/g'`
    12. Revert `README.md`
        - `git checkout -f README.md`
    13. Commit changes
@@ -105,14 +105,14 @@ Source template version: [`2.0.2`](https://github.com/michimussato/OpenStudioLan
 
 Installation instructions will be generated automatically. Once all
 preliminary steps were executed, the following command will generate
-the new `READMD.md` for `Your-New-Module`:
+the new `READMD.md` for `Your-New-Feature`:
 
 Todo: Create CLI package
 
 ```
 # ? pip install -e .[dev]
 # ? pip install -e ../OpenStudioLandscapes[dev]
-python3.11 src/OpenStudioLandscapes/Your_New_Module/readme_generator.py
+python3.11 src/OpenStudioLandscapes/Your_New_Feature/readme_generator.py
 ```
 
 # PyScaffold
@@ -120,13 +120,13 @@ python3.11 src/OpenStudioLandscapes/Your_New_Module/readme_generator.py
 If you want to start from scratch, a good starting point would be to create
 a new package using `PyScaffold`
 
-## Create Module
+## Create Feature
 
 ### PyScaffold Command
 
 ```
 pip install PyScaffold
-putup --package Your_New_Module --force --namespace OpenStudioLandscapes --no-skeleton OpenStudioLandscapes-Your-New-Module
+putup --package Your_New_Feature --force --namespace OpenStudioLandscapes --no-skeleton OpenStudioLandscapes-Your-New-Feature
 ```
 
 ### `pyproject.toml`
@@ -143,8 +143,8 @@ build-backend = "setuptools.build_meta"
 version_scheme = "no-guess-dev"
 
 [tool.dagster]
-module_name = "OpenStudioLandscapes.Your_New_Module.definitions"
-code_location_name = "OpenStudioLandscapes-Your-New-Module"
+module_name = "OpenStudioLandscapes.Your_New_Feature.definitions"
+code_location_name = "OpenStudioLandscapes-Your-New-Feature"
 ```
 
 ### `setup.cfg`
@@ -156,7 +156,7 @@ code_location_name = "OpenStudioLandscapes-Your-New-Module"
 # https://setuptools.pypa.io/en/latest/references/keywords.html
 
 [metadata]
-name = OpenStudioLandscapes-Your-New-Module
+name = OpenStudioLandscapes-Your-New-Feature
 description = Add a short description here!
 author = John Doe
 author_email = john.doe@acme.com
@@ -218,7 +218,7 @@ exclude =
 
 [options.extras_require]
 # Add here additional requirements for extra features, to install with:
-# `pip install OpenStudioLandscapes-Your-New-Module[PDF]` like:
+# `pip install OpenStudioLandscapes-Your-New-Feature[PDF]` like:
 # PDF = ReportLab; RXP
 
 # Add here test requirements (semicolon/line-separated)
@@ -234,13 +234,13 @@ graphviz =
 docs =
     sphinx
     myst_parser
-    OpenStudioLandscapes-Your-New-Module[graphviz]
+    OpenStudioLandscapes-Your-New-Feature[graphviz]
     # https://github.com/omnilib/sphinx-mdinclude
     # sphinx-mdinclude @ git+https://github.com/michimussato/sphinx-mdinclude.git
     sphinx-mdinclude @ git+https://github.com/omnilib/sphinx-mdinclude.git
 
 sbom =
-    OpenStudioLandscapes-Your-New-Module[graphviz]
+    OpenStudioLandscapes-Your-New-Feature[graphviz]
     cyclonedx-bom
 
 lint =
@@ -254,26 +254,26 @@ coverage =
     pytest
 
 nox =
-    OpenStudioLandscapes-Your-New-Module[testing]
+    OpenStudioLandscapes-Your-New-Feature[testing]
     nox
 
 dev =
-    OpenStudioLandscapes-Your-New-Module[testing]
-    OpenStudioLandscapes-Your-New-Module[docs]
-    OpenStudioLandscapes-Your-New-Module[lint]
-    OpenStudioLandscapes-Your-New-Module[nox]
-    OpenStudioLandscapes-Your-New-Module[sbom]
-    OpenStudioLandscapes-Your-New-Module[coverage]
+    OpenStudioLandscapes-Your-New-Feature[testing]
+    OpenStudioLandscapes-Your-New-Feature[docs]
+    OpenStudioLandscapes-Your-New-Feature[lint]
+    OpenStudioLandscapes-Your-New-Feature[nox]
+    OpenStudioLandscapes-Your-New-Feature[sbom]
+    OpenStudioLandscapes-Your-New-Feature[coverage]
     dagster-webserver==1.9.11
     snakemd
 
 [options.entry_points]
 # Add here console scripts like:
 # console_scripts =
-#     script_name = OpenStudioLandscapes.Your_New_Module.module:function
+#     script_name = OpenStudioLandscapes.Your_New_Feature.module:function
 # For example:
 # console_scripts =
-#     fibonacci = OpenStudioLandscapes.Your_New_Module.skeleton:run
+#     fibonacci = OpenStudioLandscapes.Your_New_Feature.skeleton:run
 # And any other entry points, for example:
 # pyscaffold.cli =
 #     awesome = pyscaffoldext.awesome.extension:AwesomeExtension
@@ -285,7 +285,7 @@ dev =
 # CAUTION: --cov flags may prohibit setting breakpoints while debugging.
 #          Comment those flags to avoid this pytest issue.
 addopts =
-    --cov OpenStudioLandscapes.Your_New_Module --cov-report term-missing
+    --cov OpenStudioLandscapes.Your_New_Feature --cov-report term-missing
     --verbose
 norecursedirs =
     dist
@@ -321,7 +321,7 @@ exclude =
 # PyScaffold's parameters when the project was created.
 # This will be used when updating. Do not change!
 version = 4.6
-package = Your-New-Module
+package = Your_New_Feature
 extensions =
     namespace
 namespace = OpenStudioLandscapes
@@ -329,8 +329,7 @@ namespace = OpenStudioLandscapes
 
 # File De-Duplication
 
-
-From `OpenStudioLandscapes-Template` into every module (including
+From `OpenStudioLandscapes-Template` into every Feature (including
 `OpenStudioLandscapes` itself, except:
 - `OpenStudioLandscapes-Template` (of course)
 
@@ -365,26 +364,26 @@ declare -a identical_files=( \
 
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-# The script assumes that all module repos live in the same root dir
-# as this one
+# The script assumes that all Feature repos live in the .features
 
 
-for dir in "${SCRIPT_DIR}"/../OpenStudioLandscapes*/; do
+for dir in "${SCRIPT_DIR}"/.features/; do
   
     echo ""
     echo ""
     echo "################################"
-    echo "Current Module: ${dir}"
+    echo "Current Feature: ${dir}"
     echo "################################"
     echo ""
     
     pushd "${dir}" || exit
     
-    if [[ $(pwd) == *"/OpenStudioLandscapes-Template"* ]]; then
-        echo "$(pwd) skipped."
-        popd || exit
-        continue
-    fi;
+    # if [[ $(pwd) == *"/OpenStudioLandscapes-Template"* ]]; then
+    #     echo "$(pwd) skipped."
+    #     popd || exit
+    #     continue
+    # fi;
+    
     for f in "${identical_files[@]}"; do
         echo "---------------------"
         echo "Current file: ${f}"

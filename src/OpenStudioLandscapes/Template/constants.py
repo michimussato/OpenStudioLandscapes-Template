@@ -26,7 +26,7 @@ from OpenStudioLandscapes.engine.exceptions import ComposeScopeException
 DOCKER_USE_CACHE = DOCKER_USE_CACHE_GLOBAL or False
 
 
-GROUP = "Template"
+GROUP = "Your_New_Feature"
 KEY = [GROUP]
 
 ASSET_HEADER = {

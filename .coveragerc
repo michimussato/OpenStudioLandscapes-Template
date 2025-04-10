@@ -1,7 +1,7 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
-source = OpenStudioLandscapes.<Your_New_Module>
+source = OpenStudioLandscapes.<Your_New_Feature>
 # omit = bad_file.py
 
 [paths]

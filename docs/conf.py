@@ -87,7 +87,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "OpenStudioLandscapes-<Your-New-Module>"
+project = "OpenStudioLandscapes-<Your-New-Feature>"
 copyright = "20XX, John Doe"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -99,7 +99,7 @@ copyright = "20XX, John Doe"
 # If you don’t need the separation provided between version and release,
 # just set them both to the same value.
 try:
-    from OpenStudioLandscapes.<Your_New_Module> import __version__ as version
+    from OpenStudioLandscapes.<Your_New_Feature> import __version__ as version
 except ImportError:
     version = ""
 
@@ -229,7 +229,7 @@ html_static_path = ["_static"]
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "OpenStudioLandscapes-<Your-New-Module>-doc"
+htmlhelp_basename = "OpenStudioLandscapes-<Your-New-Feature>-doc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -246,7 +246,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ("index", "user_guide.tex", "OpenStudioLandscapes-<Your-New-Module> Documentation", "Michael Mussato", "manual")
+    ("index", "user_guide.tex", "OpenStudioLandscapes-<Your-New-Feature> Documentation", "Michael Mussato", "manual")
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

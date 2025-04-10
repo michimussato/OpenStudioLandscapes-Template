@@ -1,5 +1,5 @@
 """
-    Setup file for OpenStudioLandscapes-<Your-New-Module>.
+    Setup file for OpenStudioLandscapes-<Your-New-Feature>.
     Use setup.cfg to configure your project.
 
     This file was generated with PyScaffold 4.6.

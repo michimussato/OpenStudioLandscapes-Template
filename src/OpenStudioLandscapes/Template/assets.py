@@ -34,7 +34,7 @@ from OpenStudioLandscapes.engine.base.ops import (
     op_group_out,
 )
 
-from OpenStudioLandscapes.<Your_New_Module>.constants import *
+from OpenStudioLandscapes.<Your_New_Feature>.constants import *
 
 
 @asset(
@@ -479,7 +479,7 @@ def compose_template(
         "volumes": [],
     }
 
-    service_name = "template"
+    service_name = "Your_New_Feature"
     container_name = service_name
     host_name = ".".join([service_name, env["ROOT_DOMAIN"]])
 
@@ -528,8 +528,8 @@ def compose_template(
 @asset(
     **ASSET_HEADER,
     ins={
-        "compose_template": AssetIn(
-            AssetKey([*KEY, "compose_template"]),
+        "compose_Your_New_Feature": AssetIn(
+            AssetKey([*KEY, "compose_Your_New_Feature"]),
         ),
     },
 )
