@@ -4,7 +4,7 @@
 
 <!-- TOC -->
 * [OpenStudioLandscapes Feature Template](#openstudiolandscapes-feature-template)
-  * [Guide: How to use the template](#guide-how-to-use-the-template)
+  * [Guide: How to use the Feature Template](#guide-how-to-use-the-feature-template)
 * [Install](#install)
 * [File De-Duplication (Hard-Links)](#file-de-duplication-hard-links)
 <!-- TOC -->
@@ -15,7 +15,7 @@
 
 Source template version: [`3.0.0`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/3.0.0)
 
-## Guide: How to use the template
+## Guide: How to use the Feature Template
 
 1. Create your new Git repo on Github, 
    i.e. `yourlogin/OpenStudioLandscapes-YourFeature`.
