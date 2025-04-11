@@ -80,7 +80,7 @@ Source template version: [`3.0.2`](https://github.com/michimussato/OpenStudioLan
    9. All occurrences of `<USERNAME>` -> `your_github_login`
       - `Ctrl+Shift+R` in PyCharm
       - `find . -type f | xargs sed -i 's/<USERNAME>/your_github_login/g'`
-   10. All occurrences of `"compose_Your_New_Feature"` -> `"compose_Your_New_Feature"`
+   10. All occurrences of `"compose_Your_New_Feature"` -> `"compose_your_new_feature"`
        - `Ctrl+Shift+R` in PyCharm
        - `find . -type f | xargs sed -i 's/"compose_Your_New_Feature"/"compose_Your_New_Feature"/g'`
    10. All occurrences of `compose_template` -> `compose_your_new_feature`
