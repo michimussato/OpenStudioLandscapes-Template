@@ -13,7 +13,7 @@
 
 # OpenStudioLandscapes Feature Template
 
-Source template version: [`3.0.1`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/3.0.1)
+Source template version: [`3.0.2`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/3.0.2)
 
 ## Guide: How to use the Feature Template
 
