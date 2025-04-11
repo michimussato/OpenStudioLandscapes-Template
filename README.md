@@ -5,7 +5,7 @@
 <!-- TOC -->
 * [OpenStudioLandscapes Feature Template](#openstudiolandscapes-feature-template)
   * [Guide: How to use the Feature Template](#guide-how-to-use-the-feature-template)
-* [Install](#install)
+* [First Install](#first-install)
 * [File De-Duplication (Hard-Links)](#file-de-duplication-hard-links)
 <!-- TOC -->
 
