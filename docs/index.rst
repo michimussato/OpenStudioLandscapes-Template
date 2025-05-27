@@ -37,6 +37,11 @@ Contents
    Module Reference <api/modules>
 
 
+SBOM Graph:
+
+.. graphviz:: dot/graphviz_pipdeptree.docs.dot
+
+
 Indices and tables
 ==================
 
@@ -44,6 +49,7 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+.. _Github: https://github.com/michimussato/open-studio-landscapes
 .. _toctree: https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html
 .. _reStructuredText: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 .. _references: https://www.sphinx-doc.org/en/stable/markup/inline.html
