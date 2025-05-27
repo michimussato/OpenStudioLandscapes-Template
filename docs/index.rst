@@ -1,6 +1,6 @@
-======================================
+=======================================
 OpenStudioLandscapes-<Your-New-Feature>
-======================================
+=======================================
 
 This is the documentation of **OpenStudioLandscapes-<Your-New-Feature>**.
 
@@ -29,7 +29,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   Overview <readme>
+   README.md <readme_md>
    Contributions & Help <contributing>
    License <license>
    Authors <authors>
