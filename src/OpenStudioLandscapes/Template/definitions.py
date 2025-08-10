@@ -3,16 +3,15 @@ from dagster import (
     load_assets_from_modules,
 )
 
-import OpenStudioLandscapes.<Your_New_Feature>.assets
-import OpenStudioLandscapes.<Your_New_Feature>.constants
-
+import OpenStudioLandscapes.Template.assets
+import OpenStudioLandscapes.Template.constants
 
 assets = load_assets_from_modules(
-    modules=[OpenStudioLandscapes.<Your_New_Feature>.assets],
+    modules=[OpenStudioLandscapes.Template.assets],
 )
 
 constants = load_assets_from_modules(
-    modules=[OpenStudioLandscapes.<Your_New_Feature>.constants],
+    modules=[OpenStudioLandscapes.Template.constants],
 )
 
 

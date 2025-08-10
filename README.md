@@ -109,12 +109,12 @@ Add the following code to `OpenStudioLandscapes.engine.constants` (`THIRD_PARTY`
 THIRD_PARTY.append
     {
         "enabled": True,
-        "module": "OpenStudioLandscapes.Your_New_Feature.definitions",
+        "module": "OpenStudioLandscapes.Template.definitions",
         "compose_scope": ComposeScope.DEFAULT,
     }
 ```
 
-Install `OpenStudioLandscapes-Your-New-Feature` into
+Install `OpenStudioLandscapes-Template` into
 `OpenStudioLandscapes/.venv`
 
 ```shell
@@ -124,7 +124,7 @@ pip install -e ".[dev]"
 
 Basic installation instructions will be generated automatically. 
 Once all preliminary steps were executed, the following command will generate
-the new `READMD.md` for `Your-New-Feature`:
+the new `READMD.md` for `Template`:
 
 ```shell
 nox --session readme

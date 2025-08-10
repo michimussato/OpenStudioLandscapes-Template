@@ -1,15 +1,14 @@
 import copy
 import json
 import pathlib
+import re
 import shutil
 import textwrap
-import urllib.parse
-
 import time
-from typing import Generator
+import urllib.parse
+from typing import Generator, Any
 
 import yaml
-
 from dagster import (
     AssetExecutionContext,
     AssetIn,
@@ -18,157 +17,95 @@ from dagster import (
     MetadataValue,
     Output,
     asset,
-    AssetsDefinition,
 )
 
-from OpenStudioLandscapes.engine.base.assets import KEY_BASE
 from OpenStudioLandscapes.engine.constants import *
-
 from OpenStudioLandscapes.engine.enums import *
 from OpenStudioLandscapes.engine.utils import *
-from OpenStudioLandscapes.engine.utils.docker.whales import *
+from OpenStudioLandscapes.engine.utils.docker import *
 
-from OpenStudioLandscapes.engine.base.ops import (
-    op_compose,
-    op_docker_compose_graph,
-    op_group_out,
+from OpenStudioLandscapes.Template.constants import *
+
+from OpenStudioLandscapes.engine.common_assets.constants import get_constants
+from OpenStudioLandscapes.engine.common_assets.docker_config import get_docker_config
+from OpenStudioLandscapes.engine.common_assets.env import get_env
+from OpenStudioLandscapes.engine.common_assets.group_in import get_group_in
+from OpenStudioLandscapes.engine.common_assets.group_out import get_group_out
+from OpenStudioLandscapes.engine.common_assets.docker_compose_graph import get_docker_compose_graph
+from OpenStudioLandscapes.engine.common_assets.feature_out import get_feature_out
+from OpenStudioLandscapes.engine.common_assets.compose import get_compose
+from OpenStudioLandscapes.engine.common_assets.docker_config_json import get_docker_config_json
+
+
+constants = get_constants(
+    ASSET_HEADER=ASSET_HEADER,
 )
 
-from OpenStudioLandscapes.<Your_New_Feature>.constants import *
+
+docker_config = get_docker_config(
+    ASSET_HEADER=ASSET_HEADER,
+)
 
 
-@asset(
-    **ASSET_HEADER,
-    ins={
-        "group_in": AssetIn(
-            AssetKey([*KEY_BASE, "group_out"])
-        ),
+group_in = get_group_in(
+    ASSET_HEADER=ASSET_HEADER,
+    ASSET_HEADER_PARENT=ASSET_HEADER_BASE,
+    input_name=str(GroupIn.BASE_IN),
+)
+
+
+env = get_env(
+    ASSET_HEADER=ASSET_HEADER,
+)
+
+
+group_out = get_group_out(
+    ASSET_HEADER=ASSET_HEADER,
+)
+
+
+docker_compose_graph = get_docker_compose_graph(
+    ASSET_HEADER=ASSET_HEADER,
+)
+
+
+compose = get_compose(
+    ASSET_HEADER=ASSET_HEADER,
+)
+
+
+feature_out = get_feature_out(
+    ASSET_HEADER=ASSET_HEADER,
+    feature_out_ins={
+        "env": dict,
+        "compose": dict,
+        "group_in": dict,
     },
-    deps=[
-        AssetKey([*ASSET_HEADER['key_prefix'], "constants"])
-    ],
 )
-def env(
-    context: AssetExecutionContext,
-    group_in: dict,  # pylint: disable=redefined-outer-name
-) -> Generator[Output[dict] | AssetMaterialization, None, None]:
-
-    env_in = copy.deepcopy(group_in["env"])
-
-    env_in.update(ENVIRONMENT)
-
-    env_in.update(
-        {
-            "COMPOSE_SCOPE": COMPOSE_SCOPE,
-        },
-    )
-
-    yield Output(env_in)
-
-    yield AssetMaterialization(
-        asset_key=context.asset_key,
-        metadata={
-            "__".join(context.asset_key.path): MetadataValue.json(env_in),
-            "ENVIRONMENT": MetadataValue.json(ENVIRONMENT),
-        },
-    )
 
 
-@asset(
-    **ASSET_HEADER,
+docker_config_json = get_docker_config_json(
+    ASSET_HEADER=ASSET_HEADER,
 )
-def pip_packages(
-    context: AssetExecutionContext,
-) -> Generator[Output[list] | AssetMaterialization, None, None]:
-    """ """
-
-    _pip_packages: list = []
-
-    yield Output(_pip_packages)
-
-    yield AssetMaterialization(
-        asset_key=context.asset_key,
-        metadata={
-            "__".join(context.asset_key.path): MetadataValue.json(_pip_packages),
-        },
-    )
-
-
-@asset(
-    **ASSET_HEADER,
-)
-def apt_packages(
-    context: AssetExecutionContext,
-) -> Generator[Output[dict] | AssetMaterialization, None, None]:
-    """ """
-
-    _apt_packages = {}
-
-    _apt_packages["list_a"] = [
-        "git",
-        "ca-certificates",
-        "htop",
-        "file",
-        "tzdata",
-        "curl",
-        "wget",
-        "ffmpeg",
-        "xvfb",
-        "libegl1",
-        "libsm6",
-        "libsm6",
-        "libglu1-mesa",
-        "libxss1",
-    ]
-
-    _apt_packages["list_b"] = [
-        "build-essential",
-        "pkg-config",
-        "zlib1g-dev",
-        "libncurses5-dev",
-        "libgdbm-dev",
-        "libnss3-dev",
-        "libssl-dev",
-        "libreadline-dev",
-        "libffi-dev",
-        "libsqlite3-dev",
-        "libbz2-dev",
-        "iproute2",
-    ]
-
-    yield Output(_apt_packages)
-
-    yield AssetMaterialization(
-        asset_key=context.asset_key,
-        metadata={
-            "__".join(context.asset_key.path): MetadataValue.json(_apt_packages),
-        },
-    )
 
 
 @asset(
     **ASSET_HEADER,
     ins={
         "env": AssetIn(
-            AssetKey([*KEY, "env"]),
+            AssetKey([*ASSET_HEADER["key_prefix"], "env"]),
         ),
-        "group_in": AssetIn(
-            AssetKey([*KEY_BASE, "group_out"])
+        "docker_config_json": AssetIn(
+            AssetKey([*ASSET_HEADER["key_prefix"], "docker_config_json"]),
         ),
-        "apt_packages": AssetIn(
-            AssetKey([*KEY, "apt_packages"]),
-        ),
-        "pip_packages": AssetIn(
-            AssetKey([*KEY, "pip_packages"]),
-        ),
+        "group_in": AssetIn(AssetKey([*ASSET_HEADER_BASE["key_prefix"], str(GroupIn.BASE_IN)])),
     },
 )
 def build_docker_image(
     context: AssetExecutionContext,
     env: dict,  # pylint: disable=redefined-outer-name
+    docker_config_json: pathlib.Path,  # pylint: disable=redefined-outer-name
     group_in: dict,  # pylint: disable=redefined-outer-name
-    apt_packages: dict[str, list[str]],  # pylint: disable=redefined-outer-name
-    pip_packages: list,  # pylint: disable=redefined-outer-name
 ) -> Generator[Output[dict] | AssetMaterialization, None, None]:
     """ """
 
@@ -178,7 +115,9 @@ def build_docker_image(
     if build_base_docker_config.value["docker_push"]:
         build_base_parent_image_prefix: str = build_base_image_data["image_prefix_full"]
     else:
-        build_base_parent_image_prefix: str = build_base_image_data["image_prefix_local"]
+        build_base_parent_image_prefix: str = build_base_image_data[
+            "image_prefix_local"
+        ]
 
     build_base_parent_image_name: str = build_base_image_data["image_name"]
     build_base_parent_image_tags: list = build_base_image_data["image_tags"]
@@ -186,7 +125,7 @@ def build_docker_image(
     docker_file = pathlib.Path(
         env["DOT_LANDSCAPES"],
         env.get("LANDSCAPE"),
-        f"{GROUP}__{'__'.join(KEY)}",
+        f"{ASSET_HEADER['group_name']}__{'__'.join(ASSET_HEADER['key_prefix'])}",
         "__".join(context.asset_key.path),
         "Dockerfiles",
         "Dockerfile",
@@ -204,164 +143,55 @@ def build_docker_image(
         prepend_registry=True,
     )
 
-    # @formatter:off
-    extra_files = {
-        "MyFile.txt": env.get(f"PATH_TO_LOCAL_MY_FILE_TXT"),
-    }
-    # @formatter:on
-
     tags = [
-        env.get('LANDSCAPE', str(time.time())),
+        env.get("LANDSCAPE", str(time.time())),
     ]
 
-    apt_install_str_list_a: str = get_apt_install_str(
-        apt_install_packages=apt_packages["list_a"],
-    )
+    # @formatter:off
+    docker_file_str = textwrap.dedent(
+        """\
+        # {auto_generated}
+        # {dagster_url}
+        FROM {parent_image} AS {image_name}
+        LABEL authors="{AUTHOR}"
 
-    apt_install_str_list_b: str = get_apt_install_str(
-        apt_install_packages=apt_packages["list_b"],
-    )
+        ARG DEBIAN_FRONTEND=noninteractive
 
-    pip_install_str: str = get_pip_install_str(pip_install_packages=pip_packages)
+        ENV CONTAINER_TIMEZONE={TIMEZONE}
+        ENV SET_CONTAINER_TIMEZONE=true
 
-    if bool(extra_files):
+        SHELL ["/bin/bash", "-c"]
 
-        docker_payload = ".payload"
-        tmpdir = docker_file.parent / docker_payload
-        tmpdir.mkdir(exist_ok=True, parents=True)
+        RUN apt-get update && apt-get upgrade -y
 
-        # Todo
-        #  copy_str: str = get_copy_str(
-        #      temp_dir=tmpdir,
-        #      copy_packages=files,
-        #      mode=755,
-        #  )
+        # WORKDIR /workdir
+        # USER user
 
-        # @formatter:off
-        docker_file_str = textwrap.dedent(
-            """
-            # {auto_generated}
-            # {dagster_url}
-            FROM {parent_image} AS {image_name}
-            LABEL authors="{AUTHOR}"
+        # RUN commands
+        # [...]
 
-            ARG DEBIAN_FRONTEND=noninteractive
-    
-            ENV CONTAINER_TIMEZONE={TIMEZONE}
-            ENV SET_CONTAINER_TIMEZONE=true
+        RUN apt-get clean
 
-            SHELL ["/bin/bash", "-c"]
-
-            RUN apt-get update && apt-get upgrade -y
-
-            {apt_install_str_list_a}
-    
-            {apt_install_str_list_b}
-
-            {pip_install_str}
-
-            WORKDIR /workdir
-
-            # copy_str
-
-            # RUN commands
-            # [...]
-        
-            # COPY ./{tmpdir}/<FILE> .
-            # RUN chmod 644 FILE
-            # RUN chown user:group FILE
-
-            RUN apt-get clean
-
-            ENTRYPOINT []
+        ENTRYPOINT []
         """
-        ).format(
-            # copy_str=copy_str,
-            tmpdir=pathlib.Path(tmpdir).name,
-            apt_install_str_list_a=apt_install_str_list_a,
-            apt_install_str_list_b=apt_install_str_list_b,
-            pip_install_str=pip_install_str.format(
-                **env,
-            ),
-            auto_generated=f"AUTO-GENERATED by Dagster Asset {'__'.join(context.asset_key.path)}",
-            dagster_url=urllib.parse.quote(
-                f"http://localhost:3000/asset-groups/{'%2F'.join(context.asset_key.path)}",
-                safe=":/%",
-            ),
-            image_name=image_name,
-            # Todo: this won't work as expected if len(tags) > 1
-            parent_image=f"{build_base_parent_image_prefix}{build_base_parent_image_name}:{build_base_parent_image_tags[0]}",
-            **env,
-        )
-        # @formatter:on
+    ).format(
+        auto_generated=f"AUTO-GENERATED by Dagster Asset {'__'.join(context.asset_key.path)}",
+        dagster_url=urllib.parse.quote(
+            f"http://localhost:3000/asset-groups/{'%2F'.join(context.asset_key.path)}",
+            safe=":/%",
+        ),
+        image_name=image_name,
+        # Todo: this won't work as expected if len(tags) > 1
+        parent_image=f"{build_base_parent_image_prefix}{build_base_parent_image_name}:{build_base_parent_image_tags[0]}",
+        **env,
+    )
+    # @formatter:on
 
-        with open(docker_file, "w") as fw:
-            fw.write(docker_file_str)
+    with open(docker_file, "w") as fw:
+        fw.write(docker_file_str)
 
-        with open(docker_file, "r") as fr:
-            docker_file_content = fr.read()
-
-        for key, value in extra_files.items():
-            shutil.copyfile(
-                src=value,
-                dst=pathlib.Path(tmpdir) / key,
-            )
-
-    else:
-
-        # @formatter:off
-        docker_file_str = textwrap.dedent(
-            """
-            # {auto_generated}
-            # {dagster_url}
-            FROM {parent_image} AS {image_name}
-            LABEL authors="{AUTHOR}"
-    
-            ARG DEBIAN_FRONTEND=noninteractive
-    
-            ENV CONTAINER_TIMEZONE={TIMEZONE}
-            ENV SET_CONTAINER_TIMEZONE=true
-    
-            RUN apt-get update && apt-get upgrade -y
-
-            {apt_install_str_list_a}
-    
-            {apt_install_str_list_b}
-    
-            {pip_install_str}
-    
-            WORKDIR /workdir
-    
-            # RUN commands
-            # [...]
-        
-            RUN apt-get clean
-    
-            ENTRYPOINT []
-        """
-        ).format(
-            apt_install_str_list_a=apt_install_str_list_a,
-            apt_install_str_list_b=apt_install_str_list_b,
-            pip_install_str=pip_install_str.format(
-                **env,
-            ),
-            auto_generated=f"AUTO-GENERATED by Dagster Asset {'__'.join(context.asset_key.path)}",
-            dagster_url=urllib.parse.quote(
-                f"http://localhost:3000/asset-groups/{'%2F'.join(context.asset_key.path)}",
-                safe=":/%",
-            ),
-            image_name=image_name,
-            # Todo: this won't work as expected if len(tags) > 1
-            parent_image=f"{build_base_parent_image_prefix}{build_base_parent_image_name}:{build_base_parent_image_tags[0]}",
-            **env,
-        )
-        # @formatter:on
-
-        with open(docker_file, "w") as fw:
-            fw.write(docker_file_str)
-
-        with open(docker_file, "r") as fr:
-            docker_file_content = fr.read()
+    with open(docker_file, "r") as fr:
+        docker_file_content = fr.read()
 
     image_data = {
         "image_name": image_name,
@@ -371,14 +201,40 @@ def build_docker_image(
         "image_parent": copy.deepcopy(build_base_image_data),
     }
 
-    tags_list: list = docker_build(
+    context.log.info(f"{image_data = }")
+
+    cmds = []
+
+    tags_local = [f"{image_prefix_local}{image_name}:{tag}" for tag in tags]
+    tags_full = [f"{image_prefix_full}{image_name}:{tag}" for tag in tags]
+
+    cmd_build = docker_build_cmd(
         context=context,
-        docker_config=build_base_docker_config,
+        docker_config_json=docker_config_json,
         docker_file=docker_file,
-        context_path=docker_file.parent,
-        docker_use_cache=DOCKER_USE_CACHE,
-        image_data=image_data,
+        tags_local=tags_local,
+        tags_full=tags_full,
     )
+
+    cmds.append(cmd_build)
+
+    cmds_push = docker_push_cmd(
+        context=context,
+        docker_config_json=docker_config_json,
+        tags_full=tags_full,
+    )
+
+    cmds.extend(cmds_push)
+
+    context.log.info(f"{cmds = }")
+
+    logs = []
+
+    for logs_ in docker_process_cmds(
+        context=context,
+        cmds=cmds,
+    ):
+        logs.append(logs_)
 
     yield Output(image_data)
 
@@ -386,11 +242,9 @@ def build_docker_image(
         asset_key=context.asset_key,
         metadata={
             "__".join(context.asset_key.path): MetadataValue.json(image_data),
-            "tags_list": MetadataValue.json(tags_list),
-            "docker_file": MetadataValue.md(
-                f"```shell\n{docker_file_content}\n```"
-            ),
+            "docker_file": MetadataValue.md(f"```shell\n{docker_file_content}\n```"),
             "env": MetadataValue.json(env),
+            "logs": MetadataValue.json(logs),
         },
     )
 
@@ -401,7 +255,8 @@ def build_docker_image(
 def compose_networks(
     context: AssetExecutionContext,
 ) -> Generator[
-    Output[dict[str, dict[str, dict[str, str]]]] | AssetMaterialization, None, None]:
+    Output[dict[str, dict[str, dict[str, str]]]] | AssetMaterialization, None, None
+]:
 
     compose_network_mode = ComposeNetworkMode.DEFAULT
 
@@ -440,13 +295,13 @@ def compose_networks(
     **ASSET_HEADER,
     ins={
         "env": AssetIn(
-            AssetKey([*KEY, "env"]),
+            AssetKey([*ASSET_HEADER["key_prefix"], "env"]),
         ),
         "build": AssetIn(
-            AssetKey([*KEY, "build_docker_image"]),
+            AssetKey([*ASSET_HEADER["key_prefix"], "build_docker_image"]),
         ),
         "compose_networks": AssetIn(
-            AssetKey([*KEY, "compose_networks"]),
+            AssetKey([*ASSET_HEADER["key_prefix"], "compose_networks"]),
         ),
     },
 )
@@ -462,42 +317,59 @@ def compose_template(
     ports_dict = {}
 
     if "networks" in compose_networks:
-        network_dict = {
-            "networks": list(compose_networks.get("networks", {}).keys())
-        }
+        network_dict = {"networks": list(compose_networks.get("networks", {}).keys())}
         ports_dict = {
             "ports": [
-                f"{env.get('PORT_HOST')}:{env.get('PORT_CONTAINER')}",
+                f"{env.get('ENV_VAR_PORT_HOST')}:{env.get('ENV_VAR_PORT_CONTAINER')}",
             ]
         }
     elif "network_mode" in compose_networks:
-        network_dict = {
-            "network_mode": compose_networks.get("network_mode")
-        }
+        network_dict = {"network_mode": compose_networks.get("network_mode")}
 
     volumes_dict = {
         "volumes": [],
     }
 
-    service_name = "Your_New_Feature"
-    container_name = service_name
+    # For portability, convert absolute volume paths to relative paths
+
+    _volume_relative = []
+
+    for v in volumes_dict["volumes"]:
+
+        host, container = v.split(":", maxsplit=1)
+
+        volume_dir_host_rel_path = get_relative_path_via_common_root(
+            context=context,
+            path_src=pathlib.Path(env["DOCKER_COMPOSE"]),
+            path_dst=pathlib.Path(host),
+            path_common_root=pathlib.Path(env["DOT_LANDSCAPES"]),
+        )
+
+        _volume_relative.append(
+            f"{volume_dir_host_rel_path.as_posix()}:{container}",
+        )
+
+    volumes_dict = {
+        "volumes": [
+            *_volume_relative,
+        ],
+    }
+
+    command = []
+
+    service_name = "Template"
+    container_name = "--".join([service_name, env.get("LANDSCAPE", "default")])
     host_name = ".".join([service_name, env["ROOT_DOMAIN"]])
 
     docker_dict = {
         "services": {
             service_name: {
                 "container_name": container_name,
-                "hostname":  host_name,
+                "hostname": host_name,
                 "domainname": env.get("ROOT_DOMAIN"),
+                # "mac_address": ":".join(re.findall(r"..", env["HOST_ID"])),
                 "restart": "always",
-                **[
-                    {
-                        "image": "docker.io/template/template",
-                    },
-                    {
-                        "image": f"{build['image_prefix_full']}{build['image_name']}:{build['image_tags'][0]}",
-                    },
-                ][1],
+                "image": "${DOT_OVERRIDES_REGISTRY_NAMESPACE:-docker.io/openstudiolandscapes}/%s:%s" % (build['image_name'], build['image_tags'][0]),
                 **copy.deepcopy(volumes_dict),
                 **copy.deepcopy(network_dict),
                 **copy.deepcopy(ports_dict),
@@ -505,8 +377,7 @@ def compose_template(
                 # },
                 # "healthcheck": {
                 # },
-                # "command": [
-                # ],
+                # "command": command,
             },
         },
     }
@@ -528,8 +399,8 @@ def compose_template(
 @asset(
     **ASSET_HEADER,
     ins={
-        "compose_Your_New_Feature": AssetIn(
-            AssetKey([*KEY, "compose_Your_New_Feature"]),
+        "compose_template": AssetIn(
+            AssetKey([*ASSET_HEADER["key_prefix"], "compose_template"]),
         ),
     },
 )
@@ -552,60 +423,46 @@ def compose_maps(
     )
 
 
-compose = AssetsDefinition.from_op(
-    op_compose,
-    tags_by_output_name={
-        "compose": {
-            "compose": "third_party",
+@asset(
+    **ASSET_HEADER,
+    ins={
+    },
+)
+def cmd_extend(
+        context: AssetExecutionContext,
+) -> Generator[Output[list[Any]] | AssetMaterialization | Any, Any, None]:
+
+    ret = []
+
+    yield Output(ret)
+
+    yield AssetMaterialization(
+        asset_key=context.asset_key,
+        metadata={
+            "__".join(context.asset_key.path): MetadataValue.json(ret),
         },
-    },
-    group_name=GROUP,
-    key_prefix=KEY,
-    keys_by_input_name={
-        "compose_networks": AssetKey(
-            [*KEY, "compose_networks"]
-        ),
-        "compose_maps": AssetKey(
-            [*KEY, "compose_maps"]
-        ),
+    )
+
+
+@asset(
+    **ASSET_HEADER,
+    ins={
     },
 )
+def cmd_append(
+        context: AssetExecutionContext,
+) -> Generator[Output[dict[str, list[Any]]] | AssetMaterialization | Any, Any, None]:
 
+    ret = {
+        "cmd": [],
+        "exclude_from_quote": []
+    }
 
-group_out = AssetsDefinition.from_op(
-    op_group_out,
-    can_subset=True,
-    group_name=GROUP,
-    tags_by_output_name={
-        "group_out": {
-            "group_out": "third_party",
+    yield Output(ret)
+
+    yield AssetMaterialization(
+        asset_key=context.asset_key,
+        metadata={
+            "__".join(context.asset_key.path): MetadataValue.json(ret),
         },
-    },
-    key_prefix=KEY,
-    keys_by_input_name={
-        "compose": AssetKey(
-            [*KEY, "compose"]
-        ),
-        "env": AssetKey(
-            [*KEY, "env"]
-        ),
-        "group_in": AssetKey(
-            [*KEY_BASE, "group_out"]
-        ),
-    },
-)
-
-
-docker_compose_graph = AssetsDefinition.from_op(
-    op_docker_compose_graph,
-    group_name=GROUP,
-    key_prefix=KEY,
-    keys_by_input_name={
-        "group_out": AssetKey(
-            [*KEY, "group_out"]
-        ),
-        "compose_project_name": AssetKey(
-            [*KEY, "compose_project_name"]
-        ),
-    },
-)
+    )

@@ -54,10 +54,61 @@ MANIFEST
 .conda*/
 .python-version
 
-.payload/data/
-.payload/bin/
+# Landscapes
+.landscapes/*/
+docker/.volumes/.landscapes/*/
+!docker/.volumes/.landscapes/.gitkeep
+
+# Features
+.features/*
+!.features/.gitkeep
+
+# Dagster
+.env
+.dagster/*
+!.dagster/.gitkeep
+!.dagster/dagster.yaml
+.dagster-postgres/*
+!.dagster-postgres/.gitkeep
+tmp*/
+
+# Harbor
+!.harbor/
+
+.harbor/data/*
+!.harbor/data/.gitkeep
+
+.harbor/bin/*
+!.harbor/bin/.gitkeep
+
+.harbor/download/*
+!.harbor/download/.gitkeep
+
+# Pi-hole
+.pi-hole/*
+!.pi-hole/.gitkeep
+
+# Payloads
+.payload/bin/*
+!.payload/bin/.gitkeep
+.payload/data/*
+!.payload/data/.gitkeep
+!.payload/data/foundry.lic.example
 
 # Obsidian
 .obsidian/hotkeys.json
 .obsidian/workspace.json
 .obsidian/workspaces.json
+
+# Media
+/media/Blender/.out/*
+!/media/Blender/.out/.gitkeep
+
+# Docker
+!docker/.volumes/
+
+docker/.volumes/dagster/dagster-home/*
+!docker/.volumes/dagster/dagster-home/dagster.yaml
+
+docker/.volumes/postgres-dagster/*
+!docker/.volumes/postgres-dagster/.gitkeep
