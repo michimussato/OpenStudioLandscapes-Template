@@ -394,6 +394,10 @@ diff --git a/setup.py b/setup.py
      This file was generated with PyScaffold 4.6.
 ```
 
+#### `README_TEMPLATE.md`
+
+Delete file.
+
 ## First Install
 
 ### Add Feature to OpenStudioLandscapes
