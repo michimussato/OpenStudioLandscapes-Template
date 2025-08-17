@@ -7,17 +7,19 @@
   * [Guide: How to use the Feature Template](#guide-how-to-use-the-feature-template)
   * [Refactor](#refactor)
     * [Diffs](#diffs)
+      * [`README.md`](#readmemd)
       * [`src/OpenStudioLandscapes/n8n/__init__.py`](#srcopenstudiolandscapesn8n__init__py)
       * [`src/OpenStudioLandscapes/n8n/assets.py`](#srcopenstudiolandscapesn8nassetspy)
       * [`src/OpenStudioLandscapes/n8n/constants.py`](#srcopenstudiolandscapesn8nconstantspy)
       * [`src/OpenStudioLandscapes/n8n/definitions.py`](#srcopenstudiolandscapesn8ndefinitionspy)
       * [`src/OpenStudioLandscapes/n8n/pyproject.py`](#srcopenstudiolandscapesn8npyprojectpy)
-      * [`src/OpenStudioLandscapes/n8n/README.md`](#srcopenstudiolandscapesn8nreadmemd)
       * [`src/OpenStudioLandscapes/n8n/readme_feature.py`](#srcopenstudiolandscapesn8nreadme_featurepy)
       * [`src/OpenStudioLandscapes/n8n/setup.cfg`](#srcopenstudiolandscapesn8nsetupcfg)
       * [`src/OpenStudioLandscapes/n8n/setup.py`](#srcopenstudiolandscapesn8nsetuppy)
   * [First Install](#first-install)
     * [Add Feature to OpenStudioLandscapes](#add-feature-to-openstudiolandscapes)
+    * [Install Feature into OpenStudioLanscapes `venv`](#install-feature-into-openstudiolanscapes-venv)
+  * [README.md](#readmemd-1)
 * [File De-Duplication (Hard-Links)](#file-de-duplication-hard-links)
 <!-- TOC -->
 
@@ -53,6 +55,10 @@ renamed:    src/OpenStudioLandscapes/Template/readme_feature.py -> src/OpenStudi
 ### Diffs
 
 Replace all occurrences of `template` with the name of your new Feature.
+
+#### `README.md`
+
+See [README.md](#readmemd-1)
 
 #### `src/OpenStudioLandscapes/n8n/__init__.py`
 
@@ -393,10 +399,6 @@ diff --git a/setup.py b/setup.py
  
      This file was generated with PyScaffold 4.6.
 ```
-
-#### `README_TEMPLATE.md`
-
-Delete file.
 
 ## First Install
 
