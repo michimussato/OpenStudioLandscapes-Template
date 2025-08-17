@@ -357,7 +357,7 @@ def compose_template(
 
     command = []
 
-    service_name = "Template"
+    service_name = "n8n"
     container_name = "--".join([service_name, env.get("LANDSCAPE", "default")])
     host_name = ".".join([service_name, env["ROOT_DOMAIN"]])
 
