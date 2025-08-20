@@ -124,26 +124,6 @@ testpaths = ["tests"]
 # slow: mark tests as slow (deselect with '-m "not slow"')
 # system: mark end-to-end system tests
 
-# [tool.devpi.upload]
-# # Options for the devpi: PyPI server and packaging tool
-# # VCS export must be deactivated since we are using setuptools-scm
-# no_vcs = "1"
-# formats = "bdist_wheel"
-#
-# [tool.flake8]
-# # Some sane defaults for the code style checker flake8
-# max_line_length = "88"
-# extend_ignore = "E203, W503"
-# # ^  Black-compatible
-# # E203 and W503 have edge cases handled by black
-# exclude = """
-# .nox
-# .svg
-# build
-# dist
-# .eggs
-# docs/conf.py"""
-
 [tool.dagster]
 module_name = "OpenStudioLandscapes.Template.definitions"
 code_location_name = "OpenStudioLandscapes-Template"
