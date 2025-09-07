@@ -25,7 +25,7 @@ from OpenStudioLandscapes.engine.enums import OpenStudioLandscapesConfig
 DOCKER_USE_CACHE = DOCKER_USE_CACHE_GLOBAL or False
 
 
-GROUP = "n8n"
+GROUP = "Template"
 KEY = [GROUP]
 FEATURE = f"OpenStudioLandscapes-{GROUP}".replace("_", "-")
 
