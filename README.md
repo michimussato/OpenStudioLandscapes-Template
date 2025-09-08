@@ -184,12 +184,12 @@ The following variables are being declared in `OpenStudioLandscapes.Template.con
 
 #### Feature Config: default
 
-| Variable                 | Type   | Value                                                             |
-| :----------------------- | :----- | :---------------------------------------------------------------- |
-| `DOCKER_USE_CACHE`       | `bool` | `False`                                                           |
-| `ENV_VAR_PORT_HOST`      | `str`  | `1234`                                                            |
-| `ENV_VAR_PORT_CONTAINER` | `str`  | `4321`                                                            |
-| `EXTRA_FILE`             | `str`  | `{DOT_FEATURES}/OpenStudioLandscapes-n8n/.payload/bin/extra.file` |
+| Variable                 | Type   | Value                                                                  |
+| :----------------------- | :----- | :--------------------------------------------------------------------- |
+| `DOCKER_USE_CACHE`       | `bool` | `False`                                                                |
+| `ENV_VAR_PORT_HOST`      | `str`  | `1234`                                                                 |
+| `ENV_VAR_PORT_CONTAINER` | `str`  | `4321`                                                                 |
+| `EXTRA_FILE`             | `str`  | `{DOT_FEATURES}/OpenStudioLandscapes-Template/.payload/bin/extra.file` |
 
 # Community
 
