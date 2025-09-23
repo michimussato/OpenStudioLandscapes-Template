@@ -38,6 +38,7 @@ ASSET_HEADER = {
 FEATURE_CONFIGS = {
     OpenStudioLandscapesConfig.DEFAULT: {
         "DOCKER_USE_CACHE": DOCKER_USE_CACHE,
+        "TEMPLATE_HOSTNAME": "template-host",
         "ENV_VAR_PORT_HOST": "1234",
         "ENV_VAR_PORT_CONTAINER": "4321",
         f"EXTRA_FILE": pathlib.Path(
@@ -49,6 +50,8 @@ FEATURE_CONFIGS = {
         )
         .expanduser()
         .as_posix(),
+        "TELEPORT_ENTRY_POINT_HOST": "{{TEMPLATE_HOSTNAME}}",  # Either a hardcoded str or a ref to a Variable (with double {{ }}!)
+        "TELEPORT_ENTRY_POINT_PORT": "{{ENV_VAR_PORT_HOST}}",  # Either a hardcoded str or a ref to a Variable (with double {{ }}!)
     }
 }
 # @formatter:on

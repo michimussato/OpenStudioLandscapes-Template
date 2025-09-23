@@ -362,7 +362,7 @@ def compose_template(
 
     service_name = "template"
     container_name = "--".join([service_name, env.get("LANDSCAPE", "default")])
-    host_name = ".".join([service_name, env["ROOT_DOMAIN"]])
+    host_name = ".".join([env["TEMPLATE_HOSTNAME"] or service_name, env["ROOT_DOMAIN"]])
 
     docker_dict = {
         "services": {
