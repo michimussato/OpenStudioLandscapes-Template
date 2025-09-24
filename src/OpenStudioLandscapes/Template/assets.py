@@ -362,14 +362,14 @@ def compose_template(
 
     service_name = "template"
     container_name = "--".join([service_name, env.get("LANDSCAPE", "default")])
-    host_name = ".".join([env["TEMPLATE_HOSTNAME"] or service_name, env["ROOT_DOMAIN"]])
+    host_name = ".".join([env["HOSTNAME"] or service_name, env["OPENSTUDIOLANDSCAPES__DOMAIN_LAN"]])
 
     docker_dict = {
         "services": {
             service_name: {
                 "container_name": container_name,
                 "hostname": host_name,
-                "domainname": env.get("ROOT_DOMAIN"),
+                "domainname": env.get("OPENSTUDIOLANDSCAPES__DOMAIN_LAN"),
                 # "mac_address": ":".join(re.findall(r"..", env["HOST_ID"])),
                 "restart": "always",
                 "image": "${DOT_OVERRIDES_REGISTRY_NAMESPACE:-docker.io/openstudiolandscapes}/%s:%s"
