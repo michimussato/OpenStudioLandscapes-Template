@@ -246,7 +246,6 @@ Rename all occurrences of `template` in your new Feature with the correct name i
 - remove media `rm ./media/images/*.*`
 - remove nox reports `rm ./.nox/*.*`
 - remove sbom reports `rm ./.sbom/*.*`
-- remove sbom reports `rm ./.sbom/*.*`
 
 ## Commit your initial Setup
 

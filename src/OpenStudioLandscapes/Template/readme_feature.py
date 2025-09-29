@@ -172,7 +172,6 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
             "remove media `rm ./media/images/*.*`",
             "remove nox reports `rm ./.nox/*.*`",
             "remove sbom reports `rm ./.sbom/*.*`",
-            "remove sbom reports `rm ./.sbom/*.*`",
         ]
     )
 
