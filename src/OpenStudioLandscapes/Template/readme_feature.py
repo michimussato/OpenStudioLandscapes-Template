@@ -145,7 +145,7 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
         code=textwrap.dedent(
             """\
             NEW_FEATURE="NewFeature"
-            
+
             cd /to/your/git/repos/OpenStudioLandscapes/.features/OpenStudioLandscapes-${NEW_FEATURE}
             mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/${NEW_FEATURE}\
 """
