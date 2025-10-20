@@ -1,8 +1,6 @@
 import copy
 import json
 import pathlib
-import re
-import shutil
 import textwrap
 import time
 import urllib.parse
@@ -37,6 +35,7 @@ from OpenStudioLandscapes.engine.utils import *
 from OpenStudioLandscapes.engine.utils.docker import *
 
 from OpenStudioLandscapes.Template.constants import *
+
 
 constants = get_constants(
     ASSET_HEADER=ASSET_HEADER,
@@ -231,13 +230,10 @@ def build_docker_image(
 
     context.log.info(f"{cmds = }")
 
-    logs = []
-
-    for logs_ in docker_process_cmds(
+    logs = docker_do(
         context=context,
         cmds=cmds,
-    ):
-        logs.append(logs_)
+    )
 
     yield Output(image_data)
 
