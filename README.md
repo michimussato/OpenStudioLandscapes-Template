@@ -272,3 +272,24 @@ Edit the `OpenStudioLandscapes.engine` to use your new Feature:
 - update `OpenStudioLandscapes/.env`
 - update `OpenStudioLandscapes/src/OpenStudioLandscapes/engine/features.py`
 - update `OpenStudioLandscapes/README.md#current-feature-statuses`
+
+Known Issues:
+
+```shell
+$ /home/michael/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose/docker_compose_up.sh
+~/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose ~
+Working Directory: /home/michael/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose
+Sourcing ../../../../2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/.overrides file...
+Sourced successfully.
+ Container hbbs--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+ Container dagster--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+ Container template--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+ Container mongo-express-10-2--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+ Container repository-installer-10-2--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+ Container ayon-server--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+ Container opencue-flyway--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+ Container kitsu--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+ Container template--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Error response from daemon: no command specified
+Error response from daemon: no command specified
+~
+```
