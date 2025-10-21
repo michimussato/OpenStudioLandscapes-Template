@@ -202,17 +202,17 @@ To follow up on the previous LinkedIn publications, visit:
 
 # Create new Feature from this Template
 
-[![ Logo OpenStudioLandscapes ](https://github.com/michimussato/OpenStudioLandscapes/raw/main/media/images/logo128.png)](https://www.url.com)
+[![Logo OpenStudioLandscapes ](https://github.com/michimussato/OpenStudioLandscapes/raw/main/media/images/logo128.png)](https://www.url.com)
 
 ## Create a new repository from this Template
 
 Click `Use this template` and select `Create a new repository`
 
-![ Create a new repository ](media/images/use_template.png)
+![Create a new repository ](media/images/use_template.png)
 
 And fill in information as needed by specifying the `Repository name *` of the OpenStudioLandscapes Feature (i.e. `OpenStudioLandscapes-NewFeature`):
 
-![ Create a new repository ](media/images/create_repository.png)
+![Create a new repository ](media/images/create_repository.png)
 
 ## Clone new Feature to your local drive
 

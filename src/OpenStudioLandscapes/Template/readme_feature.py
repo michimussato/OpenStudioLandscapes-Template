@@ -17,8 +17,8 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
     # doc.add_paragraph(
     #     snakemd.Inline(
     #         text=textwrap.dedent(
-    #             """
-    #             Logo Template
+    #             """\
+    #             Logo Template\
     #             """
     #         ),
     #         image={
@@ -30,8 +30,8 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
     #
     # doc.add_paragraph(
     #     text=textwrap.dedent(
-    #         """
-    #         Official Template information.
+    #         """\
+    #         Official Template information.\
     #         """
     #     )
     # )
@@ -50,8 +50,8 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
     doc.add_paragraph(
         snakemd.Inline(
             text=textwrap.dedent(
-                """
-                Logo OpenStudioLandscapes
+                """\
+                Logo OpenStudioLandscapes\
                 """
             ),
             image="https://github.com/michimussato/OpenStudioLandscapes/raw/main/media/images/logo128.png",
@@ -66,8 +66,8 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
 
     doc.add_paragraph(
         text=textwrap.dedent(
-            """
-            Click `Use this template` and select `Create a new repository`
+            """\
+            Click `Use this template` and select `Create a new repository`\
             """
         )
     )
@@ -75,8 +75,8 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
     doc.add_paragraph(
         snakemd.Inline(
             text=textwrap.dedent(
-                """
-                Create a new repository
+                """\
+                Create a new repository\
                 """
             ),
             image="media/images/use_template.png",
@@ -86,9 +86,9 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
 
     doc.add_paragraph(
         text=textwrap.dedent(
-            """
+            """\
             And fill in information as needed by specifying the `Repository name *`
-            of the OpenStudioLandscapes Feature (i.e. `OpenStudioLandscapes-NewFeature`):
+            of the OpenStudioLandscapes Feature (i.e. `OpenStudioLandscapes-NewFeature`):\
             """
         )
     )
@@ -96,8 +96,8 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
     doc.add_paragraph(
         snakemd.Inline(
             text=textwrap.dedent(
-                """
-                Create a new repository
+                """\
+                Create a new repository\
                 """
             ),
             image="media/images/create_repository.png",
@@ -112,9 +112,9 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
 
     doc.add_paragraph(
         text=textwrap.dedent(
-            """
+            """\
             Clone the new Feature into the `.features` directory of your local
-            `OpenStudioLandscapes` clone:
+            `OpenStudioLandscapes` clone:\
             """
         )
     )
@@ -135,8 +135,8 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
 
     doc.add_paragraph(
         text=textwrap.dedent(
-            """
-            Rename the package directory from `Template` to `NewFeature`:
+            """\
+            Rename the package directory from `Template` to `NewFeature`:\
             """
         )
     )
@@ -154,9 +154,9 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
 
     doc.add_paragraph(
         text=textwrap.dedent(
-            """
+            """\
             Rename all occurrences of `template` in your new Feature with
-            the correct name in the following files:
+            the correct name in the following files:\
             """
         )
     )
@@ -182,8 +182,8 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
 
     doc.add_paragraph(
         text=textwrap.dedent(
-            """
-            Commit all changes to Git:
+            """\
+            Commit all changes to Git:\
             """
         )
     )
@@ -205,8 +205,8 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
 
     doc.add_paragraph(
         text=textwrap.dedent(
-            """
-            Commit all changes to Git:
+            """\
+            Commit all changes to Git:\
             """
         )
     )
@@ -224,9 +224,9 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
 
     doc.add_paragraph(
         text=textwrap.dedent(
-            """
+            """\
             Edit the `OpenStudioLandscapes.engine` to use
-            your new Feature:
+            your new Feature:\
             """
         )
     )
