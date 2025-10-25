@@ -169,6 +169,7 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
             "update `./src/OpenStudioLandscapes/${NEW_FEATURE}/constants.py`",
             "update `./src/OpenStudioLandscapes/${NEW_FEATURE}/definitions.py`",
             "update `./src/OpenStudioLandscapes/${NEW_FEATURE}/readme_feature.py` [`snakemd` Documentation](https://www.snakemd.io/en/latest/)",
+            "update `/.coveragerc`",
             "remove media `rm ./media/images/*.*`",
             "remove nox reports `rm ./.nox/*.*`",
             "remove sbom reports `rm ./.sbom/*.*`",
@@ -196,6 +197,18 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
             git push\
 """
         )
+    )
+
+    doc.add_heading(
+        text="Tag `OpenStudioLandscapesUtil` Repos",
+        level=2,
+    )
+
+    doc.add_unordered_list(
+        [
+            "[OpenStudioLandscapesUtil-HarborCLI](https://github.com/michimussato/OpenStudioLandscapesUtil-HarborCLI?tab=readme-ov-file#tagging)",
+            "[OpenStudioLandscapesUtil-ReadmeGenerator](https://github.com/michimussato/OpenStudioLandscapesUtil-ReadmeGenerator?tab=readme-ov-file#tagging)",
+        ]
     )
 
     doc.add_heading(
@@ -237,6 +250,50 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
             "update `OpenStudioLandscapes/src/OpenStudioLandscapes/engine/features.py`",
             "update `OpenStudioLandscapes/README.md#current-feature-statuses`",
         ]
+    )
+
+    doc.add_heading(
+        text="Known Issues",
+        level=2,
+    )
+
+    doc.add_heading(
+        text="`no command specified`",
+        level=3,
+    )
+
+    doc.add_paragraph(
+        text=textwrap.dedent(
+            """\
+            `OpenStudioLandscapes-Template` can't be launched
+            as a Feature in a Landscape. If you do, this is the
+            error message you will be presented with:\
+            """
+        )
+    )
+
+    doc.add_code(
+        code=textwrap.dedent(
+            """\
+            $ /home/michael/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose/docker_compose_up.sh
+            ~/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose ~
+            Working Directory: /home/michael/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose
+            Sourcing ../../../../2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/.overrides file...
+            Sourced successfully.
+             Container hbbs--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+             Container dagster--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+             Container template--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+             Container mongo-express-10-2--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+             Container repository-installer-10-2--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+             Container ayon-server--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+             Container opencue-flyway--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+             Container kitsu--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating
+             Container template--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Error response from daemon: no command specified
+            Error response from daemon: no command specified
+            ~\
+"""
+        ),
+        lang="shell",
     )
 
     # ... TO HERE
