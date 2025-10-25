@@ -21,6 +21,8 @@
    4. [Commit your initial Setup](#commit-your-initial-setup)
    5. [Tag `OpenStudioLandscapesUtil` Repos](#tag-openstudiolandscapesutil-repos)
    6. [Enable OpenStudioLandscapes-NewFeature in the Engine](#enable-openstudiolandscapes-newfeature-in-the-engine)
+   7. [Known Issues](#known-issues)
+      1. [`no command specified`](#no-command-specified)
 
 ***
 
@@ -193,6 +195,7 @@ The following variables are being declared in `OpenStudioLandscapes.Template.con
 | OpenStudioLandscapes-RustDeskServer | [https://github.com/michimussato/OpenStudioLandscapes-RustDeskServer](https://github.com/michimussato/OpenStudioLandscapes-RustDeskServer) | [# openstudiolandscapes-rustdeskserver](https://discord.gg/nJ8Ffd2xY3) |
 | OpenStudioLandscapes-Template       | [https://github.com/michimussato/OpenStudioLandscapes-Template](https://github.com/michimussato/OpenStudioLandscapes-Template)             | [# openstudiolandscapes-template](https://discord.gg/J59GYp3Wpy)       |
 | OpenStudioLandscapes-Twingate       | [https://github.com/michimussato/OpenStudioLandscapes-Twingate](https://github.com/michimussato/OpenStudioLandscapes-Twingate)             | [# openstudiolandscapes-twingate](https://discord.gg/tREYa6UNJf)       |
+| OpenStudioLandscapes-VERT           | [https://github.com/michimussato/OpenStudioLandscapes-VERT](https://github.com/michimussato/OpenStudioLandscapes-VERT)                     | [# openstudiolandscapes-twingate](https://discord.gg/FYaFRUwbYr)       |
 
 To follow up on the previous LinkedIn publications, visit:
 
@@ -280,7 +283,11 @@ Edit the `OpenStudioLandscapes.engine` to use your new Feature:
 - update `OpenStudioLandscapes/src/OpenStudioLandscapes/engine/features.py`
 - update `OpenStudioLandscapes/README.md#current-feature-statuses`
 
-Known Issues:
+## Known Issues
+
+### `no command specified`
+
+`OpenStudioLandscapes-Template` can't be launched as a Feature in a Landscape. If you do, this is the error message you will be presented with:
 
 ```shell
 $ /home/michael/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose/docker_compose_up.sh

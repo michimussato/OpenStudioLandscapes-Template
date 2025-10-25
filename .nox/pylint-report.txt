@@ -28,6 +28,16 @@ src/OpenStudioLandscapes/Template/definitions.py:1:0: C0114: Missing module docs
 ************* Module OpenStudioLandscapes.Template.readme_feature
 src/OpenStudioLandscapes/Template/readme_feature.py:57:0: C0301: Line too long (107/100) (line-too-long)
 src/OpenStudioLandscapes/Template/readme_feature.py:171:0: C0301: Line too long (144/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:209:0: C0301: Line too long (146/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:210:0: C0301: Line too long (158/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:278:0: C0301: Line too long (239/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:279:0: C0301: Line too long (206/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:280:0: C0301: Line too long (235/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:281:0: C0301: Line too long (104/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:286:0: C0301: Line too long (105/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:287:0: C0301: Line too long (112/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:289:0: C0301: Line too long (101/100) (line-too-long)
+src/OpenStudioLandscapes/Template/readme_feature.py:291:0: C0301: Line too long (135/100) (line-too-long)
 src/OpenStudioLandscapes/Template/readme_feature.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Template/readme_feature.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
 src/OpenStudioLandscapes/Template/readme_feature.py:51:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
@@ -51,5 +61,5 @@ src/OpenStudioLandscapes/Template/__init__.py:1:0: C0103: Module name "Template"
 src/OpenStudioLandscapes/Template/__init__.py:11:4: C0103: Constant name "dist_name" doesn't conform to UPPER_CASE naming style (invalid-name)
 
 ------------------------------------------------------------------
-Your code has been rated at 7.41/10 (previous run: 7.29/10, +0.12)
+Your code has been rated at 6.94/10 (previous run: 7.29/10, -0.35)
 
