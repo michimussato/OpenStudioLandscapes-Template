@@ -243,6 +243,7 @@ Rename all occurrences of `template` in your new Feature with the correct name i
 - update `./src/OpenStudioLandscapes/${NEW_FEATURE}/constants.py`
 - update `./src/OpenStudioLandscapes/${NEW_FEATURE}/definitions.py`
 - update `./src/OpenStudioLandscapes/${NEW_FEATURE}/readme_feature.py` [`snakemd` Documentation](https://www.snakemd.io/en/latest/)
+- update `/.coveragerc`
 - remove media `rm ./media/images/*.*`
 - remove nox reports `rm ./.nox/*.*`
 - remove sbom reports `rm ./.sbom/*.*`
