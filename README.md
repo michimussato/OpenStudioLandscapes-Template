@@ -19,7 +19,8 @@
    2. [Clone new Feature to your local drive](#clone-new-feature-to-your-local-drive)
    3. [Replace `Template` occurrences in `OpenStudioLandscapes-NewFeature`](#replace-template-occurrences-in-openstudiolandscapes-newfeature)
    4. [Commit your initial Setup](#commit-your-initial-setup)
-   5. [Enable OpenStudioLandscapes-NewFeature in the Engine](#enable-openstudiolandscapes-newfeature-in-the-engine)
+   5. [Tag `OpenStudioLandscapesUtil` Repos](#tag-openstudiolandscapesutil-repos)
+   6. [Enable OpenStudioLandscapes-NewFeature in the Engine](#enable-openstudiolandscapes-newfeature-in-the-engine)
 
 ***
 
@@ -255,6 +256,11 @@ git add *
 git commit -m "Initial Setup"
 git push
 ```
+
+## Tag `OpenStudioLandscapesUtil` Repos
+
+- [OpenStudioLandscapesUtil-HarborCLI](https://github.com/michimussato/OpenStudioLandscapesUtil-HarborCLI?tab=readme-ov-file#tagging)
+- [OpenStudioLandscapesUtil-ReadmeGenerator](https://github.com/michimussato/OpenStudioLandscapesUtil-ReadmeGenerator?tab=readme-ov-file#tagging)
 
 ## Enable OpenStudioLandscapes-NewFeature in the Engine
 
