@@ -61,5 +61,5 @@ src/OpenStudioLandscapes/Template/__init__.py:1:0: C0103: Module name "Template"
 src/OpenStudioLandscapes/Template/__init__.py:11:4: C0103: Constant name "dist_name" doesn't conform to UPPER_CASE naming style (invalid-name)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.94/10 (previous run: 7.29/10, -0.35)
+Your code has been rated at 6.94/10 (previous run: 7.24/10, -0.29)
 
