@@ -18,10 +18,11 @@
    1. [Create a new repository from this Template](#create-a-new-repository-from-this-template)
    2. [Clone new Feature to your local drive](#clone-new-feature-to-your-local-drive)
    3. [Replace `Template` occurrences in `OpenStudioLandscapes-NewFeature`](#replace-template-occurrences-in-openstudiolandscapes-newfeature)
-   4. [Commit your initial Setup](#commit-your-initial-setup)
-   5. [Tag `OpenStudioLandscapesUtil` Repos](#tag-openstudiolandscapesutil-repos)
-   6. [Enable OpenStudioLandscapes-NewFeature in the Engine](#enable-openstudiolandscapes-newfeature-in-the-engine)
-   7. [Known Issues](#known-issues)
+   4. [Create `pyproject.toml`](#create-pyprojecttoml)
+   5. [Commit your initial Setup](#commit-your-initial-setup)
+   6. [Tag `OpenStudioLandscapesUtil` Repos](#tag-openstudiolandscapesutil-repos)
+   7. [Enable OpenStudioLandscapes-NewFeature in the Engine](#enable-openstudiolandscapes-newfeature-in-the-engine)
+   8. [Known Issues](#known-issues)
       1. [`no command specified`](#no-command-specified)
 
 ***
@@ -243,6 +244,7 @@ mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/${NEW_FEATURE}
 Rename all occurrences of `template` in your new Feature with the correct name in the following files:
 
 - update [`./pyproject.toml`](./pyproject.toml)
+- update `./pyproject_layer.yaml`
 - update `./src/OpenStudioLandscapes/${NEW_FEATURE}/__init__.py`
 - update `./src/OpenStudioLandscapes/${NEW_FEATURE}/assets.py`
 - update `./src/OpenStudioLandscapes/${NEW_FEATURE}/constants.py`
@@ -252,6 +254,12 @@ Rename all occurrences of `template` in your new Feature with the correct name i
 - remove media `rm ./media/images/*.*`
 - remove nox reports `rm ./.nox/*.*`
 - remove sbom reports `rm ./.sbom/*.*`
+
+## Create `pyproject.toml`
+
+```generic
+nox -session "readme(OpenStudioLandscapes-<FEATURE>)"
+```
 
 ## Commit your initial Setup
 
