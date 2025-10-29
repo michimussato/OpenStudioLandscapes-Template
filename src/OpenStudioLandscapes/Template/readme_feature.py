@@ -164,6 +164,7 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
     doc.add_unordered_list(
         [
             "update [`./pyproject.toml`](./pyproject.toml)",
+            "update `./pyproject_layer.yaml`",
             "update `./src/OpenStudioLandscapes/${NEW_FEATURE}/__init__.py`",
             "update `./src/OpenStudioLandscapes/${NEW_FEATURE}/assets.py`",
             "update `./src/OpenStudioLandscapes/${NEW_FEATURE}/constants.py`",
@@ -174,6 +175,19 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
             "remove nox reports `rm ./.nox/*.*`",
             "remove sbom reports `rm ./.sbom/*.*`",
         ]
+    )
+
+    doc.add_heading(
+        text="Create `pyproject.toml`",
+        level=2,
+    )
+
+    doc.add_code(
+        code=textwrap.dedent(
+            """\
+            nox -session "readme(OpenStudioLandscapes-<FEATURE>)"\
+"""
+        )
     )
 
     doc.add_heading(
