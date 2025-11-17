@@ -110,18 +110,7 @@ def build_docker_image(
 ) -> Generator[Output[dict] | AssetMaterialization, None, None]:
     """ """
 
-    build_base_image_data: dict = group_in["docker_image"]
-    build_base_docker_config: DockerConfig = group_in["docker_config"]
-
-    if build_base_docker_config.value["docker_push"]:
-        build_base_parent_image_prefix: str = build_base_image_data["image_prefix_full"]
-    else:
-        build_base_parent_image_prefix: str = build_base_image_data[
-            "image_prefix_local"
-        ]
-
-    build_base_parent_image_name: str = build_base_image_data["image_name"]
-    build_base_parent_image_tags: list = build_base_image_data["image_tags"]
+    docker_image: dict = group_in["docker_image"]
 
     docker_file = pathlib.Path(
         env["DOT_LANDSCAPES"],
@@ -134,19 +123,23 @@ def build_docker_image(
 
     docker_file.parent.mkdir(parents=True, exist_ok=True)
 
-    image_name = get_image_name(context=context)
-    image_prefix_local = parse_docker_image_path(
-        docker_config=build_base_docker_config,
-        prepend_registry=False,
-    )
-    image_prefix_full = parse_docker_image_path(
-        docker_config=build_base_docker_config,
-        prepend_registry=True,
+    #################################################
+
+    (
+        image_name,
+        image_prefixes,
+        tags,
+        build_base_parent_image_prefix,
+        build_base_parent_image_name,
+        build_base_parent_image_tags
+    ) = get_image_metadata(
+        context=context,
+        docker_image=docker_image,
+        docker_config=docker_config,
+        env=env,
     )
 
-    tags = [
-        env.get("LANDSCAPE", str(time.time())),
-    ]
+    #################################################
 
     # @formatter:off
     docker_file_str = textwrap.dedent(
@@ -194,44 +187,17 @@ def build_docker_image(
     with open(docker_file, "r") as fr:
         docker_file_content = fr.read()
 
-    image_data = {
-        "image_name": image_name,
-        "image_prefix_local": image_prefix_local,
-        "image_prefix_full": image_prefix_full,
-        "image_tags": tags,
-        "image_parent": copy.deepcopy(build_base_image_data),
-    }
+    #################################################
 
-    context.log.info(f"{image_data = }")
-
-    cmds = []
-
-    tags_local = [f"{image_prefix_local}{image_name}:{tag}" for tag in tags]
-    tags_full = [f"{image_prefix_full}{image_name}:{tag}" for tag in tags]
-
-    cmd_build = docker_build_cmd(
+    image_data, logs = create_image(
         context=context,
+        image_name=image_name,
+        image_prefixes=image_prefixes,
+        tags=tags,
+        docker_image=docker_image,
+        docker_config=docker_config,
         docker_config_json=docker_config_json,
         docker_file=docker_file,
-        tags_local=tags_local,
-        tags_full=tags_full,
-    )
-
-    cmds.append(cmd_build)
-
-    cmds_push = docker_push_cmd(
-        context=context,
-        docker_config_json=docker_config_json,
-        tags_full=tags_full,
-    )
-
-    cmds.extend(cmds_push)
-
-    context.log.info(f"{cmds = }")
-
-    logs = docker_do(
-        context=context,
-        cmds=cmds,
     )
 
     yield Output(image_data)
