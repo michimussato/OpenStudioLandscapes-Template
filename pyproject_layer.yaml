@@ -1,5 +1,5 @@
 project:
-  dependencies: []
+  # dependencies: []
   description: Template Feature for OpenStudioLandscapes
   name: OpenStudioLandscapes-Template
   optional-dependencies:
