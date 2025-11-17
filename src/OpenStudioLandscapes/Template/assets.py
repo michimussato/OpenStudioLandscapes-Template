@@ -2,7 +2,6 @@ import copy
 import json
 import pathlib
 import textwrap
-import time
 import urllib.parse
 from typing import Any, Generator
 
@@ -32,7 +31,6 @@ from OpenStudioLandscapes.engine.common_assets.group_out import get_group_out
 from OpenStudioLandscapes.engine.constants import *
 from OpenStudioLandscapes.engine.enums import *
 from OpenStudioLandscapes.engine.utils import *
-from OpenStudioLandscapes.engine.utils.docker import *
 
 from OpenStudioLandscapes.Template.constants import *
 
@@ -97,6 +95,9 @@ docker_config_json = get_docker_config_json(
         "docker_config_json": AssetIn(
             AssetKey([*ASSET_HEADER["key_prefix"], "docker_config_json"]),
         ),
+        "docker_config": AssetIn(
+            AssetKey([*ASSET_HEADER["key_prefix"], "docker_config"])
+        ),
         "group_in": AssetIn(
             AssetKey([*ASSET_HEADER_BASE["key_prefix"], str(GroupIn.BASE_IN)])
         ),
@@ -106,6 +107,7 @@ def build_docker_image(
     context: AssetExecutionContext,
     env: dict,  # pylint: disable=redefined-outer-name
     docker_config_json: pathlib.Path,  # pylint: disable=redefined-outer-name
+    docker_config: DockerConfig,  # pylint: disable=redefined-outer-name
     group_in: dict,  # pylint: disable=redefined-outer-name
 ) -> Generator[Output[dict] | AssetMaterialization, None, None]:
     """ """
