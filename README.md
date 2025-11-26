@@ -174,16 +174,13 @@ The following variables are being declared in `OpenStudioLandscapes.Template.con
 
 #### Feature Config: default
 
-| Variable                    | Type   | Value                                                                  |
-| :-------------------------- | :----- | :--------------------------------------------------------------------- |
-| `DOCKER_USE_CACHE`          | `bool` | `False`                                                                |
-| `HOSTNAME`                  | `str`  | `template`                                                             |
-| `TELEPORT_ENTRY_POINT_HOST` | `str`  | `{{HOSTNAME}}`                                                         |
-| `TELEPORT_ENTRY_POINT_PORT` | `str`  | `{{ENV_VAR_PORT_HOST}}`                                                |
-| `ENV_VAR_PORT_HOST`         | `str`  | `1234`                                                                 |
-| `ENV_VAR_PORT_CONTAINER`    | `str`  | `4321`                                                                 |
-| `EXTRA_FILE`                | `str`  | `{DOT_FEATURES}/OpenStudioLandscapes-Template/.payload/bin/extra.file` |
-| `TEMPLATE_VOLUME`           | `str`  | `{DOT_LANDSCAPES}/{LANDSCAPE}/Template__Template/data`                 |
+| Variable                 | Type   | Value                                                                  |
+| :----------------------- | :----- | :--------------------------------------------------------------------- |
+| `DOCKER_USE_CACHE`       | `bool` | `False`                                                                |
+| `ENV_VAR_PORT_HOST`      | `str`  | `1234`                                                                 |
+| `ENV_VAR_PORT_CONTAINER` | `str`  | `4321`                                                                 |
+| `EXTRA_FILE`             | `str`  | `{DOT_FEATURES}/OpenStudioLandscapes-Template/.payload/bin/extra.file` |
+| `TEMPLATE_VOLUME`        | `str`  | `{DOT_LANDSCAPES}/{LANDSCAPE}/Template__Template/data`                 |
 
 # Community
 
