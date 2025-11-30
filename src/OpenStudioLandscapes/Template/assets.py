@@ -32,6 +32,7 @@ from OpenStudioLandscapes.engine.constants import *
 from OpenStudioLandscapes.engine.enums import *
 from OpenStudioLandscapes.engine.policies.retry import build_docker_image_retry_policy
 from OpenStudioLandscapes.engine.utils import *
+from OpenStudioLandscapes.engine.utils.docker.compose_dicts import *
 
 from OpenStudioLandscapes.Template.constants import *
 
@@ -219,28 +220,26 @@ def build_docker_image(
 
 @asset(
     **ASSET_HEADER,
+    ins={
+        "env": AssetIn(
+            AssetKey([*ASSET_HEADER["key_prefix"], "env"]),
+        ),
+    },
 )
 def compose_networks(
     context: AssetExecutionContext,
+    env: dict,  # pylint: disable=redefined-outer-name
 ) -> Generator[
     Output[dict[str, dict[str, dict[str, str]]]] | AssetMaterialization, None, None
 ]:
 
-    compose_network_mode = DockerComposePolicies.NETWORK_MODE.DEFAULT
+    compose_network_mode = DockerComposePolicies.NETWORK_MODE.BRIDGE
 
-    if compose_network_mode is DockerComposePolicies.NETWORK_MODE.DEFAULT:
-        docker_dict = {
-            "networks": {
-                "template": {
-                    "name": "network_template",
-                },
-            },
-        }
-
-    else:
-        docker_dict = {
-            "network_mode": compose_network_mode.value,
-        }
+    docker_dict = get_network_dicts(
+        context=context,
+        compose_network_mode=compose_network_mode,
+        env=env,
+    )
 
     docker_yaml = yaml.dump(docker_dict)
 
