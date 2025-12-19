@@ -42,7 +42,7 @@ class Config(FeatureBaseModel):
 
     MOUNTED_VOLUME: pathlib.Path = Field(
         description="The host side mounted volume.",
-        default=pathlib.Path("{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/volume")
+        default=pathlib.Path("{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/volume"),
     )
 
     # EXPANDABLE PATHS
