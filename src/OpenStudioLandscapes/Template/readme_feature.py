@@ -318,8 +318,6 @@ def readme_feature(doc: snakemd.Document) -> snakemd.Document:
     # https://www.snakemd.io/en/latest/
     ##################################################
 
-    # doc.add_horizontal_rule()
-
     return doc
 
 
