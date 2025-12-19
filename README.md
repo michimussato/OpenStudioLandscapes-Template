@@ -5,7 +5,6 @@
 1. [Feature: OpenStudioLandscapes-Template](#feature-openstudiolandscapes-template)
    1. [Brief](#brief)
    2. [Configuration](#configuration)
-   3. [Official Resources](#official-resources)
 2. [Create new Feature from this Template](#create-new-feature-from-this-template)
    1. [Create a new repository from this Template](#create-a-new-repository-from-this-template)
    2. [Clone new Feature to your local drive](#clone-new-feature-to-your-local-drive)
@@ -84,8 +83,6 @@ key_prefixes:
 ```
 
 ***
-
-## Official Resources
 
 # Create new Feature from this Template
 
@@ -319,4 +316,4 @@ Currently, the following Python interpreters are enabled for testing:
 
 ***
 
-Last changed: **2025-12-19 15:51:42 UTC**.
+Last changed: **2025-12-19 16:41:34 UTC**
