@@ -321,6 +321,8 @@ def readme_feature(
     # https://www.snakemd.io/en/latest/
     ##################################################
 
+    doc.add_horizontal_rule()
+
     return doc
 
 
