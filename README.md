@@ -308,9 +308,6 @@ ENV_VAR_PORT_CONTAINER: 2345
 # Examples:
 #     None
 MOUNTED_VOLUME: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/volume'
-
-
-
 ```
 
 ***
@@ -547,4 +544,4 @@ Currently, the following Python interpreters are enabled for testing:
 
 ***
 
-Last changed: **2025-12-23 13:35:05 UTC**
+Last changed: **2025-12-23 13:37:25 UTC**
