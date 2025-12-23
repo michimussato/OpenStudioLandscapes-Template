@@ -66,19 +66,164 @@ A local config store location will be created if it doesn't exist, together with
 The following settings are available in `OpenStudioLandscapes-Template` and are accessible throughout the [`OpenStudioLandscapes-Template`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/main/OpenStudioLandscapes/Template/config/models.py) package.
 
 ```yaml
-# Base Information
-group_name: "OpenStudioLandscapes_Template"
-key_prefixes:
-  - "OpenStudioLandscapes_Template"
+# ===
+# env
+# ---
+#
+# Type: typing.Dict
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
 
-#compose_scope: "default"
 
-#enabled: false
+# =============
+# config_engine
+# -------------
+#
+# Type: <class 'OpenStudioLandscapes.engine.config.models.ConfigEngine'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
 
-#ENV_VAR_PORT_HOST: 1234
-#ENV_VAR_PORT_CONTAINER: 2345
 
-#MOUNTED_VOLUME: "{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/volume"
+# =============
+# config_parent
+# -------------
+#
+# Type: <class 'OpenStudioLandscapes.engine.config.models.FeatureBaseModel'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
+
+
+# ============
+# distribution
+# ------------
+#
+# Type: <class 'importlib.metadata.Distribution'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
+
+
+# ==========
+# group_name
+# ----------
+#
+# Type: <class 'str'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
+
+
+# ============
+# key_prefixes
+# ------------
+#
+# Type: typing.List[str]
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
+
+
+# =======
+# enabled
+# -------
+#
+# Type: <class 'bool'>
+# Base Class:
+#     Description:
+#         Whether the Feature is enabled or not.
+#     Default value:
+#         True
+enabled: false
+
+
+# =============
+# compose_scope
+# -------------
+#
+# Type: <class 'str'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         default
+
+
+# ============
+# feature_name
+# ------------
+#
+# Type: <class 'str'>
+# Base Class:
+#     Description:
+#         The name of the feature. It is derived from the `OpenStudioLandscapes.<Feature>.dist` attribute.
+#     Default value:
+#         PydanticUndefined
+feature_name: OpenStudioLandscapes-Template
+
+
+# ==============
+# docker_compose
+# --------------
+#
+# Type: <class 'pathlib.Path'>
+# Base Class:
+#     Description:
+#         The path to the `docker-compose.yml` file.
+#     Default value:
+#         {DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/docker_compose/docker-compose.yml
+
+
+# =================
+# ENV_VAR_PORT_HOST
+# -----------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The host port.
+# Examples:
+#     None
+ENV_VAR_PORT_HOST: 1234
+
+
+# ======================
+# ENV_VAR_PORT_CONTAINER
+# ----------------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The Ayon container port.
+# Examples:
+#     None
+ENV_VAR_PORT_CONTAINER: 2345
+
+
+# ==============
+# MOUNTED_VOLUME
+# --------------
+#
+# Type: <class 'pathlib.Path'>
+# Sub Class Description:
+#     The host side mounted volume.
+# Examples:
+#     None
+MOUNTED_VOLUME: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/volume'
+
+
 
 ```
 
@@ -316,4 +461,4 @@ Currently, the following Python interpreters are enabled for testing:
 
 ***
 
-Last changed: **2025-12-19 21:11:37 UTC**
+Last changed: **2025-12-23 12:26:21 UTC**
