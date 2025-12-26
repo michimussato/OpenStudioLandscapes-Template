@@ -6,6 +6,7 @@
    1. [Brief](#brief)
    2. [Install](#install)
    3. [Configure](#configure)
+      1. [Default Configuration](#default-configuration)
 2. [Create new Feature from this Template](#create-new-feature-from-this-template)
    1. [Create a new repository from this Template](#create-a-new-repository-from-this-template)
    2. [Clone new Feature to your local drive](#clone-new-feature-to-your-local-drive)
@@ -83,9 +84,11 @@ A local config store location will be created if it doesn't exist, together with
 
 The following settings are available in `OpenStudioLandscapes-Template` and are based on [`OpenStudioLandscapes-Template/tree/main/OpenStudioLandscapes/Template/config/models.py`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/main/OpenStudioLandscapes/Template/config/models.py).
 
+### Default Configuration
+
 
 <details>
-<summary>Default Configuration (click to expand)</summary>
+<summary(click to expand)</summary>
 
 
 ```yaml
@@ -476,4 +479,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2025-12-26 10:47:46 UTC**
+Last changed: **2025-12-26 10:53:13 UTC**
