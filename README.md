@@ -43,8 +43,10 @@ Clone this repository into `OpenStudioLandscapes/.features` (assuming the curren
 ```shell
 git -C ./.features clone https://github.com/michimussato/OpenStudioLandscapes-Template.git
 # Check out a specific branch with:
-# List branches: git -C ./.features/OpenStudioLandscapes-Template branch -a
-# Checkout branch: git -C ./.features/OpenStudioLandscapes-Template checkout <branch>
+# List branches: 
+# git -C ./.features/OpenStudioLandscapes-Template branch -a
+# Checkout branch: 
+# git -C ./.features/OpenStudioLandscapes-Template checkout <branch>
 ```
 
 Install into OpenStudioLandscapes `venv` (`./OpenStudioLandscapes/.venv`):
@@ -479,4 +481,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2025-12-26 10:59:49 UTC**
+Last changed: **2025-12-26 12:27:02 UTC**
