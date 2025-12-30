@@ -52,123 +52,6 @@
         "message-id": "C0114"
     },
     {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 20,
-        "column": 0,
-        "endLine": 22,
-        "endColumn": 1,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "import-error",
-        "message": "Unable to import 'OpenStudioLandscapes.engine.common_assets.compose_scope'",
-        "message-id": "E0401"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 20,
-        "column": 0,
-        "endLine": 22,
-        "endColumn": 1,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "no-name-in-module",
-        "message": "No name 'compose_scope' in module 'OpenStudioLandscapes.engine.common_assets'",
-        "message-id": "E0611"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 26,
-        "column": 0,
-        "endLine": 26,
-        "endColumn": 81,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "import-error",
-        "message": "Unable to import 'OpenStudioLandscapes.engine.common_assets.feature'",
-        "message-id": "E0401"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 26,
-        "column": 0,
-        "endLine": 26,
-        "endColumn": 81,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "no-name-in-module",
-        "message": "No name 'feature' in module 'OpenStudioLandscapes.engine.common_assets'",
-        "message-id": "E0611"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 27,
-        "column": 0,
-        "endLine": 27,
-        "endColumn": 84,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "no-name-in-module",
-        "message": "No name 'get_feature_out_v2' in module 'OpenStudioLandscapes.engine.common_assets.feature_out'",
-        "message-id": "E0611"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 28,
-        "column": 0,
-        "endLine": 31,
-        "endColumn": 1,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "no-name-in-module",
-        "message": "No name 'get_feature_in' in module 'OpenStudioLandscapes.engine.common_assets.group_in'",
-        "message-id": "E0611"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 28,
-        "column": 0,
-        "endLine": 31,
-        "endColumn": 1,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "no-name-in-module",
-        "message": "No name 'get_feature_in_parent' in module 'OpenStudioLandscapes.engine.common_assets.group_in'",
-        "message-id": "E0611"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 33,
-        "column": 0,
-        "endLine": 33,
-        "endColumn": 85,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "import-error",
-        "message": "Unable to import 'OpenStudioLandscapes.engine.config.models'",
-        "message-id": "E0401"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 33,
-        "column": 0,
-        "endLine": 33,
-        "endColumn": 85,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "no-name-in-module",
-        "message": "No name 'config' in module 'OpenStudioLandscapes.engine'",
-        "message-id": "E0611"
-    },
-    {
         "type": "warning",
         "module": "OpenStudioLandscapes.Template.assets",
         "obj": "",
@@ -193,32 +76,6 @@
         "symbol": "wildcard-import",
         "message": "Wildcard import OpenStudioLandscapes.engine.enums",
         "message-id": "W0401"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 36,
-        "column": 0,
-        "endLine": 36,
-        "endColumn": 81,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "import-error",
-        "message": "Unable to import 'OpenStudioLandscapes.engine.link.models'",
-        "message-id": "E0401"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 36,
-        "column": 0,
-        "endLine": 36,
-        "endColumn": 81,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "no-name-in-module",
-        "message": "No name 'link' in module 'OpenStudioLandscapes.engine'",
-        "message-id": "E0611"
     },
     {
         "type": "warning",
@@ -260,19 +117,6 @@
         "message-id": "W0401"
     },
     {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "",
-        "line": 100,
-        "column": 18,
-        "endLine": 100,
-        "endColumn": 30,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "undefined-variable",
-        "message": "Undefined variable 'ConfigParent'",
-        "message-id": "E0602"
-    },
-    {
         "type": "convention",
         "module": "OpenStudioLandscapes.Template.assets",
         "obj": "build_docker_image",
@@ -310,19 +154,6 @@
         "symbol": "too-many-locals",
         "message": "Too many local variables (21/15)",
         "message-id": "R0914"
-    },
-    {
-        "type": "warning",
-        "module": "OpenStudioLandscapes.Template.assets",
-        "obj": "build_docker_image",
-        "line": 131,
-        "column": 4,
-        "endLine": 131,
-        "endColumn": 17,
-        "path": "src/OpenStudioLandscapes/Template/assets.py",
-        "symbol": "redefined-outer-name",
-        "message": "Redefining name 'docker_config' from outer scope (line 34)",
-        "message-id": "W0621"
     },
     {
         "type": "warning",
@@ -464,7 +295,20 @@
         "endColumn": 51,
         "path": "src/OpenStudioLandscapes/Template/assets.py",
         "symbol": "unused-wildcard-import",
-        "message": "Unused import(s) os, LOGGER, DOCKER_PROGRESS, docker_config_, msg, e, DOCKER_CONFIG, DOCKER_USE_CACHE_GLOBAL, DOCKER_USE_CACHE_BASE, PREFIX_COMPOSE_SCOPE, GROUP_COMPOSE, KEY_COMPOSE, ASSET_HEADER_COMPOSE, ENVIRONMENT_COMPOSE, GROUP_COMPOSE_LICENSE_SERVER, KEY_COMPOSE_LICENSE_SERVER, ASSET_HEADER_COMPOSE_LICENSE_SERVER, ENVIRONMENT_COMPOSE_LICENSE_SERVER, GROUP_COMPOSE_WORKER, KEY_COMPOSE_WORKER, ASSET_HEADER_COMPOSE_WORKER, ENVIRONMENT_COMPOSE_WORKER, GROUP_BASE_ENV, KEY_BASE_ENV, ASSET_HEADER_BASE_ENV, GROUP_BASE, KEY_BASE, GROUP_LANDSCAPE_MAP, KEY_LANDSCAPE_MAP, ASSET_HEADER_LANDSCAPE_MAP, GROUP_TELEPORT, KEY_TELEPORT, ASSET_HEADER_TELEPORT, GROUP_TRAEFIK, KEY_TRAEFIK, ASSET_HEADER_TRAEFIK, GROUP_DISTRIBUTABLE, KEY_DISTRIBUTABLE, ASSET_HEADER_DISTRIBUTABLE, constants_base, features, docker_config, Any, MutableMapping, get_dagster_logger, GroupIn, OpenStudioLandscapesConfig, FeatureVolumeType, ComposeScope, ComposeCmdExclusion, DockerComposeNetworkMode, DockerComposeRestartPolicy, DockerComposeDependsOnPolicy, DockerRegistry, DockerRepositoryType, DockerConfig, EnvVar, FEATURES, constants_compose, constants_compose_license_server and constants_compose_worker from wildcard import of OpenStudioLandscapes.engine.constants",
+        "message": "Unused import(s) LOGGER, DOCKER_PROGRESS, GROUP_BASE_ENV, KEY_BASE_ENV, ASSET_HEADER_BASE_ENV, GROUP_BASE, KEY_BASE, GROUP_LANDSCAPE_MAP, KEY_LANDSCAPE_MAP, ASSET_HEADER_LANDSCAPE_MAP, GROUP_DISTRIBUTABLE, KEY_DISTRIBUTABLE, ASSET_HEADER_DISTRIBUTABLE, get_dagster_logger, DAGSTER_DEFAULT_OUTPUT and FeatureBaseModel from wildcard import of OpenStudioLandscapes.engine.constants",
+        "message-id": "W0614"
+    },
+    {
+        "type": "warning",
+        "module": "OpenStudioLandscapes.Template.assets",
+        "obj": "",
+        "line": 35,
+        "column": 0,
+        "endLine": 35,
+        "endColumn": 47,
+        "path": "src/OpenStudioLandscapes/Template/assets.py",
+        "symbol": "unused-wildcard-import",
+        "message": "Unused import(s) GroupIn, OpenStudioLandscapesConfig, FeatureVolumeType, ComposeCmdExclusion, DockerComposeNetworkMode, DockerComposeRestartPolicy and DockerComposeDependsOnPolicy from wildcard import of OpenStudioLandscapes.engine.enums",
         "message-id": "W0614"
     },
     {
@@ -477,7 +321,7 @@
         "endColumn": 47,
         "path": "src/OpenStudioLandscapes/Template/assets.py",
         "symbol": "unused-wildcard-import",
-        "message": "Unused import(s) json, operator_, shlex, time, git, cmd_list_to_str, get_pip_install_str, get_apt_install_str, get_copy_str, get_wget_str, get_git_root, get_configs_root, get_data_root, get_bin_root, get_image_name, parse_docker_image_path, get_compose_scope, get_feature_config, expand_dict_vars, metadatavalues_from_dict, get_bool_env, get_str_env, get_dynamic_ins, get_networks_dict, Tuple, OpExecutionContext, ComposeScopeException, OpenStudioLandscapesException, queue, shutil, subprocess, threading, OpenStudioLandscapesDockerException, docker_build_cmd, docker_push_cmd, OutputReader, execute_in_threads, docker_process_cmds and docker_do from wildcard import of OpenStudioLandscapes.engine.utils",
+        "message": "Unused import(s) json, os, shlex, time, git, requests, discovery, cmd_list_to_str, get_pip_install_str, get_apt_install_str, get_copy_str, get_wget_str, get_git_root, get_configs_root, get_data_root, get_bin_root, get_image_name, parse_docker_image_path, get_compose_scope, get_feature_config, expand_dict_vars, metadatavalues_from_dict, get_bool_env, get_str_env, get_all_compose_scopes, get_dynamic_ins, get_networks_dict, download_file, Any, MutableMapping, Tuple, OpExecutionContext, ComposeScopeException, OpenStudioLandscapesException, queue, shutil, subprocess, threading, OpenStudioLandscapesDockerException, docker_build_cmd, docker_push_cmd, OutputReader, execute_in_threads, docker_process_cmds and docker_do from wildcard import of OpenStudioLandscapes.engine.utils",
         "message-id": "W0614"
     },
     {
@@ -819,43 +663,17 @@
         "message-id": "C0114"
     },
     {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.config.models",
-        "obj": "",
-        "line": 12,
-        "column": 0,
-        "endLine": 12,
-        "endColumn": 70,
-        "path": "src/OpenStudioLandscapes/Template/config/models.py",
-        "symbol": "import-error",
-        "message": "Unable to import 'OpenStudioLandscapes.engine.config.models'",
-        "message-id": "E0401"
-    },
-    {
         "type": "convention",
         "module": "OpenStudioLandscapes.Template.config.models",
         "obj": "",
-        "line": 12,
+        "line": 13,
         "column": 0,
-        "endLine": 12,
+        "endLine": 13,
         "endColumn": 70,
         "path": "src/OpenStudioLandscapes/Template/config/models.py",
         "symbol": "wrong-import-position",
         "message": "Import \"from OpenStudioLandscapes.engine.config.models import FeatureBaseModel\" should be placed at the top of the module",
         "message-id": "C0413"
-    },
-    {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.config.models",
-        "obj": "",
-        "line": 12,
-        "column": 0,
-        "endLine": 12,
-        "endColumn": 70,
-        "path": "src/OpenStudioLandscapes/Template/config/models.py",
-        "symbol": "no-name-in-module",
-        "message": "No name 'config' in module 'OpenStudioLandscapes.engine'",
-        "message-id": "E0611"
     },
     {
         "type": "convention",
@@ -864,32 +682,32 @@
         "line": 14,
         "column": 0,
         "endLine": 14,
-        "endColumn": 46,
+        "endColumn": 69,
         "path": "src/OpenStudioLandscapes/Template/config/models.py",
         "symbol": "wrong-import-position",
-        "message": "Import \"from OpenStudioLandscapes.Template import dist\" should be placed at the top of the module",
+        "message": "Import \"from OpenStudioLandscapes.engine.config.str_gen import get_config_str\" should be placed at the top of the module",
         "message-id": "C0413"
     },
     {
-        "type": "warning",
+        "type": "convention",
         "module": "OpenStudioLandscapes.Template.config.models",
         "obj": "",
-        "line": 17,
-        "column": 13,
-        "endLine": 17,
-        "endColumn": 39,
+        "line": 16,
+        "column": 0,
+        "endLine": 16,
+        "endColumn": 57,
         "path": "src/OpenStudioLandscapes/Template/config/models.py",
-        "symbol": "unspecified-encoding",
-        "message": "Using open without explicitly specifying an encoding",
-        "message-id": "W1514"
+        "symbol": "wrong-import-position",
+        "message": "Import \"from OpenStudioLandscapes.Template import constants, dist\" should be placed at the top of the module",
+        "message-id": "C0413"
     },
     {
         "type": "convention",
         "module": "OpenStudioLandscapes.Template.config.models",
         "obj": "Branches",
-        "line": 20,
+        "line": 19,
         "column": 0,
-        "endLine": 20,
+        "endLine": 19,
         "endColumn": 14,
         "path": "src/OpenStudioLandscapes/Template/config/models.py",
         "symbol": "missing-class-docstring",
@@ -900,9 +718,9 @@
         "type": "convention",
         "module": "OpenStudioLandscapes.Template.config.models",
         "obj": "Branches",
-        "line": 21,
+        "line": 20,
         "column": 4,
-        "endLine": 21,
+        "endLine": 20,
         "endColumn": 8,
         "path": "src/OpenStudioLandscapes/Template/config/models.py",
         "symbol": "invalid-name",
@@ -913,9 +731,9 @@
         "type": "convention",
         "module": "OpenStudioLandscapes.Template.config.models",
         "obj": "Config",
-        "line": 24,
+        "line": 23,
         "column": 0,
-        "endLine": 24,
+        "endLine": 23,
         "endColumn": 12,
         "path": "src/OpenStudioLandscapes/Template/config/models.py",
         "symbol": "missing-class-docstring",
@@ -926,9 +744,9 @@
         "type": "convention",
         "module": "OpenStudioLandscapes.Template.config.models",
         "obj": "Config.MOUNTED_VOLUME_expanded",
-        "line": 50,
+        "line": 51,
         "column": 4,
-        "endLine": 50,
+        "endLine": 51,
         "endColumn": 31,
         "path": "src/OpenStudioLandscapes/Template/config/models.py",
         "symbol": "missing-function-docstring",
@@ -939,9 +757,9 @@
         "type": "convention",
         "module": "OpenStudioLandscapes.Template.config.models",
         "obj": "Config.MOUNTED_VOLUME_expanded",
-        "line": 50,
+        "line": 51,
         "column": 4,
-        "endLine": 50,
+        "endLine": 51,
         "endColumn": 31,
         "path": "src/OpenStudioLandscapes/Template/config/models.py",
         "symbol": "invalid-name",
@@ -952,27 +770,14 @@
         "type": "error",
         "module": "OpenStudioLandscapes.Template.config.models",
         "obj": "Config.MOUNTED_VOLUME_expanded",
-        "line": 56,
+        "line": 57,
         "column": 12,
-        "endLine": 56,
+        "endLine": 57,
         "endColumn": 42,
         "path": "src/OpenStudioLandscapes/Template/config/models.py",
         "symbol": "no-member",
         "message": "Instance of 'FieldInfo' has no 'expanduser' member",
         "message-id": "E1101"
-    },
-    {
-        "type": "refactor",
-        "module": "OpenStudioLandscapes.Template.config.models",
-        "obj": "Config",
-        "line": 24,
-        "column": 0,
-        "endLine": 24,
-        "endColumn": 12,
-        "path": "src/OpenStudioLandscapes/Template/config/models.py",
-        "symbol": "too-few-public-methods",
-        "message": "Too few public methods (1/2)",
-        "message-id": "R0903"
     },
     {
         "type": "convention",
@@ -1218,7 +1023,7 @@
         "endColumn": null,
         "path": "src/OpenStudioLandscapes/Template/doc/readme.py",
         "symbol": "duplicate-code",
-        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[45:328]\n==OpenStudioLandscapes.Template.readme_feature:[42:325]\n    doc.add_heading(\n        text=\"Create new Feature from this Template\",\n        level=1,\n    )\n\n    # Logo\n\n    doc.add_paragraph(\n        snakemd.Inline(\n            text=textwrap.dedent(\n                \"\"\"\\\n                Logo OpenStudioLandscapes\\\n                \"\"\"\n            ),\n            image=\"https://github.com/michimussato/OpenStudioLandscapes/raw/main/media/images/logo128.png\",\n            link=\"https://www.url.com\",\n        ).__str__()\n    )\n\n    doc.add_heading(\n        text=\"Create a new repository from this Template\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Click `Use this template` and select `Create a new repository`\\\n            \"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        snakemd.Inline(\n            text=textwrap.dedent(\n                \"\"\"\\\n                Create a new repository\\\n                \"\"\"\n            ),\n            image=\"media/images/use_template.png\",\n            # link=\"https://www.url.com\",\n        ).__str__()\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            And fill in information as needed by specifying the `Repository name *`\n            of the OpenStudioLandscapes Feature (i.e. `OpenStudioLandscapes-NewFeature`):\\\n            \"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        snakemd.Inline(\n            text=textwrap.dedent(\n                \"\"\"\\\n                Create a new repository\\\n                \"\"\"\n            ),\n            image=\"media/images/create_repository.png\",\n            # link=\"https://www.url.com\",\n        ).__str__()\n    )\n\n    doc.add_heading(\n        text=\"Clone new Feature to your local drive\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Clone the new Feature into the `.features` directory of your local\n            `OpenStudioLandscapes` clone:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes/.features\n            git clone <GIT_REPOSITORY_URL>\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(\n        text=\"Replace `Template` occurrences in `OpenStudioLandscapes-NewFeature`\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Rename the package directory from `Template` to `NewFeature`:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            NEW_FEATURE=\"NewFeature\"\n\n            cd /to/your/git/repos/OpenStudioLandscapes/.features/OpenStudioLandscapes-${NEW_FEATURE}\n            mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/${NEW_FEATURE}\\\n\"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Rename all occurrences of `template` in your new Feature with\n            the correct name in the following files:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_unordered_list(\n        [\n            \"update [`./pyproject.toml`](./pyproject.toml)\",\n            \"update `./pyproject_layer.yaml`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/__init__.py`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/assets.py`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/constants.py`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/definitions.py`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/readme_feature.py` [`snakemd` Documentation](https://www.snakemd.io/en/latest/)\",\n            \"update `/.coveragerc`\",\n            \"remove media `rm ./media/images/*.*`\",\n            \"remove nox reports `rm ./.nox/*.*`\",\n            \"remove sbom reports `rm ./.sbom/*.*`\",\n        ]\n    )\n\n    doc.add_heading(\n        text=\"Create `pyproject.toml`\",\n        level=2,\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            nox -session \"readme(OpenStudioLandscapes-<FEATURE>)\"\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(\n        text=\"Commit your initial Setup\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            git add *\n            git commit -m \"Initial Setup\"\n            git push\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(\n        text=\"Tag `OpenStudioLandscapesUtil` Repos\",\n        level=2,\n    )\n\n    doc.add_unordered_list(\n        [\n            \"[OpenStudioLandscapesUtil-HarborCLI](https://github.com/michimussato/OpenStudioLandscapesUtil-HarborCLI?tab=readme-ov-file#tagging)\",\n            \"[OpenStudioLandscapesUtil-ReadmeGenerator](https://github.com/michimussato/OpenStudioLandscapesUtil-ReadmeGenerator?tab=readme-ov-file#tagging)\",\n        ]\n    )\n\n    doc.add_heading(\n        text=\"Enable OpenStudioLandscapes-NewFeature in the Engine\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes\n            source .venv/bin/activate\n            pip install --editable .features/OpenStudioLandscapes-${NEW_FEATURE}[dev]\n            pip install --editable .[dev]\\\n\"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Edit the `OpenStudioLandscapes.engine` to use\n            your new Feature:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_unordered_list(\n        [\n            \"update `OpenStudioLandscapes/.env`\",\n            \"update `OpenStudioLandscapes/src/OpenStudioLandscapes/engine/features.py`\",\n            \"update `OpenStudioLandscapes/README.md#current-feature-statuses`\",\n        ]\n    )\n\n    doc.add_heading(\n        text=\"Known Issues\",\n        level=2,\n    )\n\n    doc.add_heading(\n        text=\"`no command specified`\",\n        level=3,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            `OpenStudioLandscapes-Template` can't be launched\n            as a Feature in a Landscape. If you do, this is the\n            error message you will be presented with:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            $ /home/michael/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose/docker_compose_up.sh\n            ~/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose ~\n            Working Directory: /home/michael/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose\n            Sourcing ../../../../2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/.overrides file...\n            Sourced successfully.\n             Container hbbs--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container dagster--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container template--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container mongo-express-10-2--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container repository-installer-10-2--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container ayon-server--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container opencue-flyway--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container kitsu--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container template--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Error response from daemon: no command specified\n            Error response from daemon: no command specified\n            ~\\\n\"\"\"\n        ),\n        lang=\"shell\",\n    )\n\n    # ... TO HERE\n    # AND USE THIS FILE TO HAVE YOUR OWN README.md\n    # PROGRAMMATICALLY GENERATED.\n    #\n    # Help on snakemd:\n    # https://www.snakemd.io/en/latest/\n    ##################################################\n\n    return doc\n\n\nif __name__ == \"__main__\":\n    pass",
+        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[45:323]\n==OpenStudioLandscapes.Template.readme_feature:[42:320]\n    doc.add_heading(\n        text=\"Create new Feature from this Template\",\n        level=1,\n    )\n\n    # Logo\n\n    doc.add_paragraph(\n        snakemd.Inline(\n            text=textwrap.dedent(\n                \"\"\"\\\n                Logo OpenStudioLandscapes\\\n                \"\"\"\n            ),\n            image=\"https://github.com/michimussato/OpenStudioLandscapes/raw/main/media/images/logo128.png\",\n            link=\"https://www.url.com\",\n        ).__str__()\n    )\n\n    doc.add_heading(\n        text=\"Create a new repository from this Template\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Click `Use this template` and select `Create a new repository`\\\n            \"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        snakemd.Inline(\n            text=textwrap.dedent(\n                \"\"\"\\\n                Create a new repository\\\n                \"\"\"\n            ),\n            image=\"media/images/use_template.png\",\n            # link=\"https://www.url.com\",\n        ).__str__()\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            And fill in information as needed by specifying the `Repository name *`\n            of the OpenStudioLandscapes Feature (i.e. `OpenStudioLandscapes-NewFeature`):\\\n            \"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        snakemd.Inline(\n            text=textwrap.dedent(\n                \"\"\"\\\n                Create a new repository\\\n                \"\"\"\n            ),\n            image=\"media/images/create_repository.png\",\n            # link=\"https://www.url.com\",\n        ).__str__()\n    )\n\n    doc.add_heading(\n        text=\"Clone new Feature to your local drive\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Clone the new Feature into the `.features` directory of your local\n            `OpenStudioLandscapes` clone:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes/.features\n            git clone <GIT_REPOSITORY_URL>\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(\n        text=\"Replace `Template` occurrences in `OpenStudioLandscapes-NewFeature`\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Rename the package directory from `Template` to `NewFeature`:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            NEW_FEATURE=\"NewFeature\"\n\n            cd /to/your/git/repos/OpenStudioLandscapes/.features/OpenStudioLandscapes-${NEW_FEATURE}\n            mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/${NEW_FEATURE}\\\n\"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Rename all occurrences of `template` in your new Feature with\n            the correct name in the following files:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_unordered_list(\n        [\n            \"update [`./pyproject.toml`](./pyproject.toml)\",\n            \"update `./pyproject_layer.yaml`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/__init__.py`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/assets.py`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/constants.py`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/definitions.py`\",\n            \"update `./src/OpenStudioLandscapes/${NEW_FEATURE}/readme_feature.py` [`snakemd` Documentation](https://www.snakemd.io/en/latest/)\",\n            \"update `/.coveragerc`\",\n            \"remove media `rm ./media/images/*.*`\",\n            \"remove nox reports `rm ./.nox/*.*`\",\n            \"remove sbom reports `rm ./.sbom/*.*`\",\n        ]\n    )\n\n    doc.add_heading(\n        text=\"Create `pyproject.toml`\",\n        level=2,\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            nox -session \"readme(OpenStudioLandscapes-<FEATURE>)\"\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(\n        text=\"Commit your initial Setup\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            git add *\n            git commit -m \"Initial Setup\"\n            git push\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(\n        text=\"Tag `OpenStudioLandscapesUtil` Repos\",\n        level=2,\n    )\n\n    doc.add_unordered_list(\n        [\n            \"[OpenStudioLandscapesUtil-HarborCLI](https://github.com/michimussato/OpenStudioLandscapesUtil-HarborCLI?tab=readme-ov-file#tagging)\",\n            \"[OpenStudioLandscapesUtil-ReadmeGenerator](https://github.com/michimussato/OpenStudioLandscapesUtil-ReadmeGenerator?tab=readme-ov-file#tagging)\",\n        ]\n    )\n\n    doc.add_heading(\n        text=\"Enable OpenStudioLandscapes-NewFeature in the Engine\",\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes\n            source .venv/bin/activate\n            pip install --editable .features/OpenStudioLandscapes-${NEW_FEATURE}[dev]\n            pip install --editable .[dev]\\\n\"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Edit the `OpenStudioLandscapes.engine` to use\n            your new Feature:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_unordered_list(\n        [\n            \"update `OpenStudioLandscapes/.env`\",\n            \"update `OpenStudioLandscapes/src/OpenStudioLandscapes/engine/features.py`\",\n            \"update `OpenStudioLandscapes/README.md#current-feature-statuses`\",\n        ]\n    )\n\n    doc.add_heading(\n        text=\"Known Issues\",\n        level=2,\n    )\n\n    doc.add_heading(\n        text=\"`no command specified`\",\n        level=3,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            `OpenStudioLandscapes-Template` can't be launched\n            as a Feature in a Landscape. If you do, this is the\n            error message you will be presented with:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            $ /home/michael/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose/docker_compose_up.sh\n            ~/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose ~\n            Working Directory: /home/michael/git/repos/OpenStudioLandscapes/.landscapes/2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/ComposeScope_default__ComposeScope_default/ComposeScope_default__DOCKER_COMPOSE/docker_compose\n            Sourcing ../../../../2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0/.overrides file...\n            Sourced successfully.\n             Container hbbs--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container dagster--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container template--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container mongo-express-10-2--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container repository-installer-10-2--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container ayon-server--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container opencue-flyway--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container kitsu--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Creating\n             Container template--2025-10-20-12-51-39-68351d36801042cb943f1675e611e3c0  Error response from daemon: no command specified\n            Error response from daemon: no command specified\n            ~\\\n\"\"\"\n        ),\n        lang=\"shell\",\n    )\n\n    # ... TO HERE\n    # AND USE THIS FILE TO HAVE YOUR OWN README.md\n    # PROGRAMMATICALLY GENERATED.\n    #\n    # Help on snakemd:\n    # https://www.snakemd.io/en/latest/\n    ##################################################\n",
         "message-id": "R0801"
     },
     {
@@ -1244,7 +1049,7 @@
         "endColumn": null,
         "path": "src/OpenStudioLandscapes/Template/doc/readme.py",
         "symbol": "duplicate-code",
-        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[135:168]\n==OpenStudioLandscapes.Template.readme_feature:[229:262]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes\n            source .venv/bin/activate\n            pip install --editable .features/OpenStudioLandscapes-${NEW_FEATURE}[dev]\n            pip install --editable .[dev]\\\n\"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Edit the `OpenStudioLandscapes.engine` to use\n            your new Feature:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_unordered_list(\n        [",
+        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[135:168]\n==OpenStudioLandscapes.Template.readme_feature:[229:262]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Rename the package directory from `Template` to `NewFeature`:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            NEW_FEATURE=\"NewFeature\"\n\n            cd /to/your/git/repos/OpenStudioLandscapes/.features/OpenStudioLandscapes-${NEW_FEATURE}\n            mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/${NEW_FEATURE}\\\n\"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Rename all occurrences of `template` in your new Feature with\n            the correct name in the following files:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_unordered_list(\n        [",
         "message-id": "R0801"
     },
     {
@@ -1257,7 +1062,7 @@
         "endColumn": null,
         "path": "src/OpenStudioLandscapes/Template/doc/readme.py",
         "symbol": "duplicate-code",
-        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[197:219]\n==OpenStudioLandscapes.Template.readme_feature:[109:131]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            git add *\n            git commit -m \"Initial Setup\"\n            git push\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(",
+        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[197:219]\n==OpenStudioLandscapes.Template.readme_feature:[109:131]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Clone the new Feature into the `.features` directory of your local\n            `OpenStudioLandscapes` clone:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes/.features\n            git clone <GIT_REPOSITORY_URL>\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(",
         "message-id": "R0801"
     },
     {
@@ -1270,7 +1075,7 @@
         "endColumn": null,
         "path": "src/OpenStudioLandscapes/Template/doc/readme.py",
         "symbol": "duplicate-code",
-        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[112:134]\n==OpenStudioLandscapes.Template.readme_feature:[194:216]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            git add *\n            git commit -m \"Initial Setup\"\n            git push\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(",
+        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[112:134]\n==OpenStudioLandscapes.Template.readme_feature:[194:216]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Clone the new Feature into the `.features` directory of your local\n            `OpenStudioLandscapes` clone:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes/.features\n            git clone <GIT_REPOSITORY_URL>\\\n\"\"\"\n        )\n    )\n\n    doc.add_heading(",
         "message-id": "R0801"
     },
     {
@@ -1296,7 +1101,7 @@
         "endColumn": null,
         "path": "src/OpenStudioLandscapes/Template/doc/readme.py",
         "symbol": "duplicate-code",
-        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[112:133]\n==OpenStudioLandscapes.Template.readme_feature:[132:154]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Clone the new Feature into the `.features` directory of your local\n            `OpenStudioLandscapes` clone:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes/.features\n            git clone <GIT_REPOSITORY_URL>\\\n\"\"\"\n        )\n    )\n",
+        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[112:133]\n==OpenStudioLandscapes.Template.readme_feature:[132:154]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Rename the package directory from `Template` to `NewFeature`:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            NEW_FEATURE=\"NewFeature\"\n\n            cd /to/your/git/repos/OpenStudioLandscapes/.features/OpenStudioLandscapes-${NEW_FEATURE}\n            mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/${NEW_FEATURE}\\\n\"\"\"\n        )\n    )\n",
         "message-id": "R0801"
     },
     {
@@ -1309,7 +1114,7 @@
         "endColumn": null,
         "path": "src/OpenStudioLandscapes/Template/doc/readme.py",
         "symbol": "duplicate-code",
-        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[232:254]\n==OpenStudioLandscapes.Template.readme_feature:[194:215]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes\n            source .venv/bin/activate\n            pip install --editable .features/OpenStudioLandscapes-${NEW_FEATURE}[dev]\n            pip install --editable .[dev]\\\n\"\"\"\n        )\n    )\n",
+        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[232:254]\n==OpenStudioLandscapes.Template.readme_feature:[194:215]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            git add *\n            git commit -m \"Initial Setup\"\n            git push\\\n\"\"\"\n        )\n    )\n",
         "message-id": "R0801"
     },
     {
@@ -1322,7 +1127,7 @@
         "endColumn": null,
         "path": "src/OpenStudioLandscapes/Template/doc/readme.py",
         "symbol": "duplicate-code",
-        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[197:218]\n==OpenStudioLandscapes.Template.readme_feature:[229:251]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            cd /to/your/git/repos/OpenStudioLandscapes\n            source .venv/bin/activate\n            pip install --editable .features/OpenStudioLandscapes-${NEW_FEATURE}[dev]\n            pip install --editable .[dev]\\\n\"\"\"\n        )\n    )\n",
+        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[197:218]\n==OpenStudioLandscapes.Template.readme_feature:[229:251]\n        level=2,\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Commit all changes to Git:\\\n            \"\"\"\n        )\n    )\n\n    doc.add_code(\n        code=textwrap.dedent(\n            \"\"\"\\\n            git add *\n            git commit -m \"Initial Setup\"\n            git push\\\n\"\"\"\n        )\n    )\n",
         "message-id": "R0801"
     },
     {
@@ -1335,7 +1140,7 @@
         "endColumn": null,
         "path": "src/OpenStudioLandscapes/Template/doc/readme.py",
         "symbol": "duplicate-code",
-        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[87:105]\n==OpenStudioLandscapes.Template.readme_feature:[64:81]\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            Click `Use this template` and select `Create a new repository`\\\n            \"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        snakemd.Inline(\n            text=textwrap.dedent(\n                \"\"\"\\\n                Create a new repository\\\n                \"\"\"\n            ),",
+        "message": "Similar lines in 2 files\n==OpenStudioLandscapes.Template.doc.readme:[87:105]\n==OpenStudioLandscapes.Template.readme_feature:[64:81]\n    )\n\n    doc.add_paragraph(\n        text=textwrap.dedent(\n            \"\"\"\\\n            And fill in information as needed by specifying the `Repository name *`\n            of the OpenStudioLandscapes Feature (i.e. `OpenStudioLandscapes-NewFeature`):\\\n            \"\"\"\n        )\n    )\n\n    doc.add_paragraph(\n        snakemd.Inline(\n            text=textwrap.dedent(\n                \"\"\"\\\n                Create a new repository\\\n                \"\"\"\n            ),",
         "message-id": "R0801"
     },
     {
