@@ -425,7 +425,7 @@ Commit all changes to Git:
 
 ```generic
 git add *
-git commit -m "Initial Setup"
+git commit -m "Initial Commit from Template"
 git push
 ```
 
