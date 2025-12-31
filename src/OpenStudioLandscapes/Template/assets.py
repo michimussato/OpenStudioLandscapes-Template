@@ -285,7 +285,7 @@ def compose_networks(
         ),
     },
 )
-def compose_template(
+def compose_Template(
     context: AssetExecutionContext,
     CONFIG: Config,  # pylint: disable=redefined-outer-name
     build: Dict,  # pylint: disable=redefined-outer-name
@@ -346,7 +346,7 @@ def compose_template(
 
     command = []
 
-    service_name = "template"
+    service_name = "Template"
     container_name, host_name = get_docker_compose_names(
         context=context,
         service_name=service_name,
@@ -402,8 +402,8 @@ def compose_template(
 @asset(
     **ASSET_HEADER,
     ins={
-        "compose_template": AssetIn(
-            AssetKey([*ASSET_HEADER["key_prefix"], "compose_template"]),
+        "compose_Template": AssetIn(
+            AssetKey([*ASSET_HEADER["key_prefix"], "compose_Template"]),
         ),
     },
 )

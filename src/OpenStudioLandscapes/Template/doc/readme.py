@@ -40,7 +40,7 @@ def readme_feature(
     # )
 
     ##################################################
-    # TO EDIT THIS FILE FOR YOUR OWN FEATURE,
+    # EDIT THIS FILE FOR YOUR OWN FEATURE
     # REMOVE EVERYTHING FROM HERE...
 
     doc.add_heading(
@@ -314,7 +314,7 @@ def readme_feature(
     )
 
     # ... TO HERE
-    # AND USE THIS FILE TO HAVE YOUR OWN README.md
+    # USE THIS FILE TO HAVE YOUR OWN README.md
     # PROGRAMMATICALLY GENERATED.
     #
     # Help on snakemd:
