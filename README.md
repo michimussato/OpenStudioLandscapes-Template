@@ -378,45 +378,27 @@ Rename the package directory from `Template` to `NewFeature`:
 NEW_FEATURE="NewFeature"
 
 cd /to/your/git/repos/OpenStudioLandscapes/.features/OpenStudioLandscapes-${NEW_FEATURE}
+mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/${NEW_FEATURE}
 ```
 
-Rename all occurrences of `Template` in your new Feature with the correct name in the following files:
+Rename all occurrences of `template` in your new Feature with the correct name in the following files:
 
-- Rename the package directory from `Template` to `NewFeature`
-  - `mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/${NEW_FEATURE}`
-- update `./pyproject_layer.yaml` (if necessary)
-  - `sed -i.bak -e "s/Template/${NEW_FEATURE}/g" ./pyproject_layer.yaml`
-- update `./src/OpenStudioLandscapes/${NEW_FEATURE}/constants.py`
-  - `sed -i.bak -e "s/Template/${NEW_FEATURE}/g" ./src/OpenStudioLandscapes/${NEW_FEATURE}/constants.py`
+- update [`./pyproject.toml`](./pyproject.toml)
+- update `./pyproject_layer.yaml`
+- update `./src/OpenStudioLandscapes/${NEW_FEATURE}/__init__.py`
 - update `./src/OpenStudioLandscapes/${NEW_FEATURE}/assets.py`
-  - `sed -i.bak -e "s/Template/${NEW_FEATURE}/g" ./src/OpenStudioLandscapes/${NEW_FEATURE}/assets.py`
+- update `./src/OpenStudioLandscapes/${NEW_FEATURE}/constants.py`
 - update `./src/OpenStudioLandscapes/${NEW_FEATURE}/definitions.py`
-  - `sed -i.bak -e "s/Template/${NEW_FEATURE}/g" ./src/OpenStudioLandscapes/${NEW_FEATURE}/definitions.py`
-- update `./src/OpenStudioLandscapes/${NEW_FEATURE}/config/models.py`
-  - `sed -i.bak -e "s/Template/${NEW_FEATURE}/g" ./src/OpenStudioLandscapes/${NEW_FEATURE}/config/models.py`
-- update `./src/OpenStudioLandscapes/${NEW_FEATURE}/doc/readme.py` [`snakemd` Documentation](https://www.snakemd.io/en/latest/)
-  - `sed -i.bak '/# REMOVE EVERYTHING FROM HERE.../,/# ... TO HERE/d' ./src/OpenStudioLandscapes/${NEW_FEATURE}/doc/readme.py`
-- update `./.coveragerc`
-  - `sed -i.bak -e "s/Template/${NEW_FEATURE}/g" ./.coveragerc`
-- remove media 
-  - `rm ./media/images/*.*`
-- remove nox reports 
-  - `rm ./.nox/*.*`
-- remove sbom reports 
-  - `rm ./.sbom/*.*`
+- update `./src/OpenStudioLandscapes/${NEW_FEATURE}/readme_feature.py` [`snakemd` Documentation](https://www.snakemd.io/en/latest/)
+- update `/.coveragerc`
+- remove media `rm ./media/images/*.*`
+- remove nox reports `rm ./.nox/*.*`
+- remove sbom reports `rm ./.sbom/*.*`
 
 ## Create `pyproject.toml`
 
 ```generic
-cd OpenStudioLandscapes
-nox -s "pyproject_features(OpenStudioLandscapes-${NEW_FEATURE})"
-```
-
-## Create `README.md`
-
-```generic
-cd OpenStudioLandscapes
-nox -s "readme(OpenStudioLandscapes-${NEW_FEATURE})"
+nox -session "readme(OpenStudioLandscapes-<FEATURE>)"
 ```
 
 ## Commit your initial Setup
@@ -425,9 +407,14 @@ Commit all changes to Git:
 
 ```generic
 git add *
-git commit -m "Initial Commit from Template"
+git commit -m "Initial Setup"
 git push
 ```
+
+## Tag `OpenStudioLandscapesUtil` Repos
+
+- [OpenStudioLandscapesUtil-HarborCLI](https://github.com/michimussato/OpenStudioLandscapesUtil-HarborCLI?tab=readme-ov-file#tagging)
+- [OpenStudioLandscapesUtil-ReadmeGenerator](https://github.com/michimussato/OpenStudioLandscapesUtil-ReadmeGenerator?tab=readme-ov-file#tagging)
 
 ## Enable OpenStudioLandscapes-NewFeature in the Engine
 
@@ -442,7 +429,8 @@ pip install --editable .[dev]
 
 Edit the `OpenStudioLandscapes.engine` to use your new Feature:
 
-- update `OpenStudioLandscapes/src/OpenStudioLandscapes/engine/community_channels.py`
+- update `OpenStudioLandscapes/.env`
+- update `OpenStudioLandscapes/src/OpenStudioLandscapes/engine/features.py`
 - update `OpenStudioLandscapes/README.md#current-feature-statuses`
 
 ## Known Issues
@@ -501,4 +489,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2025-12-30 01:27:25 UTC**
+Last changed: **2025-12-31 11:21:01 UTC**
