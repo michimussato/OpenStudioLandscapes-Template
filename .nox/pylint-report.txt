@@ -16,6 +16,7 @@ src/OpenStudioLandscapes/Template/assets.py:207:9: W1514: Using open without exp
 src/OpenStudioLandscapes/Template/assets.py:243:0: C0116: Missing function or method docstring (missing-function-docstring)
 src/OpenStudioLandscapes/Template/assets.py:245:4: C0103: Argument name "CONFIG" doesn't conform to snake_case naming style (invalid-name)
 src/OpenStudioLandscapes/Template/assets.py:288:0: C0112: Empty function docstring (empty-docstring)
+src/OpenStudioLandscapes/Template/assets.py:288:0: C0103: Function name "compose_Template" doesn't conform to snake_case naming style (invalid-name)
 src/OpenStudioLandscapes/Template/assets.py:290:4: C0103: Argument name "CONFIG" doesn't conform to snake_case naming style (invalid-name)
 src/OpenStudioLandscapes/Template/assets.py:288:0: R0914: Too many local variables (21/15) (too-many-locals)
 src/OpenStudioLandscapes/Template/assets.py:371:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
@@ -358,7 +359,7 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
     )
 
     # ... TO HERE
-    # AND USE THIS FILE TO HAVE YOUR OWN README.md
+    # USE THIS FILE TO HAVE YOUR OWN README.md
     # PROGRAMMATICALLY GENERATED.
     #
     # Help on snakemd:
@@ -471,8 +472,7 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
     doc.add_paragraph(
         text=textwrap.dedent(
             """\
-            Clone the new Feature into the `.features` directory of your local
-            `OpenStudioLandscapes` clone:\
+            Commit all changes to Git:\
             """
         )
     )
@@ -480,8 +480,9 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
     doc.add_code(
         code=textwrap.dedent(
             """\
-            cd /to/your/git/repos/OpenStudioLandscapes/.features
-            git clone <GIT_REPOSITORY_URL>\
+            git add *
+            git commit -m "Initial Setup"
+            git push\
 """
         )
     )
@@ -521,7 +522,8 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
     doc.add_paragraph(
         text=textwrap.dedent(
             """\
-            Rename the package directory from `Template` to `NewFeature`:\
+            Clone the new Feature into the `.features` directory of your local
+            `OpenStudioLandscapes` clone:\
             """
         )
     )
@@ -529,10 +531,8 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
     doc.add_code(
         code=textwrap.dedent(
             """\
-            NEW_FEATURE="NewFeature"
-
-            cd /to/your/git/repos/OpenStudioLandscapes/.features/OpenStudioLandscapes-${NEW_FEATURE}
-            mv src/OpenStudioLandscapes/Template src/OpenStudioLandscapes/${NEW_FEATURE}\
+            cd /to/your/git/repos/OpenStudioLandscapes/.features
+            git clone <GIT_REPOSITORY_URL>\
 """
         )
     )
@@ -554,9 +554,10 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
     doc.add_code(
         code=textwrap.dedent(
             """\
-            git add *
-            git commit -m "Initial Setup"
-            git push\
+            cd /to/your/git/repos/OpenStudioLandscapes
+            source .venv/bin/activate
+            pip install --editable .features/OpenStudioLandscapes-${NEW_FEATURE}[dev]
+            pip install --editable .[dev]\
 """
         )
     )
@@ -578,9 +579,10 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
     doc.add_code(
         code=textwrap.dedent(
             """\
-            git add *
-            git commit -m "Initial Setup"
-            git push\
+            cd /to/your/git/repos/OpenStudioLandscapes
+            source .venv/bin/activate
+            pip install --editable .features/OpenStudioLandscapes-${NEW_FEATURE}[dev]
+            pip install --editable .[dev]\
 """
         )
     )
@@ -628,5 +630,5 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
             ), (duplicate-code)
 
 ------------------------------------------------------------------
-Your code has been rated at 5.67/10 (previous run: 4.47/10, +1.20)
+Your code has been rated at 5.63/10 (previous run: 4.47/10, +1.16)
 
