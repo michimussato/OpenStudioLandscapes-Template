@@ -169,22 +169,13 @@ def build_docker_image(
         FROM {parent_image} AS {image_name}
         LABEL authors="{AUTHOR}"
 
-        ARG DEBIAN_FRONTEND=noninteractive
-
-        ENV CONTAINER_TIMEZONE={TIMEZONE}
-        ENV SET_CONTAINER_TIMEZONE=true
-
-        SHELL ["/bin/bash", "-c"]
-
-        RUN apt-get update && apt-get upgrade -y
-
         # WORKDIR /workdir
         # USER user
 
         # RUN commands
         # [...]
 
-        RUN apt-get clean
+        # RUN apt-get clean
 
         ENTRYPOINT []
         """
