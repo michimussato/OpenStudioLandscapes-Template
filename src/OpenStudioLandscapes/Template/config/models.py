@@ -54,7 +54,7 @@ class Config(FeatureBaseModel):
             raise KeyError("`env` is `None`.")
         LOGGER.debug(f"Expanding {self.MOUNTED_VOLUME}...")
         ret = pathlib.Path(
-            self.MOUNTED_VOLUME.expanduser()
+            self.MOUNTED_VOLUME.expanduser()  # pylint: disable=E1101
             .as_posix()
             .format(
                 **{
