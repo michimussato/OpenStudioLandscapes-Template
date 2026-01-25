@@ -57,7 +57,6 @@ src/OpenStudioLandscapes/Template/config/models.py:20:4: C0103: Class constant n
 src/OpenStudioLandscapes/Template/config/models.py:23:0: C0115: Missing class docstring (missing-class-docstring)
 src/OpenStudioLandscapes/Template/config/models.py:51:4: C0116: Missing function or method docstring (missing-function-docstring)
 src/OpenStudioLandscapes/Template/config/models.py:51:4: C0103: Attribute name "MOUNTED_VOLUME_expanded" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Template/config/models.py:57:12: E1101: Instance of 'FieldInfo' has no 'expanduser' member (no-member)
 ************* Module OpenStudioLandscapes.Template.doc.readme
 src/OpenStudioLandscapes/Template/doc/readme.py:58:0: C0301: Line too long (107/100) (line-too-long)
 src/OpenStudioLandscapes/Template/doc/readme.py:141:0: C0301: Line too long (144/100) (line-too-long)
@@ -85,5 +84,5 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
                 Logo OpenStudioLandscapes\ (duplicate-code)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.84/10 (previous run: 6.45/10, +0.39)
+Your code has been rated at 7.07/10 (previous run: 6.86/10, +0.21)
 

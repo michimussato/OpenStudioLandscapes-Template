@@ -676,19 +676,6 @@
         "message-id": "C0103"
     },
     {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Template.config.models",
-        "obj": "Config.MOUNTED_VOLUME_expanded",
-        "line": 57,
-        "column": 12,
-        "endLine": 57,
-        "endColumn": 42,
-        "path": "src/OpenStudioLandscapes/Template/config/models.py",
-        "symbol": "no-member",
-        "message": "Instance of 'FieldInfo' has no 'expanduser' member",
-        "message-id": "E1101"
-    },
-    {
         "type": "convention",
         "module": "OpenStudioLandscapes.Template.doc.readme",
         "obj": "",
