@@ -334,6 +334,7 @@ def compose_Template(
             {
                 *_volume_relative,
                 *config_engine.global_bind_volumes,
+                *CONFIG.local_bind_volumes,
             }
         ),
     }
@@ -370,6 +371,7 @@ def compose_Template(
                 ),
                 "environment": {
                     **config_engine.global_environment_variables,
+                    **CONFIG.local_environment_variables,
                 },
                 **copy.deepcopy(volumes_dict),
                 **copy.deepcopy(network_dict),
