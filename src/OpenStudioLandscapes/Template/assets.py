@@ -370,6 +370,7 @@ def compose_Template(
                     build["image_tags"][0],
                 ),
                 "environment": {
+                    "TZ": CONFIG.tz,
                     **config_engine.global_environment_variables,
                     **CONFIG.local_environment_variables,
                 },
