@@ -8,7 +8,7 @@
       1. [Clone and Install](#clone-and-install)
    3. [Configure](#configure)
       1. [Default Configuration](#default-configuration)
-   4. [Local Development](#local-development)
+   4. [Local Development/Unit Testing/Debugging](#local-developmentunit-testingdebugging)
 2. [Create new Feature from this Template](#create-new-feature-from-this-template)
    1. [Create a new repository from this Template](#create-a-new-repository-from-this-template)
    2. [Clone new Feature to your local drive](#clone-new-feature-to-your-local-drive)
@@ -81,7 +81,7 @@ A local config store location will be created if it doesn't exist, together with
 > controlled repository. This makes it easy to track changes
 > you made to the `config.yml`.
 
-The following settings are available in `OpenStudioLandscapes-Template` and are based on [`OpenStudioLandscapes-Template/tree/main/OpenStudioLandscapes/Template/config/models.py`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/main/OpenStudioLandscapes/Template/config/models.py).
+The following settings are available in `OpenStudioLandscapes-Template` and are based on [`OpenStudioLandscapes-Template/tree/main/src/OpenStudioLandscapes/Template/config/models.py`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/main/src/OpenStudioLandscapes/Template/config/models.py).
 
 ### Default Configuration
 
@@ -360,10 +360,12 @@ MOUNTED_VOLUME: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/volume'
 </details>
 
 
-## Local Development
+## Local Development/Unit Testing/Debugging
+
+This is for isolated development, unit testing and debugging. Instead of the [`OpenStudioLandscapes-Template/tree/main/src/OpenStudioLandscapes/Template/definitions.py`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/main/src/OpenStudioLandscapes/Template/definitions.py), the accompanying [`OpenStudioLandscapes-Template/tree/main/workspace.yaml`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/main/workspace.yaml) loads the [`OpenStudioLandscapes-Template/tree/main/src/OpenStudioLandscapes/Template/_definitions_with_upstream_specs.py`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/main/src/OpenStudioLandscapes/Template/_definitions_with_upstream_specs.py) which also contains [`AssetSpec`](https://release-1-9-13.archive.dagster-docs.io/api/dagster/assets#dagster.AssetSpec) definitions for upstream dependencies as [external assets](https://release-1-9-13.archive.dagster-docs.io/guides/build/assets/external-assets).
 
 ```shell
-cd ./.features/OpenStudioLandscapes-Template
+# cd ./.features/OpenStudioLandscapes-Template
 python3.11 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip setuptools setuptools_scm wheel
@@ -516,4 +518,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2026-04-11 02:00:38 UTC**
+Last changed: **2026-04-11 11:23:03 UTC**
