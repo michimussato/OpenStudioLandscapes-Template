@@ -8,6 +8,7 @@
       1. [Clone and Install](#clone-and-install)
    3. [Configure](#configure)
       1. [Default Configuration](#default-configuration)
+   4. [Local Development](#local-development)
 2. [Create new Feature from this Template](#create-new-feature-from-this-template)
    1. [Create a new repository from this Template](#create-a-new-repository-from-this-template)
    2. [Clone new Feature to your local drive](#clone-new-feature-to-your-local-drive)
@@ -47,7 +48,6 @@ source .venv/bin/activate
 openstudiolandscapes clone-feature --repo=https://github.com/michimussato/OpenStudioLandscapes-Template.git
 deactivate
 # Check the resulting console output for installation instructions
-
 ```
 
 ### Clone and Install
@@ -58,7 +58,6 @@ source .venv/bin/activate
 openstudiolandscapes clone-feature --repo=https://github.com/michimussato/OpenStudioLandscapes-Template.git \
     && pip install --editable ./.features/OpenStudioLandscapes-Template
 deactivate
-
 ```
 
 For more info on `pip` see [VCS Support of `pip`](https://pip.pypa.io/en/stable/topics/vcs-support/).
@@ -85,7 +84,6 @@ A local config store location will be created if it doesn't exist, together with
 The following settings are available in `OpenStudioLandscapes-Template` and are based on [`OpenStudioLandscapes-Template/tree/main/OpenStudioLandscapes/Template/config/models.py`](https://github.com/michimussato/OpenStudioLandscapes-Template/tree/main/OpenStudioLandscapes/Template/config/models.py).
 
 ### Default Configuration
-
 
 <details open>
 <summary><code>config.yml</code></summary>
@@ -359,9 +357,19 @@ ENV_VAR_PORT_CONTAINER: 2345
 MOUNTED_VOLUME: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/volume'
 ```
 
-
 </details>
 
+
+## Local Development
+
+```shell
+cd ./.features/OpenStudioLandscapes-Template
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip setuptools setuptools_scm wheel
+pip install --editable .[dev]
+dagster dev --workspace workspace.yaml
+```
 
 ***
 
@@ -508,4 +516,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2026-04-03 02:51:13 UTC**
+Last changed: **2026-04-11 02:00:38 UTC**
