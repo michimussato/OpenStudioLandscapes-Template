@@ -51,6 +51,9 @@ src/OpenStudioLandscapes/Template/readme_feature.py:85:8: C2801: Unnecessarily c
 ************* Module OpenStudioLandscapes.Template.constants
 src/OpenStudioLandscapes/Template/constants.py:7:1: W0511: Todo (fixme)
 src/OpenStudioLandscapes/Template/constants.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module OpenStudioLandscapes.Template._definitions_with_upstream_specs
+src/OpenStudioLandscapes/Template/_definitions_with_upstream_specs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src/OpenStudioLandscapes/Template/_definitions_with_upstream_specs.py:2:0: E0611: No name 'group_out_base_spec' in module 'OpenStudioLandscapes.engine.base.assets' (no-name-in-module)
 ************* Module OpenStudioLandscapes.Template.__init__
 src/OpenStudioLandscapes/Template/__init__.py:6:5: W0511: TODO: Import directly (no need for conditional) when `python_requires = >= 3.8` (fixme)
 ************* Module OpenStudioLandscapes.Template
@@ -92,5 +95,5 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
                 Logo OpenStudioLandscapes\ (duplicate-code)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.80/10 (previous run: 7.22/10, -0.41)
+Your code has been rated at 6.62/10 (previous run: 6.72/10, -0.10)
 
