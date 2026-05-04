@@ -60,13 +60,15 @@ src/OpenStudioLandscapes/Template/__init__.py:1:0: C0114: Missing module docstri
 src/OpenStudioLandscapes/Template/__init__.py:1:0: C0103: Module name "Template" doesn't conform to snake_case naming style (invalid-name)
 ************* Module OpenStudioLandscapes.Template.config.models
 src/OpenStudioLandscapes/Template/config/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:13:0: C0413: Import "from OpenStudioLandscapes.engine.config.models import FeatureBaseModel" should be placed at the top of the module (wrong-import-position)
-src/OpenStudioLandscapes/Template/config/models.py:15:0: C0413: Import "from OpenStudioLandscapes.Template import constants, dist" should be placed at the top of the module (wrong-import-position)
-src/OpenStudioLandscapes/Template/config/models.py:18:0: C0115: Missing class docstring (missing-class-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:19:4: C0103: Class constant name "main" doesn't conform to UPPER_CASE naming style (invalid-name)
-src/OpenStudioLandscapes/Template/config/models.py:22:0: C0115: Missing class docstring (missing-class-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:50:4: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:50:4: C0103: Attribute name "MOUNTED_VOLUME_expanded" doesn't conform to snake_case naming style (invalid-name)
+src/OpenStudioLandscapes/Template/config/models.py:6:0: E0401: Unable to import 'OpenStudioLandscapes.engine.logging.loggers' (import-error)
+src/OpenStudioLandscapes/Template/config/models.py:6:0: E0611: No name 'logging' in module 'OpenStudioLandscapes.engine' (no-name-in-module)
+src/OpenStudioLandscapes/Template/config/models.py:15:0: C0115: Missing class docstring (missing-class-docstring)
+src/OpenStudioLandscapes/Template/config/models.py:16:4: C0103: Class constant name "main" doesn't conform to UPPER_CASE naming style (invalid-name)
+src/OpenStudioLandscapes/Template/config/models.py:19:0: C0115: Missing class docstring (missing-class-docstring)
+src/OpenStudioLandscapes/Template/config/models.py:47:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/OpenStudioLandscapes/Template/config/models.py:47:4: C0103: Attribute name "MOUNTED_VOLUME_expanded" doesn't conform to snake_case naming style (invalid-name)
+src/OpenStudioLandscapes/Template/config/models.py:7:0: C0411: third party import "pydantic.Field" should be placed before first party imports "OpenStudioLandscapes.engine.config.models.FeatureBaseModel", "OpenStudioLandscapes.engine.logging.loggers.FEATURE_LOGGER"  (wrong-import-order)
+src/OpenStudioLandscapes/Template/config/models.py:12:0: C0412: Imports from package OpenStudioLandscapes are not grouped (ungrouped-imports)
 ************* Module OpenStudioLandscapes.Template.doc.readme
 src/OpenStudioLandscapes/Template/doc/readme.py:58:0: C0301: Line too long (107/100) (line-too-long)
 src/OpenStudioLandscapes/Template/doc/readme.py:141:0: C0301: Line too long (144/100) (line-too-long)
@@ -94,5 +96,5 @@ src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 f
                 Logo OpenStudioLandscapes\ (duplicate-code)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.84/10 (previous run: 7.29/10, -0.45)
+Your code has been rated at 6.43/10 (previous run: 6.78/10, -0.35)
 
