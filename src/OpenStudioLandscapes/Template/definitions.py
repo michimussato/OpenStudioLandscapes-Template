@@ -4,7 +4,10 @@ from dagster import (
 )
 
 import OpenStudioLandscapes.Template.assets
-from OpenStudioLandscapes.Template import *
+from OpenStudioLandscapes.Template import (
+    dist,
+    LOGGER,
+)
 
 LOGGER.info(f"Loading {dist.name} assets...")
 
