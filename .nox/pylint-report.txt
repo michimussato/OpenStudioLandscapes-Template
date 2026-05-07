@@ -1,72 +1,45 @@
 ************* Module OpenStudioLandscapes.Template.assets
-src/OpenStudioLandscapes/Template/assets.py:185:0: C0301: Line too long (121/100) (line-too-long)
-src/OpenStudioLandscapes/Template/assets.py:280:0: C0301: Line too long (105/100) (line-too-long)
-src/OpenStudioLandscapes/Template/assets.py:431:0: C0301: Line too long (102/100) (line-too-long)
-src/OpenStudioLandscapes/Template/assets.py:184:9: W0511: Todo: this won't work as expected if len(tags) > 1 (fixme)
+src/OpenStudioLandscapes/Template/assets.py:193:9: W0511: Todo: this won't work as expected if len(tags) > 1 (fixme)
 src/OpenStudioLandscapes/Template/assets.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Template/assets.py:36:0: W0401: Wildcard import OpenStudioLandscapes.engine.constants (wildcard-import)
-src/OpenStudioLandscapes/Template/assets.py:37:0: W0401: Wildcard import OpenStudioLandscapes.engine.enums (wildcard-import)
-src/OpenStudioLandscapes/Template/assets.py:40:0: W0401: Wildcard import OpenStudioLandscapes.engine.utils (wildcard-import)
-src/OpenStudioLandscapes/Template/assets.py:41:0: W0401: Wildcard import OpenStudioLandscapes.engine.utils.docker.compose_dicts (wildcard-import)
-src/OpenStudioLandscapes/Template/assets.py:45:0: W0401: Wildcard import OpenStudioLandscapes.Template.constants (wildcard-import)
-src/OpenStudioLandscapes/Template/assets.py:117:0: C0112: Empty function docstring (empty-docstring)
-src/OpenStudioLandscapes/Template/assets.py:120:4: C0103: Argument name "CONFIG" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Template/assets.py:117:0: R0914: Too many local variables (18/15) (too-many-locals)
-src/OpenStudioLandscapes/Template/assets.py:190:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-src/OpenStudioLandscapes/Template/assets.py:193:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-src/OpenStudioLandscapes/Template/assets.py:147:8: W0612: Unused variable 'image_prefixes' (unused-variable)
-src/OpenStudioLandscapes/Template/assets.py:148:8: W0612: Unused variable 'tags' (unused-variable)
-src/OpenStudioLandscapes/Template/assets.py:223:0: C0112: Empty function docstring (empty-docstring)
-src/OpenStudioLandscapes/Template/assets.py:226:4: C0103: Argument name "CONFIG" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Template/assets.py:223:0: R0914: Too many local variables (17/15) (too-many-locals)
-src/OpenStudioLandscapes/Template/assets.py:249:8: W0612: Unused variable 'build_base_parent_image_prefix' (unused-variable)
-src/OpenStudioLandscapes/Template/assets.py:250:8: W0612: Unused variable 'build_base_parent_image_name' (unused-variable)
-src/OpenStudioLandscapes/Template/assets.py:251:8: W0612: Unused variable 'build_base_parent_image_tags' (unused-variable)
-src/OpenStudioLandscapes/Template/assets.py:301:0: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Template/assets.py:303:4: C0103: Argument name "CONFIG" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Template/assets.py:346:0: C0112: Empty function docstring (empty-docstring)
-src/OpenStudioLandscapes/Template/assets.py:346:0: C0103: Function name "compose_Template" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Template/assets.py:348:4: C0103: Argument name "CONFIG" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Template/assets.py:346:0: R0914: Too many local variables (21/15) (too-many-locals)
-src/OpenStudioLandscapes/Template/assets.py:433:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-src/OpenStudioLandscapes/Template/assets.py:409:4: W0612: Unused variable 'command' (unused-variable)
-src/OpenStudioLandscapes/Template/assets.py:477:0: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Template/assets.py:36:0: W0614: Unused import(s) LOGGER, DOCKER_PROGRESS, GROUP_BASE_ENV, KEY_BASE_ENV, ASSET_HEADER_BASE_ENV, GROUP_BASE, KEY_BASE, GROUP_VFX_PLATFORM, KEY_VFX_PLATFORM, ASSET_HEADER_VFX_PLATFORM, GROUP_LANDSCAPE_MAP, KEY_LANDSCAPE_MAP, ASSET_HEADER_LANDSCAPE_MAP, GROUP_DISTRIBUTABLE, KEY_DISTRIBUTABLE, ASSET_HEADER_DISTRIBUTABLE, get_dagster_logger, DAGSTER_DEFAULT_OUTPUT and FeatureBaseModel from wildcard import of OpenStudioLandscapes.engine.constants (unused-wildcard-import)
-src/OpenStudioLandscapes/Template/assets.py:37:0: W0614: Unused import(s) GroupIn, OpenStudioLandscapesConfig, FeatureVolumeType, ComposeCmdExclusion, DockerComposeNetworkMode, DockerComposeRestartPolicy and DockerComposeDependsOnPolicy from wildcard import of OpenStudioLandscapes.engine.enums (unused-wildcard-import)
-src/OpenStudioLandscapes/Template/assets.py:40:0: W0614: Unused import(s) datetime, json, os, shlex, time, git, requests, discovery, cmd_list_to_str, get_pip_install_str, get_apt_install_str, get_copy_str, get_wget_str, get_git_root, get_configs_root, get_data_root, get_bin_root, get_image_name, parse_docker_image_path, get_compose_scope, get_feature_config, expand_dict_vars, metadatavalues_from_dict, get_bool_env, get_str_env, get_all_compose_scopes, get_dynamic_ins, get_networks_dict, download_file, Any, MutableMapping, Tuple, OpExecutionContext, ComposeScopeException, OpenStudioLandscapesException, shutil, OpenStudioLandscapesDockerException, docker_build_cmd, docker_push_cmd, docker_do and submit_cmds from wildcard import of OpenStudioLandscapes.engine.utils (unused-wildcard-import)
-src/OpenStudioLandscapes/Template/assets.py:41:0: W0614: Unused import(s) DockerComposeServiceDefinition, DockerComposeNetworkDefinition, Optional, Required and TypedDict from wildcard import of OpenStudioLandscapes.engine.utils.docker.compose_dicts (unused-wildcard-import)
-src/OpenStudioLandscapes/Template/assets.py:45:0: W0614: Unused import(s) GROUP and KEY from wildcard import of OpenStudioLandscapes.Template.constants (unused-wildcard-import)
+src/OpenStudioLandscapes/Template/assets.py:126:0: C0112: Empty function docstring (empty-docstring)
+src/OpenStudioLandscapes/Template/assets.py:126:0: R0914: Too many local variables (18/15) (too-many-locals)
+src/OpenStudioLandscapes/Template/assets.py:199:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+src/OpenStudioLandscapes/Template/assets.py:202:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+src/OpenStudioLandscapes/Template/assets.py:156:8: W0612: Unused variable 'image_prefixes' (unused-variable)
+src/OpenStudioLandscapes/Template/assets.py:157:8: W0612: Unused variable 'tags' (unused-variable)
+src/OpenStudioLandscapes/Template/assets.py:232:0: C0112: Empty function docstring (empty-docstring)
+src/OpenStudioLandscapes/Template/assets.py:232:0: R0914: Too many local variables (17/15) (too-many-locals)
+src/OpenStudioLandscapes/Template/assets.py:258:8: W0612: Unused variable 'build_base_parent_image_prefix' (unused-variable)
+src/OpenStudioLandscapes/Template/assets.py:259:8: W0612: Unused variable 'build_base_parent_image_name' (unused-variable)
+src/OpenStudioLandscapes/Template/assets.py:260:8: W0612: Unused variable 'build_base_parent_image_tags' (unused-variable)
+src/OpenStudioLandscapes/Template/assets.py:310:0: C0116: Missing function or method docstring (missing-function-docstring)
+src/OpenStudioLandscapes/Template/assets.py:355:0: C0112: Empty function docstring (empty-docstring)
+src/OpenStudioLandscapes/Template/assets.py:355:0: R0914: Too many local variables (21/15) (too-many-locals)
+src/OpenStudioLandscapes/Template/assets.py:442:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+src/OpenStudioLandscapes/Template/assets.py:418:4: W0612: Unused variable 'command' (unused-variable)
+src/OpenStudioLandscapes/Template/assets.py:486:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module OpenStudioLandscapes.Template.definitions
 src/OpenStudioLandscapes/Template/definitions.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-************* Module OpenStudioLandscapes.Template.readme_feature
-src/OpenStudioLandscapes/Template/readme_feature.py:55:0: C0301: Line too long (107/100) (line-too-long)
-src/OpenStudioLandscapes/Template/readme_feature.py:138:0: C0301: Line too long (144/100) (line-too-long)
-src/OpenStudioLandscapes/Template/readme_feature.py:177:0: C0301: Line too long (146/100) (line-too-long)
-src/OpenStudioLandscapes/Template/readme_feature.py:178:0: C0301: Line too long (158/100) (line-too-long)
-src/OpenStudioLandscapes/Template/readme_feature.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Template/readme_feature.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Template/readme_feature.py:51:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
-src/OpenStudioLandscapes/Template/readme_feature.py:70:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
-src/OpenStudioLandscapes/Template/readme_feature.py:85:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
+src/OpenStudioLandscapes/Template/definitions.py:12:0: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
 ************* Module OpenStudioLandscapes.Template.constants
 src/OpenStudioLandscapes/Template/constants.py:7:1: W0511: Todo (fixme)
 src/OpenStudioLandscapes/Template/constants.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module OpenStudioLandscapes.Template._definitions_with_upstream_specs
 src/OpenStudioLandscapes/Template/_definitions_with_upstream_specs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module OpenStudioLandscapes.Template.__init__
-src/OpenStudioLandscapes/Template/__init__.py:6:5: W0511: TODO: Import directly (no need for conditional) when `python_requires = >= 3.8` (fixme)
+src/OpenStudioLandscapes/Template/__init__.py:15:5: W0511: TODO: Import directly (no need for conditional) when `python_requires = >= 3.8` (fixme)
 ************* Module OpenStudioLandscapes.Template
 src/OpenStudioLandscapes/Template/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Template/__init__.py:1:0: C0103: Module name "Template" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Template/__init__.py:25:4: E0401: Unable to import 'OpenStudioLandscapes.engine.logging.loggers' (import-error)
-src/OpenStudioLandscapes/Template/__init__.py:25:4: E0611: No name 'logging' in module 'OpenStudioLandscapes.engine' (no-name-in-module)
 ************* Module OpenStudioLandscapes.Template.config.models
 src/OpenStudioLandscapes/Template/config/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:14:0: C0115: Missing class docstring (missing-class-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:15:4: C0103: Class constant name "main" doesn't conform to UPPER_CASE naming style (invalid-name)
 src/OpenStudioLandscapes/Template/config/models.py:18:0: C0115: Missing class docstring (missing-class-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:46:4: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:46:4: C0103: Attribute name "MOUNTED_VOLUME_expanded" doesn't conform to snake_case naming style (invalid-name)
+src/OpenStudioLandscapes/Template/config/models.py:19:4: C0103: Class constant name "main" doesn't conform to UPPER_CASE naming style (invalid-name)
+src/OpenStudioLandscapes/Template/config/models.py:22:0: C0115: Missing class docstring (missing-class-docstring)
+src/OpenStudioLandscapes/Template/config/models.py:50:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/OpenStudioLandscapes/Template/config/models.py:50:4: C0103: Attribute name "MOUNTED_VOLUME_expanded" doesn't conform to snake_case naming style (invalid-name)
+src/OpenStudioLandscapes/Template/config/models.py:51:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+src/OpenStudioLandscapes/Template/config/models.py:54:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
 src/OpenStudioLandscapes/Template/config/models.py:6:0: C0411: third party import "pydantic.Field" should be placed before first party import "OpenStudioLandscapes.engine.config.models.FeatureBaseModel"  (wrong-import-order)
 src/OpenStudioLandscapes/Template/config/models.py:11:0: C0412: Imports from package OpenStudioLandscapes are not grouped (ungrouped-imports)
 ************* Module OpenStudioLandscapes.Template.doc.readme
@@ -80,21 +53,7 @@ src/OpenStudioLandscapes/Template/doc/readme.py:54:8: C2801: Unnecessarily calls
 src/OpenStudioLandscapes/Template/doc/readme.py:73:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 src/OpenStudioLandscapes/Template/doc/readme.py:88:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 src/OpenStudioLandscapes/Template/doc/readme.py:8:4: W0613: Unused argument 'main_header' (unused-argument)
-src/OpenStudioLandscapes/Template/doc/readme.py:1:0: R0801: Similar lines in 2 files
-==OpenStudioLandscapes.Template.doc.readme:[45:56]
-==OpenStudioLandscapes.Template.readme_feature:[42:53]
-    doc.add_heading(
-        text="Create new Feature from this Template",
-        level=1,
-    )
-
-    # Logo
-
-    doc.add_paragraph(
-        snakemd.Inline(
-            text=textwrap.dedent("""\
-                Logo OpenStudioLandscapes\ (duplicate-code)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.45/10 (previous run: 6.80/10, -0.35)
+Your code has been rated at 7.56/10 (previous run: 7.87/10, -0.31)
 

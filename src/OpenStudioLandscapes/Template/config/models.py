@@ -9,9 +9,9 @@ from pydantic import (
 )
 
 from OpenStudioLandscapes.Template import (
-    dist,
     LOGGER,
     constants,
+    dist,
 )
 
 
