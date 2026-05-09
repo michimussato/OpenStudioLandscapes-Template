@@ -21,9 +21,6 @@ src/OpenStudioLandscapes/Template/assets.py:486:0: C0116: Missing function or me
 ************* Module OpenStudioLandscapes.Template.definitions
 src/OpenStudioLandscapes/Template/definitions.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Template/definitions.py:12:0: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
-************* Module OpenStudioLandscapes.Template.constants
-src/OpenStudioLandscapes/Template/constants.py:7:1: W0511: Todo (fixme)
-src/OpenStudioLandscapes/Template/constants.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module OpenStudioLandscapes.Template._definitions_with_upstream_specs
 src/OpenStudioLandscapes/Template/_definitions_with_upstream_specs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module OpenStudioLandscapes.Template.__init__
@@ -31,6 +28,7 @@ src/OpenStudioLandscapes/Template/__init__.py:15:5: W0511: TODO: Import directly
 ************* Module OpenStudioLandscapes.Template
 src/OpenStudioLandscapes/Template/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Template/__init__.py:1:0: C0103: Module name "Template" doesn't conform to snake_case naming style (invalid-name)
+src/OpenStudioLandscapes/Template/__init__.py:39:4: C0103: Constant name "fill" doesn't conform to UPPER_CASE naming style (invalid-name)
 ************* Module OpenStudioLandscapes.Template.config.models
 src/OpenStudioLandscapes/Template/config/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Template/config/models.py:18:0: C0115: Missing class docstring (missing-class-docstring)
@@ -55,5 +53,5 @@ src/OpenStudioLandscapes/Template/doc/readme.py:88:8: C2801: Unnecessarily calls
 src/OpenStudioLandscapes/Template/doc/readme.py:8:4: W0613: Unused argument 'main_header' (unused-argument)
 
 ------------------------------------------------------------------
-Your code has been rated at 7.56/10 (previous run: 7.87/10, -0.31)
+Your code has been rated at 7.60/10 (previous run: 7.92/10, -0.31)
 
