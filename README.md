@@ -90,77 +90,74 @@ The following settings are available in `OpenStudioLandscapes-Template` and are 
 
 
 ```yaml
-properties:
-  ENV_VAR_PORT_CONTAINER:
-    default: 2345
-    description: The Ayon container port.
-    exclusiveMinimum: 0
-    title: Env Var Port Container
-    type: integer
-  ENV_VAR_PORT_HOST:
-    default: 1234
-    description: The host port.
-    exclusiveMinimum: 0
-    title: Env Var Port Host
-    type: integer
-  MOUNTED_VOLUME:
-    default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/volume'
-    description: The host side mounted volume.
-    format: path
-    title: Mounted Volume
+ENV_VAR_PORT_CONTAINER:
+  default: 2345
+  description: The Ayon container port.
+  exclusiveMinimum: 0
+  title: Env Var Port Container
+  type: integer
+ENV_VAR_PORT_HOST:
+  default: 1234
+  description: The host port.
+  exclusiveMinimum: 0
+  title: Env Var Port Host
+  type: integer
+MOUNTED_VOLUME:
+  default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/volume'
+  description: The host side mounted volume.
+  format: path
+  title: Mounted Volume
+  type: string
+compose_scope:
+  default: default
+  examples:
+  - default
+  - license_server
+  - worker
+  title: Compose Scope
+  type: string
+docker_compose:
+  default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/docker_compose/docker-compose.yml'
+  description: The path to the `docker-compose.yml` file.
+  format: path
+  title: Docker Compose
+  type: string
+enabled:
+  default: false
+  title: Enabled
+  type: boolean
+env:
+  additionalProperties: true
+  title: Env
+  type: object
+feature_name:
+  default: OpenStudioLandscapes-Template
+  title: Feature Name
+  type: string
+group_name:
+  default: OpenStudioLandscapes_Template
+  title: Group Name
+  type: string
+key_prefixes:
+  default:
+  - OpenStudioLandscapes_Template
+  items:
     type: string
-  compose_scope:
-    default: default
-    examples:
-    - default
-    - license_server
-    - worker
-    title: Compose Scope
+  title: Key Prefixes
+  type: array
+local_bind_volumes:
+  description: Here you can define Feature specific, arbitrary, absolute bind volume
+    mappings.
+  items:
     type: string
-  docker_compose:
-    default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/docker_compose/docker-compose.yml'
-    description: The path to the `docker-compose.yml` file.
-    format: path
-    title: Docker Compose
+  title: Local Bind Volumes
+  type: array
+local_environment_variables:
+  additionalProperties:
     type: string
-  enabled:
-    default: false
-    title: Enabled
-    type: boolean
-  env:
-    additionalProperties: true
-    title: Env
-    type: object
-  feature_name:
-    default: OpenStudioLandscapes-Template
-    title: Feature Name
-    type: string
-  group_name:
-    default: OpenStudioLandscapes_Template
-    title: Group Name
-    type: string
-  key_prefixes:
-    default:
-    - OpenStudioLandscapes_Template
-    items:
-      type: string
-    title: Key Prefixes
-    type: array
-  local_bind_volumes:
-    description: Here you can define Feature specific, arbitrary, absolute bind volume
-      mappings.
-    items:
-      type: string
-    title: Local Bind Volumes
-    type: array
-  local_environment_variables:
-    additionalProperties:
-      type: string
-    description: Here you can define Feature specific, arbitrary environment variables.
-    title: Local Environment Variables
-    type: object
-title: Config
-type: object
+  description: Here you can define Feature specific, arbitrary environment variables.
+  title: Local Environment Variables
+  type: object
 
 ```
 
@@ -325,4 +322,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2026-05-09 11:26:20 UTC**
+Last changed: **2026-05-12 10:01:55 UTC**
