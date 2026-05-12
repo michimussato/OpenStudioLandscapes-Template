@@ -53,5 +53,5 @@ src/OpenStudioLandscapes/Template/doc/readme.py:88:8: C2801: Unnecessarily calls
 src/OpenStudioLandscapes/Template/doc/readme.py:8:4: W0613: Unused argument 'main_header' (unused-argument)
 
 ------------------------------------------------------------------
-Your code has been rated at 7.60/10 (previous run: 7.92/10, -0.31)
+Your code has been rated at 7.63/10 (previous run: 7.94/10, -0.31)
 
