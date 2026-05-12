@@ -1,21 +1,13 @@
 project:
-  # dependencies: []
   description: Template Feature for OpenStudioLandscapes
   name: OpenStudioLandscapes-Template
   optional-dependencies:
-    optional-base:
-    - OpenStudioLandscapes @ git+https://github.com/michimussato/OpenStudioLandscapes.git
     dev:
     - OpenStudioLandscapes-Template[nox]
     - OpenStudioLandscapes-Template[sbom]
     - OpenStudioLandscapes-Template[readme]
-    lint:
-    - OpenStudioLandscapes-Template[optional-base]
-    readme:
-    - OpenStudioLandscapes-Template[optional-base]
     sbom:
     - OpenStudioLandscapes-Template[graphviz]
-    - OpenStudioLandscapes-Template[optional-base]
   urls:
     Homepage: https://github.com/michimussato/OpenStudioLandscapes-Template
 tool:
