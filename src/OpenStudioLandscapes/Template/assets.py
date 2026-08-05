@@ -26,8 +26,9 @@ from OpenStudioLandscapes.engine.common_assets import (
     group_in,
     group_out,
 )
-from OpenStudioLandscapes.engine.config.models import ConfigEngine, DockerConfigModel
+from OpenStudioLandscapes.engine.config.models import ConfigEngine
 from OpenStudioLandscapes.engine.base.configurable_resources.docker_registry_resource import DockerRegistryConfigurableResource
+from OpenStudioLandscapes.engine.base.configurable_resources.docker_resource import DockerConfigurableResource
 from OpenStudioLandscapes.engine.constants import (
     ASSET_HEADER_BASE,
     ConfigParent,
@@ -127,6 +128,7 @@ feature_in_parent: Union[AssetsDefinition, None] = group_in.get_feature_in_paren
 def write_dockerfile(
     context: AssetExecutionContext,
     config_DockerRegistryConfigurableResource: DockerRegistryConfigurableResource,
+    config_DockerConfigurableResource: DockerConfigurableResource,
     feature_in: OpenStudioLandscapesFeatureIn,  # pylint: disable=redefined-outer-name
     CONFIG: config.models.Config,  # pylint: disable=redefined-outer-name
 ) -> Generator[Output[pathlib.Path] | AssetMaterialization, None, None]:
@@ -136,7 +138,7 @@ def write_dockerfile(
 
     config_engine: ConfigEngine = CONFIG.config_engine
 
-    docker_config: DockerConfigModel = config_engine.openstudiolandscapes__docker_config
+    docker_config: DockerConfigurableResource = config_DockerConfigurableResource
 
     docker_image: Dict = feature_in.openstudiolandscapes_base.docker_image_base
 
@@ -235,6 +237,7 @@ def write_dockerfile(
 def build_docker_image(
     context: AssetExecutionContext,
     config_DockerRegistryConfigurableResource: DockerRegistryConfigurableResource,
+    config_DockerConfigurableResource: DockerConfigurableResource,
     feature_in: OpenStudioLandscapesFeatureIn,  # pylint: disable=redefined-outer-name
     CONFIG: config.models.Config,  # pylint: disable=redefined-outer-name
     write_dockerfile: pathlib.Path,  # pylint: disable=redefined-outer-name
@@ -249,7 +252,7 @@ def build_docker_image(
 
     config_engine: ConfigEngine = CONFIG.config_engine
 
-    docker_config: DockerConfigModel = config_engine.openstudiolandscapes__docker_config
+    docker_config: DockerConfigurableResource = config_DockerConfigurableResource
 
     docker_image: Dict = feature_in.openstudiolandscapes_base.docker_image_base
 
