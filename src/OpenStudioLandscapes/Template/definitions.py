@@ -4,7 +4,7 @@ from dagster import (
 )
 
 import OpenStudioLandscapes.Template.assets
-from OpenStudioLandscapes.Template import (
+from OpenStudioLandscapes.Template.constants import (
     LOGGER,
     dist,
 )
