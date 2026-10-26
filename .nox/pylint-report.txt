@@ -1,3 +1,14 @@
+************* Module OpenStudioLandscapes.Template.definitions
+src/OpenStudioLandscapes/Template/definitions.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src/OpenStudioLandscapes/Template/definitions.py:12:0: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+************* Module OpenStudioLandscapes.Template.constants
+src/OpenStudioLandscapes/Template/constants.py:14:5: W0511: TODO: Import directly (no need for conditional) when `python_requires = >= 3.8` (fixme)
+src/OpenStudioLandscapes/Template/constants.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src/OpenStudioLandscapes/Template/constants.py:38:4: C0103: Constant name "fill" doesn't conform to UPPER_CASE naming style (invalid-name)
+************* Module OpenStudioLandscapes.Template
+src/OpenStudioLandscapes/Template/__init__.py:1:0: C0103: Module name "Template" doesn't conform to snake_case naming style (invalid-name)
+************* Module OpenStudioLandscapes.Template._definitions_with_upstream_specs
+src/OpenStudioLandscapes/Template/_definitions_with_upstream_specs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module OpenStudioLandscapes.Template.assets
 src/OpenStudioLandscapes/Template/assets.py:193:9: W0511: Todo: this won't work as expected if len(tags) > 1 (fixme)
 src/OpenStudioLandscapes/Template/assets.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -18,28 +29,6 @@ src/OpenStudioLandscapes/Template/assets.py:355:0: R0914: Too many local variabl
 src/OpenStudioLandscapes/Template/assets.py:442:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
 src/OpenStudioLandscapes/Template/assets.py:418:4: W0612: Unused variable 'command' (unused-variable)
 src/OpenStudioLandscapes/Template/assets.py:486:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module OpenStudioLandscapes.Template.definitions
-src/OpenStudioLandscapes/Template/definitions.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Template/definitions.py:12:0: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
-************* Module OpenStudioLandscapes.Template.constants
-src/OpenStudioLandscapes/Template/constants.py:14:5: W0511: TODO: Import directly (no need for conditional) when `python_requires = >= 3.8` (fixme)
-src/OpenStudioLandscapes/Template/constants.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Template/constants.py:38:4: C0103: Constant name "fill" doesn't conform to UPPER_CASE naming style (invalid-name)
-************* Module OpenStudioLandscapes.Template._definitions_with_upstream_specs
-src/OpenStudioLandscapes/Template/_definitions_with_upstream_specs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-************* Module OpenStudioLandscapes.Template
-src/OpenStudioLandscapes/Template/__init__.py:1:0: C0103: Module name "Template" doesn't conform to snake_case naming style (invalid-name)
-************* Module OpenStudioLandscapes.Template.config.models
-src/OpenStudioLandscapes/Template/config/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:18:0: C0115: Missing class docstring (missing-class-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:19:4: C0103: Class constant name "main" doesn't conform to UPPER_CASE naming style (invalid-name)
-src/OpenStudioLandscapes/Template/config/models.py:22:0: C0115: Missing class docstring (missing-class-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:50:4: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Template/config/models.py:50:4: C0103: Attribute name "MOUNTED_VOLUME_expanded" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Template/config/models.py:51:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
-src/OpenStudioLandscapes/Template/config/models.py:54:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
-src/OpenStudioLandscapes/Template/config/models.py:6:0: C0411: third party import "pydantic.Field" should be placed before first party import "OpenStudioLandscapes.engine.config.models.FeatureBaseModel"  (wrong-import-order)
-src/OpenStudioLandscapes/Template/config/models.py:11:0: C0412: Imports from package OpenStudioLandscapes are not grouped (ungrouped-imports)
 ************* Module OpenStudioLandscapes.Template.doc.readme
 src/OpenStudioLandscapes/Template/doc/readme.py:58:0: C0301: Line too long (107/100) (line-too-long)
 src/OpenStudioLandscapes/Template/doc/readme.py:141:0: C0301: Line too long (144/100) (line-too-long)
@@ -51,7 +40,18 @@ src/OpenStudioLandscapes/Template/doc/readme.py:54:8: C2801: Unnecessarily calls
 src/OpenStudioLandscapes/Template/doc/readme.py:73:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 src/OpenStudioLandscapes/Template/doc/readme.py:88:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 src/OpenStudioLandscapes/Template/doc/readme.py:8:4: W0613: Unused argument 'main_header' (unused-argument)
+************* Module OpenStudioLandscapes.Template.config.models
+src/OpenStudioLandscapes/Template/config/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src/OpenStudioLandscapes/Template/config/models.py:18:0: C0115: Missing class docstring (missing-class-docstring)
+src/OpenStudioLandscapes/Template/config/models.py:19:4: C0103: Class constant name "main" doesn't conform to UPPER_CASE naming style (invalid-name)
+src/OpenStudioLandscapes/Template/config/models.py:22:0: C0115: Missing class docstring (missing-class-docstring)
+src/OpenStudioLandscapes/Template/config/models.py:50:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/OpenStudioLandscapes/Template/config/models.py:50:4: C0103: Attribute name "MOUNTED_VOLUME_expanded" doesn't conform to snake_case naming style (invalid-name)
+src/OpenStudioLandscapes/Template/config/models.py:51:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+src/OpenStudioLandscapes/Template/config/models.py:54:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+src/OpenStudioLandscapes/Template/config/models.py:6:0: C0411: third party import "pydantic.Field" should be placed before first party import "OpenStudioLandscapes.engine.config.models.FeatureBaseModel"  (wrong-import-order)
+src/OpenStudioLandscapes/Template/config/models.py:11:0: C0412: Imports from package OpenStudioLandscapes are not grouped (ungrouped-imports)
 
 ------------------------------------------------------------------
-Your code has been rated at 7.64/10 (previous run: 7.53/10, +0.11)
+Your code has been rated at 7.64/10 (previous run: 6.90/10, +0.74)
 
